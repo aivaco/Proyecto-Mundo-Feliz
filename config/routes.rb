@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'prueba#mientras'       #Mientras
+  root 'pages#mientras'       #Mientras
 end
