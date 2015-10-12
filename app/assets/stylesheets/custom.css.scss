@@ -22,3 +22,46 @@ textarea {
 .center h1 {
   margin-bottom: 10px;
 }
+
+.be-red {
+  background-color: green;
+}
+
+.login{
+  width:40%; 
+  margin: 0 auto;
+  font-size: 0.4em;
+  placeholder: 1px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 2;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+ 
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+big {
+   font-size: 3em !important;
+     width:40%; 
+  margin: 0 auto;
+}
+

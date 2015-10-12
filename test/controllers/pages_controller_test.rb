@@ -5,4 +5,5 @@ class PagesControllerTest < ActionController::TestCase
     get :mientras
     assert_response :success
   end
+  
 end
