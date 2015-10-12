@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tiempoDef: MyString
+  razondeser: MyString
+  portafolio_id: 
+
+two:
+  tiempoDef: MyString
+  razondeser: MyString
+  portafolio_id: 

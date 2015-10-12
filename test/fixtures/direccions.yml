@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo: MyString
+  pais: MyString
+  provincia: MyString
+  ciudad: MyString
+  direxac: MyString
+  persona_id: 
+
+two:
+  tipo: MyString
+  pais: MyString
+  provincia: MyString
+  ciudad: MyString
+  direxac: MyString
+  persona_id: 
