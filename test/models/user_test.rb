@@ -15,7 +15,7 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "Un nombre de usuario debe de contener como máximo 20 caracteres." do
-    @user.usuario = "a" * 21
+    @user.usuario = "a" * 100
     assert_not @user.valid?
   end
   

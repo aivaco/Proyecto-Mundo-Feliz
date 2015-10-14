@@ -3,33 +3,28 @@ class User < ActiveRecord::Base
     validates :usuario, presence: true, length: { maximum: 20 }, uniqueness: true
     has_secure_password
     validates :password, presence: true, length: { minimum: 8 }
-    #has_secure_password
-=begin 
-  attr_accessible :user_id, :password, :password_confirmation
-  
-  attr_accessor :password
-  before_save :encrypt_password
-  
-  validates_confirmation_of :password
-  validates_presence_of :password, :on => :create
-  validates_presence_of :user_id
-  validates_uniqueness_of :user_id
-  
-  def self.authenticate(user_id, password)
-    user = find_by_user_id(user_id)
-    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
-      user
-    else
-      nil
-    end
-  end
-  
-  def encrypt_password
-    if password.present?
-      self.password_salt = BCrypt::Engine.generate_salt
-      self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
-    end
-  end
-=end
+    
+
+
+def self.from_omniauth(auth)
+  existe = defined? auth.uid
+  if existe
+  if user = User.find_by_uid(auth.uid)
+    return user
+  else
+    user = User.create(
+    provider: auth.provider,
+    uid: auth.uid,
+    usuario: auth.uid,
+    oauth_token:  auth.credentials.token,
+    oauth_expires_at: Time.at(auth.credentials.expires_at),
+    password: "Faceb00k!",
+    password_confirmation: "Faceb00k!"
+    )
+    return  user
 end
+end
+end
+end
+
 
