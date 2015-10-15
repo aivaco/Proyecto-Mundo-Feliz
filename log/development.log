@@ -1,0 +1,2110 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:31:59 -0600
+Processing by PagesController#mientras as HTML
+  Rendered pages/mientras.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 3974ms (Views: 3964.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 15:32:03 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:32:03 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:32:03 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:32:03 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 15:32:03 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:32:03 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:32:03 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:32:03 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:32:03 -0600
+
+
+Started GET "/home" for 127.0.0.1 at 2015-10-14 15:32:27 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/modulos/_view_cliente.html.erb (0.6ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.7ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.6ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.2ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered pages/home.html.erb within layouts/application (112.5ms)
+Completed 200 OK in 193ms (Views: 191.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:45:21 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/modulos/_view_cliente.html.erb (0.2ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.2ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.2ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.2ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+  Rendered pages/home.html.erb within layouts/application (319.4ms)
+Completed 200 OK in 422ms (Views: 413.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:46:27 -0600
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/ruiz/Escritorio/Proyecto-Mundo-Feliz-master/app/views/pages/home.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting ')'
+...fer.append=( render :template 'modulo_cliente/modulocliente'...
+...                               ^):
+  app/views/pages/home.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting ')'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (13.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (9.2ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (63.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulocliente.html.erb (0.3ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (117.8ms)
+Completed 200 OK in 191ms (Views: 190.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:47:27 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:48:06 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulocliente.html.erb (3.0ms)
+  Rendered pages/home.html.erb within layouts/application (107.2ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente"}):
+  app/views/modulo_cliente/modulocliente.html.erb:11:in `_app_views_modulo_cliente_modulocliente_html_erb___2650471135148950496_69886571643380'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886588691760'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (8.6ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (31.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:49:10 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (2.9ms)
+  Rendered pages/home.html.erb within layouts/application (122.2ms)
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886332204140'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (8.5ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (32.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:49:14 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.8ms)
+  Rendered pages/home.html.erb within layouts/application (81.2ms)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886332204140'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (14.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (36.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:49:47 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.3ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (116.4ms)
+Completed 200 OK in 205ms (Views: 203.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 15:49:47 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 15:49:47 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:49:48 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.6ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 185ms (Views: 184.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:28 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:29 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:29 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:50:29 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:51:06 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (2.5ms)
+  Rendered pages/home.html.erb within layouts/application (96.5ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886596672040'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (30.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:51:43 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (2.3ms)
+  Rendered pages/home.html.erb within layouts/application (95.0ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886596672040'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (9.1ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (31.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:52:23 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (3.5ms)
+  Rendered pages/home.html.erb within layouts/application (118.2ms)
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente_controller"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886587322620'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (9.4ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (32.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:52:24 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (3.0ms)
+  Rendered pages/home.html.erb within layouts/application (109.3ms)
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente_controller"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886587322620'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.5ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (30.1ms)
+
+
+Started PUT "/console/repl_sessions/8" for 127.0.0.1 at 2015-10-14 15:52:27 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:52:30 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (2.2ms)
+  Rendered pages/home.html.erb within layouts/application (104.8ms)
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente_controller"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886587322620'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.0ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (27.1ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-10-14 15:52:34 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.9ms)
+  Rendered pages/home.html.erb within layouts/application (93.4ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente_controller"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886587322620'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (9.3ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (6.4ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (35.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:52:37 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.9ms)
+  Rendered pages/home.html.erb within layouts/application (97.1ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente_controller"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886587322620'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (8.1ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (30.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:53:37 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (2.8ms)
+  Rendered pages/home.html.erb within layouts/application (106.3ms)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente_controller.rb"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886571982800'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (9.2ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (32.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:53:40 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (2.0ms)
+  Rendered pages/home.html.erb within layouts/application (86.2ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"nuevo_cliente", :controller=>"modulo_cliente_controller.rb"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886571982800'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.3ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (27.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.4ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (88.0ms)
+Completed 200 OK in 169ms (Views: 167.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:54:11 -0600
+
+
+Started GET "/modulo_cliente/nuevo_cliente" for 127.0.0.1 at 2015-10-14 15:54:48 -0600
+Processing by ModuloClienteController#nuevo_cliente as HTML
+  Rendered modulo_cliente/nuevo_cliente.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 119ms (Views: 118.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 15:57:05 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.8ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered pages/home.html.erb within layouts/application (77.7ms)
+Completed 200 OK in 148ms (Views: 147.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 15:57:06 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.4ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (83.9ms)
+Completed 200 OK in 148ms (Views: 147.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:02:48 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:03:00 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.5ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.5ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.3ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.3ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.2ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered pages/home.html.erb within layouts/application (143.8ms)
+Completed 200 OK in 230ms (Views: 228.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:03:40 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (19.4ms)
+  Rendered pages/home.html.erb within layouts/application (126.2ms)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `mientras' for #<#<Class:0x007f1f7bf0a518>:0x007f1f7bc08b80>):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886596673680'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (9.0ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (44.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:03:54 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (20.5ms)
+  Rendered pages/home.html.erb within layouts/application (144.3ms)
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `mientras' for #<#<Class:0x007f1f7bf0a518>:0x007f1f79993a50>):
+  app/views/modulo_cliente/modulo_cliente.html.erb:11:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886568466860'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (43.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:06:13 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.5ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (103.1ms)
+Completed 200 OK in 178ms (Views: 177.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:06:13 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:06:14 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:09:32 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (16.9ms)
+  Rendered pages/home.html.erb within layouts/application (105.3ms)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `mientras' for #<#<Class:0x007f1f78423b98>:0x007f1f78422838>):
+  app/views/modulo_cliente/modulo_cliente.html.erb:12:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886339345120'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (9.0ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (44.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:10:39 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (3.2ms)
+  Rendered pages/home.html.erb within layouts/application (130.3ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.0ms)
+
+ActionController::UrlGenerationError (No route matches {:action=>"mientras", :controller=>"home"}):
+  app/views/modulo_cliente/modulo_cliente.html.erb:12:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886333798500'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.7ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (29.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.6ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (119.3ms)
+Completed 200 OK in 200ms (Views: 198.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:11:16 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:13:58 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.0ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (85.7ms)
+Completed 200 OK in 155ms (Views: 154.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:13:59 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.4ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered pages/home.html.erb within layouts/application (81.7ms)
+Completed 200 OK in 159ms (Views: 158.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:15:43 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.5ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (116.6ms)
+Completed 200 OK in 193ms (Views: 192.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:17:55 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.6ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (113.9ms)
+Completed 200 OK in 187ms (Views: 186.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:19:38 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:22:12 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.2ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (86.7ms)
+Completed 200 OK in 170ms (Views: 169.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/modulo_cliente/" for 127.0.0.1 at 2015-10-14 16:22:28 -0600
+
+ActionController::RoutingError (No route matches [GET] "/modulo_cliente"):
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+  web-console (2.0.0.beta3) lib/action_dispatch/debug_exceptions.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (29.7ms)
+
+
+Started GET "/modulo_cliente/nuevo_cliente" for 127.0.0.1 at 2015-10-14 16:22:31 -0600
+Processing by ModuloClienteController#nuevo_cliente as HTML
+  Rendered modulo_cliente/nuevo_cliente.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 102ms (Views: 101.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:22:36 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.5ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (111.7ms)
+Completed 200 OK in 188ms (Views: 186.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:23:31 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.7ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (117.3ms)
+Completed 200 OK in 198ms (Views: 197.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:23:32 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:23:42 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.5ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (99.2ms)
+Completed 200 OK in 179ms (Views: 178.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:23:42 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.9ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (101.0ms)
+Completed 200 OK in 176ms (Views: 175.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:23:42 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.9ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (94.5ms)
+Completed 200 OK in 170ms (Views: 169.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:23:43 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.9ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (107.9ms)
+Completed 200 OK in 188ms (Views: 187.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.9ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (105.8ms)
+Completed 200 OK in 179ms (Views: 178.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:47 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:48 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:48 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:48 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:48 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:48 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:24:52 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.2ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (87.7ms)
+Completed 200 OK in 171ms (Views: 170.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:24:52 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:24:52 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:52 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:24:52 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:52 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:24:53 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:24:55 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.4ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (115.9ms)
+Completed 200 OK in 189ms (Views: 188.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:24:56 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.9ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (99.4ms)
+Completed 200 OK in 170ms (Views: 169.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:24:57 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.8ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (102.8ms)
+Completed 200 OK in 203ms (Views: 202.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:24:57 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.7ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (99.0ms)
+Completed 200 OK in 169ms (Views: 168.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:24:57 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.7ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (72.4ms)
+Completed 200 OK in 136ms (Views: 135.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:24:57 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.7ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (77.8ms)
+Completed 200 OK in 154ms (Views: 153.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:25:05 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.8ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (98.1ms)
+Completed 200 OK in 182ms (Views: 181.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:26:15 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.8ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (104.6ms)
+Completed 200 OK in 179ms (Views: 177.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:26:18 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.7ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (77.9ms)
+Completed 200 OK in 142ms (Views: 141.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.7ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (106.7ms)
+Completed 200 OK in 182ms (Views: 180.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:35 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:36 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:36 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:36 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:26:36 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (2.3ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (98.1ms)
+Completed 200 OK in 181ms (Views: 180.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:32 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:33 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:33 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:33 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:33 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:33 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:27:33 -0600
+
+
+Started GET "/modulo_cliente/nuevo_cliente" for 127.0.0.1 at 2015-10-14 16:27:37 -0600
+Processing by ModuloClienteController#nuevo_cliente as HTML
+  Rendered modulo_cliente/nuevo_cliente.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 114ms (Views: 113.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:27:39 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.5ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (77.9ms)
+Completed 200 OK in 162ms (Views: 161.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.4ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (85.3ms)
+Completed 200 OK in 154ms (Views: 152.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:32:18 -0600
+
+
+Started GET "/modulo_cliente/nuevo_cliente" for 127.0.0.1 at 2015-10-14 16:32:21 -0600
+Processing by ModuloClienteController#nuevo_cliente as HTML
+  Rendered modulo_cliente/nuevo_cliente.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 108ms (Views: 106.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:32:23 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (2.0ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (106.4ms)
+Completed 200 OK in 182ms (Views: 181.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:33:43 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (3.8ms)
+  Rendered pages/home.html.erb within layouts/application (113.7ms)
+Completed 500 Internal Server Error in 121ms (ActiveRecord: 0.0ms)
+
+ArgumentError (wrong number of arguments (4 for 0..3)):
+  app/views/modulo_cliente/modulo_cliente.html.erb:103:in `_app_views_modulo_cliente_modulo_cliente_html_erb___4334558646882867938_69886365886200'
+  app/views/pages/home.html.erb:28:in `_app_views_pages_home_html_erb___710435627927360246_69886568678040'
+
+
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (8.4ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (0.8ms)
+  Rendered /home/ruiz/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (32.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:34:19 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.6ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (94.8ms)
+Completed 200 OK in 166ms (Views: 165.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:34:19 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:19 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:34:19 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:34:19 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:19 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:34:19 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:19 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:34:20 -0600
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:34:22 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.9ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (94.5ms)
+Completed 200 OK in 170ms (Views: 168.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/modulo_cliente/nuevo_cliente" for 127.0.0.1 at 2015-10-14 16:34:25 -0600
+Processing by ModuloClienteController#nuevo_cliente as HTML
+  Rendered modulo_cliente/nuevo_cliente.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 87ms (Views: 86.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:34:27 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.8ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (88.6ms)
+Completed 200 OK in 170ms (Views: 169.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.6ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (112.0ms)
+Completed 200 OK in 188ms (Views: 186.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/custom.self-e7689838c57cb460a8bcfb950a6edc3fe0f05222f2cd8bfd92c5b7229083d0ad.css?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/prueba.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/modulo_cliente.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/bootstrap.self-cdea7efeac1597b89ddd6fd86b0e8e0bec5d5fb1fac9c6e8a045f2c59eef2d13.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/turbolinks.self-680e388bf7f759d85e2dbe0044d33f55e12b26da721317111c01ec92e53df55e.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/modulo_cliente.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/prueba.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2015-10-14 16:38:32 -0600
+
+
+Started GET "/modulo_cliente/nuevo_cliente" for 127.0.0.1 at 2015-10-14 16:38:34 -0600
+Processing by ModuloClienteController#nuevo_cliente as HTML
+  Rendered modulo_cliente/nuevo_cliente.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 94ms (Views: 93.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:38:35 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (1.2ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered pages/home.html.erb within layouts/application (110.4ms)
+Completed 200 OK in 222ms (Views: 221.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/modulo_cliente/nuevo_cliente" for 127.0.0.1 at 2015-10-14 16:38:37 -0600
+Processing by ModuloClienteController#nuevo_cliente as HTML
+  Rendered modulo_cliente/nuevo_cliente.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 75ms (Views: 74.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/modulo_cliente/nuevo_cliente" for 127.0.0.1 at 2015-10-14 16:38:37 -0600
+Processing by ModuloClienteController#nuevo_cliente as HTML
+  Rendered modulo_cliente/nuevo_cliente.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 90ms (Views: 89.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-10-14 16:38:39 -0600
+Processing by PagesController#home as HTML
+  Rendered layouts/_header.html.erb (0.1ms)
+  Rendered modulo_cliente/modulo_cliente.html.erb (0.8ms)
+  Rendered layouts/modulos/_view_portafolio.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_entregables.html.erb (0.0ms)
+  Rendered layouts/modulos/_view_recursos.html.erb (0.1ms)
+  Rendered layouts/modulos/_view_bitacora.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered pages/home.html.erb within layouts/application (84.3ms)
+Completed 200 OK in 175ms (Views: 174.0ms | ActiveRecord: 0.0ms)
