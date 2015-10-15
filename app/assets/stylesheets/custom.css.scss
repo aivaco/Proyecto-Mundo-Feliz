@@ -27,7 +27,7 @@ textarea {
   
 /********** Header **********/
 
-#encabezado {
+#nombre_proyecto {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
@@ -37,13 +37,14 @@ textarea {
   padding-top: 9px;
   font-weight: bold;
   
-  
 }
 
-#encabezado:hover {
+#nombre_proyecto:hover {
   color: #fff;
   text-decoration: none;
 }
+
+
 
 /****************************/
 
@@ -81,3 +82,56 @@ footer ul li {
 }
 
 /****************************/
+
+
+/****** PESTAÑAS MENU *******/
+
+#menu_tabs {
+  margin-top: 50px; 
+ 
+}
+
+/****************************/
+
+
+
+/***** MENU DE USUARIO ******/
+
+#menu_user_button {
+  font-size: 1.2em;
+  color: #fff;
+  margin-top: 6px;
+  font-weight: bold;
+  border-left: solid;
+  border-width: 1px;
+  
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+#menu_user_dropdown{
+  margin-top: 43px;
+  margin-right: 0px;
+ 
+  left: auto;
+  right: 0;
+  
+}
+
+#menu_user_dropdown:after{
+ 
+  position: absolute;
+  top: -6px;
+  left: 151px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  content: '';
+
+}
+
+/****************************/
+
+

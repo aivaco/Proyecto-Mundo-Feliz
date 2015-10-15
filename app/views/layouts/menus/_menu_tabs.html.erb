@@ -1,0 +1,34 @@
+<div id="menu_tabs" class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#opcion_cliente"><span class="glyphicon glyphicon-book"></span> Clientes</a></li>
+      <li><a data-toggle="tab" href="#opcion_portafolio"><span class="glyphicon glyphicon-briefcase"></span> Portafolio</a></li>
+      <li><a data-toggle="tab" href="#opcion_entregables"><span class="glyphicon glyphicon-file"></span> Entregables</a></li>
+      <li><a data-toggle="tab" href="#opcion_recursos"><span class="glyphicon glyphicon-user"></span> Recursos</a></li>
+      <li><a data-toggle="tab" href="#opcion_bitacora"><span class="glyphicon glyphicon-edit"></span> Bitácora</a></li>
+    </ul>
+    
+    <div class="tab-content">
+      
+      <div id="opcion_cliente" class="tab-pane fade in active">
+       <%= render 'layouts/modulos/view_cliente' %>
+      </div>
+      
+      <div id="opcion_portafolio" class="tab-pane fade">
+       <%= render 'layouts/modulos/view_portafolio' %>
+      </div>
+      
+      <div id="opcion_entregables" class="tab-pane fade">
+        <%= render 'layouts/modulos/view_entregables' %>
+      </div>
+      
+      <div id="opcion_recursos" class="tab-pane fade">
+        <%= render 'layouts/modulos/view_recursos' %>
+      </div>
+      
+      <div id="opcion_bitacora" class="tab-pane fade">
+        <%= render 'layouts/modulos/view_bitacora' %>
+      </div>
+      
+    </div>
+    <%= render 'layouts/footer' %>
+</div>
