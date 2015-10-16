@@ -10,15 +10,17 @@ Rails.application.routes.draw do
 
   get 'users/new'
 =end
-  root 'pages#mientras'       #Mientras
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
-
-  resources :users
-  #Rutas para facebook
+#Rutas para facebook
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure' => redirect('/')
   get 'signout' => 'sessions#destroy', as: 'signout'
+
+  root 'pages#mientras'       #Mientras
+  get    'login'   => 'sessions#new'
+  get  'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
+  resources :users
+  
   
 end

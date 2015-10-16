@@ -19,4 +19,14 @@ module SessionsHelper
         session.delete(:user_id)
     @current_user = nil
     end
+    
+    def button_to_with_icon(path, text, button_class, icon)
+      form_tag path, :method => :post do
+      button_tag(:class => button_class) do
+        concat content_tag(:i, nil, :class => icon.to_sym)
+        concat text
+        
+      end
+    end
+  end
 end

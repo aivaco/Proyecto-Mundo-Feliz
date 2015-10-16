@@ -14,5 +14,16 @@ module ApplicationHelper
     nil
   end
   
+  def show_link_face(link_text, link_source)
+  link_to("#{content_tag :i, nil, class: 'btn btn-facebook'} #{link_text}".html_safe,
+    link_source, class: "btn")
+  end
+  
+#Para redireccionar autenticación de omniauth  
+  def signin_path(provider)
+    "/auth/#{provider.to_s}"
+  end
+
+
  
 end
