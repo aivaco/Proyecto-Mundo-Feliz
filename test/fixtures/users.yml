@@ -15,3 +15,8 @@ two:
   estado: false
   IdTipo: MyString
   IdPersona: MyString
+  
+michael:
+  usuario: michael134
+  password_digest: <%= User.digest('password') %>
+  password: 61516665156416

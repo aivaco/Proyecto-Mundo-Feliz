@@ -7,6 +7,7 @@ class UserTest < ActiveSupport::TestCase
   
   def setup
     @user = User.new(usuario: "Example User",  password: "foobar", password_confirmation: "foobar")
+    
   end
 
    test "El nombre de usuario debe de estar presente." do
@@ -33,6 +34,10 @@ class UserTest < ActiveSupport::TestCase
   test "Una contraseña debe de contener como mínimo 8 caracteres." do
     @user.password = @user.password_confirmation = "a" * 7
     assert_not @user.valid?
+  end
+  
+  test "Inició Sesión? Retorna falso para un usuario que tiene null en password_digest" do
+    assert_not @user.authenticated?('')
   end
 
 

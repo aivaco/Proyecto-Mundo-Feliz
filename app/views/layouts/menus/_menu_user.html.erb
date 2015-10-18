@@ -1,7 +1,7 @@
 <div class="dropdown">
     
     <!-- Botón del menu de usuario -->
-    <a id="menu_user_button" class="btn btn-link dropdown-toggle pull-right" type="button" data-toggle="dropdown">Nombre Apellido <b class="caret"></b></a>
+    <a id="menu_user_button" class="btn btn-link dropdown-toggle pull-right" type="button" data-toggle="dropdown"><%= current_user.usuario %><b class="caret"></b></a>
     
     <!-- Opciones del menu de usuario -->
     <ul id="menu_user_dropdown" class="dropdown-menu" role="menu" aria-labelledby="menu1">
@@ -10,7 +10,7 @@
       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Entradas de Bitácora</a></li>
       <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Últimos Entregables</a></li>
       <li role="presentation" class="divider"></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-log-out"></span>  Cerrar Sesión</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href=""><span class="glyphicon glyphicon-log-out"><%= link_to "Cerrar sesión", logout_path, method: :delete %></span></a></li>
     </ul>
     
 </div>

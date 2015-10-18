@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
   
 def create
+ 
     if user = User.from_omniauth(env["omniauth.auth"])
       session[:user_id] = user.id
       redirect_to root_url
@@ -12,10 +13,12 @@ def create
       if user && user.authenticate(params[:session][:password])
        #Autentica al usuario.
         log_in user
+        #Para guardar la cookie que recuerda al usuario.
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
         redirect_to root_path
       else
         # Crea un mensaje de error.
-        flash.now[:error] = 'Usuario y/o contraseña incorrectos.'
+        flash.now[:danger] = 'Usuario y/o contraseña incorrectos.'
         render 'new'
       end
     end
@@ -23,8 +26,10 @@ end
 
   
   def destroy
-    session[:user_id] = nil
-    redirect_to "sessions#login"
+   log_out if logged_in?
+   render 'new'
+    #redirect_to 'sessions#login'
   end
+  
   
 end

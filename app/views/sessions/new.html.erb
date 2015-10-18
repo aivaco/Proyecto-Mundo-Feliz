@@ -25,15 +25,14 @@
   <%= f.label :"Contraseña:" %>
   <%= f.password_field :password, class: 'form-control' %>
 
-  <%= f.label "Recordarme:" %>
-  <%= f.check_box :remember_session, layout: :default%>
-  <br>
+  <%= f.label :remember_me, class: "checkbox inline" do %>
+  <%= f.check_box :remember_me %>
+  <span>Recordarme</span>
+  <% end %>
   <%= f.submit "Iniciar sesión", class: "btn btn-success" %>
-  <br>
   <%= button_to_with_icon(signin_path(:facebook), '| Connect with Facebook', 'btn btn-facebook', 'fa fa-facebook')%>
-  <br>
   <%= button_to_with_icon("callto://mundoFeliz",' | Soporte en vivo', 'btn-skype', 'fa fa-skype')%>
-   <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
 
 <% end %>
 
