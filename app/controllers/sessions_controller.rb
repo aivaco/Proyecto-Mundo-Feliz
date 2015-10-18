@@ -22,6 +22,10 @@ def create
         flash.now[:danger] = 'Usuario y/o contraseña incorrectos.'
         render 'new'
       end
+     else
+                 # Crea un mensaje de error.
+        flash.now[:danger] = 'Usuario y/o contraseña incorrectos.'
+        render 'new'
     end
 end
 
