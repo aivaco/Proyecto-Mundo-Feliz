@@ -11,7 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012221817) do
+ActiveRecord::Schema.define(version: 20151018004547) do
+
+  create_table "activos", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "entregable_id"
+    t.integer  "recurso_id"
+    t.boolean  "estado"
+  end
+
+  create_table "alianzas", force: :cascade do |t|
+    t.string   "tipo"
+    t.string   "nombreEmp"
+    t.string   "proposito"
+    t.date     "fechaFin"
+    t.integer  "proyecto_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "alianzas", ["proyecto_id"], name: "index_alianzas_on_proyecto_id"
+
+  create_table "bitacoras", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "entregable_id"
+    t.integer  "recurso_id"
+    t.string   "descripcion"
+    t.date     "fecha"
+  end
+
+  create_table "certificacions", force: :cascade do |t|
+    t.string   "descripcion"
+    t.integer  "recurso_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "certificacions", ["recurso_id"], name: "index_certificacions_on_recurso_id"
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nombreEmp"
@@ -35,6 +73,17 @@ ActiveRecord::Schema.define(version: 20151012221817) do
 
   add_index "direccions", ["persona_id"], name: "index_direccions_on_persona_id"
 
+  create_table "entregables", force: :cascade do |t|
+    t.integer  "numero"
+    t.date     "fechaEnt"
+    t.string   "descripcion"
+    t.integer  "proyecto_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "entregables", ["proyecto_id"], name: "index_entregables_on_proyecto_id"
+
   create_table "fisicas", force: :cascade do |t|
     t.string   "nombre"
     t.string   "apellido1"
@@ -47,6 +96,15 @@ ActiveRecord::Schema.define(version: 20151012221817) do
   end
 
   add_index "fisicas", ["persona_id"], name: "index_fisicas_on_persona_id"
+
+  create_table "habilidads", force: :cascade do |t|
+    t.string   "descripcion"
+    t.integer  "recurso_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "habilidads", ["recurso_id"], name: "index_habilidads_on_recurso_id"
 
   create_table "hojas", force: :cascade do |t|
     t.string   "tiempoDef"
@@ -68,6 +126,18 @@ ActiveRecord::Schema.define(version: 20151012221817) do
 
   add_index "juridicas", ["persona_id"], name: "index_juridicas_on_persona_id"
 
+  create_table "materials", force: :cascade do |t|
+    t.string   "tipo"
+    t.string   "descripcion"
+    t.string   "uso"
+    t.date     "fechaFin"
+    t.integer  "proyecto_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "materials", ["proyecto_id"], name: "index_materials_on_proyecto_id"
+
   create_table "personas", force: :cascade do |t|
     t.string   "idpersona"
     t.string   "email"
@@ -84,6 +154,45 @@ ActiveRecord::Schema.define(version: 20151012221817) do
   end
 
   add_index "portafolios", ["cliente_id"], name: "index_portafolios_on_cliente_id"
+
+  create_table "proyectos", force: :cascade do |t|
+    t.string   "nombre"
+    t.float    "presupuesto"
+    t.float    "precio"
+    t.string   "estado"
+    t.integer  "hoja_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "proyectos", ["hoja_id"], name: "index_proyectos_on_hoja_id"
+
+  create_table "recursos", force: :cascade do |t|
+    t.string   "almaMater"
+    t.integer  "fisica_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "recursos", ["fisica_id"], name: "index_recursos_on_fisica_id"
+
+  create_table "riesgos", force: :cascade do |t|
+    t.string   "tipo"
+    t.string   "descripcion"
+    t.integer  "proyecto_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "riesgos", ["proyecto_id"], name: "index_riesgos_on_proyecto_id"
+
+  create_table "rols", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "proyecto_id"
+    t.integer  "recurso_id"
+    t.string   "papel"
+  end
 
   create_table "telefonos", force: :cascade do |t|
     t.string   "tipo"
