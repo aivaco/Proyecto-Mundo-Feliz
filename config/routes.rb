@@ -22,13 +22,14 @@ Rails.application.routes.draw do
   get 'auth/failure' => redirect('/')
   get 'signout' => 'sessions#destroy', as: 'signout'
 
-  root 'pages#home'      
+
+  root 'pages#home' 
+
   get    'login'   => 'sessions#new'
   post  'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :users
   
-   get 'home' => 'pages#home'
 
   
 end
