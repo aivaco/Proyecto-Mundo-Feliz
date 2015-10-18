@@ -11,7 +11,7 @@ class Persona < ActiveRecord::Base
     validates_associated :telefonos #Valida que se cumplan las validaciones de Teléfonos
     validates_associated :cliente #Valida que se cumplan las validaciones de Cliente
     
-    validates :idpersona, :email, :tipopersona, presence: true #Valida que esos atributos no sean nulos
-    validates :idpersona, uniqueness: true #Valida que idpersona sea único
-    validates :tipopersona, inclusion: { in: %w(f j), message: "%{value} no es un tipo válido de persona" }
+    validates :idPersona, :email, :tipoPersona, presence: true #Valida que esos atributos no sean nulos
+    validates :idPersona, uniqueness: true #Valida que idpersona sea único
+    validates :tipoPersona, inclusion: { in: %w(f j), message: "%{value} no es un tipo válido de persona" }
 end

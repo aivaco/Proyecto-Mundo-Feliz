@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018004547) do
+ActiveRecord::Schema.define(version: 20151018013307) do
 
   create_table "activos", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20151018004547) do
     t.string   "pais"
     t.string   "provincia"
     t.string   "ciudad"
-    t.string   "direxac"
+    t.string   "dirExac"
     t.integer  "persona_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20151018004547) do
     t.string   "apellido1"
     t.string   "apellido2"
     t.string   "sexo"
-    t.string   "fechanac"
+    t.string   "fechaNac"
     t.integer  "persona_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 20151018004547) do
 
   create_table "hojas", force: :cascade do |t|
     t.string   "tiempoDef"
-    t.string   "razondeser"
+    t.string   "razonDeSer"
     t.integer  "portafolio_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -117,8 +117,8 @@ ActiveRecord::Schema.define(version: 20151018004547) do
   add_index "hojas", ["portafolio_id"], name: "index_hojas_on_portafolio_id"
 
   create_table "juridicas", force: :cascade do |t|
-    t.string   "razonsocial"
-    t.date     "fechacreac"
+    t.string   "razonSocial"
+    t.date     "fechaCreac"
     t.integer  "persona_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -139,9 +139,9 @@ ActiveRecord::Schema.define(version: 20151018004547) do
   add_index "materials", ["proyecto_id"], name: "index_materials_on_proyecto_id"
 
   create_table "personas", force: :cascade do |t|
-    t.string   "idpersona"
+    t.string   "idPersona"
     t.string   "email"
-    t.string   "tipopersona"
+    t.string   "tipoPersona"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
