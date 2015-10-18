@@ -1,0 +1,47 @@
+<!--#Presenta todo el formato de la página para iniciar sesión.-->
+
+<div class = "login">
+<div class ="row">
+<div class="col-md-6 col-md-offset-3">
+
+
+      
+
+<div class = "big">
+    
+  <h1>Mundo Feliz</h1>
+</div>
+
+<h1>Inicio de Sesión</1>
+<br>
+
+
+<!--Crea el formulario de la página.-->
+<%= form_for(:session, url: login_path) do |f| %>
+
+  <%= f.label :"Usuario:" %>
+  <%= f.text_field :usuario, class: 'form-control'%>
+
+  <%= f.label :"Contraseña:" %>
+  <%= f.password_field :password, class: 'form-control' %>
+
+  <%= f.label "Recordarme:" %>
+  <%= f.check_box :remember_session, layout: :default%>
+  <br>
+  <%= f.submit "Iniciar sesión", class: "btn btn-success" %>
+  <br>
+  <%= button_to_with_icon(signin_path(:facebook), '| Connect with Facebook', 'btn btn-facebook', 'fa fa-facebook')%>
+  <br>
+  <%= button_to_with_icon("callto://mundoFeliz",' | Soporte en vivo', 'btn-skype', 'fa fa-skype')%>
+   <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+
+<% end %>
+
+
+<br>
+
+
+
+</div>
+</div>
+</div>
