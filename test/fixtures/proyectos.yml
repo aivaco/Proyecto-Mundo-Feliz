@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  presupuesto: 1.5
+  precio: 1.5
+  estado: MyString
+  hoja_id: 
+
+two:
+  nombre: MyString
+  presupuesto: 1.5
+  precio: 1.5
+  estado: MyString
+  hoja_id: 

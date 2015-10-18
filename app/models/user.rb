@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  
+   belongs_to :persona #Pertenece a Persona
+   
    attr_accessor :remember_token
     before_save { self.usuario = usuario.downcase }  
     validates :usuario, presence: true, length: { maximum: 20 }, uniqueness: true

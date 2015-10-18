@@ -41,7 +41,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
 
-
+  test 'persona' do
+    p1 = Persona.create(:idPersona => '123', :email => 'lola@lolesca.com', :tipoPersona => 'f')
+    f1 = p1.create_fisica(:nombre => 'fulano', :apellido1 => 'mengano', :apellido2 => 'nose', :sexo => 'Pikachu', :fechaNac => '1995-05-15')
+    u1 = p1.create_user(usuario: 'dadad', password: '12345678')
+    assert !u1.valid?, "u1 no válida #{u1.errors.inspect}"
+  end
 =begin  test "Una contraseña debe de contener como máximo 20 caracteres." do
     @user.password = "a" * 21
     assert_not @user.valid?
