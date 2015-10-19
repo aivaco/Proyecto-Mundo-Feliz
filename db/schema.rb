@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20151018191418) do
     t.string   "apellido1"
     t.string   "apellido2"
     t.string   "sexo"
-    t.string   "fechaNac"
+    t.date     "fechaNac"
     t.integer  "persona_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

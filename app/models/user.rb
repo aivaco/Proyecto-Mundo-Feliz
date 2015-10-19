@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   end
     
   #Recuerda un usuario de la base de datos para usar en las sesiones persistentes (cookies). 
- def remember
+  def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
   end
@@ -41,21 +41,21 @@ class User < ActiveRecord::Base
 def self.from_omniauth(auth)
   existe = defined? auth.uid
   if existe
-  if user = User.find_by_uid(auth.uid)
-    return user
-  else
-    user = User.create(
-    provider: auth.provider,
-    uid: auth.uid,
-    usuario: auth.uid,
-    oauth_token:  auth.credentials.token,
-    oauth_expires_at: Time.at(auth.credentials.expires_at),
-    password: "Faceb00k!",
-    password_confirmation: "Faceb00k!"
-    )
+    if user = User.find_by_uid(auth.uid)
+      return user
+    else
+      user = User.create(
+      provider: auth.provider,
+      uid: auth.uid,
+      usuario: auth.uid,
+      oauth_token:  auth.credentials.token,
+      oauth_expires_at: Time.at(auth.credentials.expires_at),
+      password: "Faceb00k!",
+      password_confirmation: "Faceb00k!"
+      )
     return  user
-end
-end
+    end
+  end
 end
 end
 
