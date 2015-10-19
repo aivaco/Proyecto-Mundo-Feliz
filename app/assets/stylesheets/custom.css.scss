@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/*@include box-sizing(border-box);*/
 
 /* universal */
 
@@ -24,10 +25,9 @@ textarea {
 }
   
   
-  
 /********** Header **********/
 
-#encabezado {
+#nombre_proyecto {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
@@ -37,13 +37,14 @@ textarea {
   padding-top: 9px;
   font-weight: bold;
   
-  
 }
 
-#encabezado:hover {
+#nombre_proyecto:hover {
   color: #fff;
   text-decoration: none;
 }
+
+
 
 /****************************/
 
@@ -81,3 +82,129 @@ footer ul li {
 }
 
 /****************************/
+
+
+/****** PESTAÑAS MENU *******/
+
+#menu_tabs {
+  margin-top: 50px; 
+ 
+}
+
+/****************************/
+
+
+
+/***** MENU DE USUARIO ******/
+
+#menu_user_button {
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: bold;
+  border-width: 1px;
+  
+
+}
+
+/****************************/
+
+
+/***** INICIO DE SESION *****/
+
+.horizontal_division{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.vertical_division{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border-right: 1px solid #eaeaea;
+}
+  
+/****************************/
+
+
+
+/* typography */
+
+$gray-medium-light: #eaeaea;
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box-sizing(border-box);
+}
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+//Errores
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+

@@ -1,17 +1,35 @@
 Rails.application.routes.draw do
+=begin <<<<<<< HEAD
   
-  get 'modulo_cliente/modulo_cliente'
-
-  get 'modulo_cliente/lista_clientes'
-
-  get 'modulo_cliente/actualizar_proyectos'
-
-  get 'modulo_cliente/nuevo_cliente'
-
-  root  'pages#home'       #Mientras
+  root  'pages#mientras'       #Mientras
   
   get 'home' => 'pages#home'
 
-  get 'pages/mientras'
+=end ======
+  get 'sessions/view_login'
+  
+
+=begin get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  get 'users/new'
+=end
+#Rutas para facebook
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure' => redirect('/')
+  get 'signout' => 'sessions#destroy', as: 'signout'
+
+
+  root 'pages#home' 
+
+  get    'login'   => 'sessions#new'
+  post  'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+  resources :users
+  
+
   
 end

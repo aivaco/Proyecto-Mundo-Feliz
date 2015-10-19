@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero: 1
+  fechaEnt: 2015-10-17
+  descripcion: MyString
+  proyecto_id: 
+
+two:
+  numero: 1
+  fechaEnt: 2015-10-17
+  descripcion: MyString
+  proyecto_id: 

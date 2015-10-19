@@ -1,0 +1,59 @@
+<!--#Presenta todo el formato de la página para iniciar sesión.-->
+
+<body>
+
+  <%= render 'layouts/header' %>
+  
+  <div class= "login">
+    <h1> Iniciar Sesión</h1>
+    <div class="horizontal_division"></div>
+  
+    <div class ="row">
+        
+        <!--Sección del formulario (Columna Izquierda) -->
+        <div class="col-md-4 col-md-offset-2" style="border-right: 1px solid #eaeaea;padding-right: 35px;">
+          
+          <div class="formulario" >
+            
+            <!--Crea el formulario de la página.-->
+            <%= form_for(:session, url: login_path) do |f| %>
+            
+            <%= f.label :"Usuario:" %>
+            <%= f.text_field :usuario, class: 'form-control'%>
+            
+            <%= f.label :"Contraseña:" %>
+            <%= f.password_field :password, class: 'form-control' %>
+            
+            
+            <%= f.label :remember_me, class: "checkbox inline" do %>
+              <%= f.check_box :remember_me %>
+              <span>Recordarme</span>
+            <% end %>
+            
+            <%= f.submit "Iniciar sesión", class: "btn btn-success" %>
+            
+          </div>
+          
+        </div>
+        
+        
+        <!--Sección del botones de redes sociales (Columna Derecha) -->  
+        <div class="col-md-4" style="margin-left: 60px; margin-top: 50px;">
+        
+            <%= button_to_with_icon(signin_path(:facebook), '| Connect with Facebook', 'btn btn-facebook', 'fa fa-facebook')%>
+            
+            <%= button_to_with_icon("callto://mundoFeliz",' | Soporte en vivo', 'btn-skype', 'fa fa-skype')%>
+            
+            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+          
+          <% end %>
+          
+        </div>
+        
+    </div>
+    <div class="horizontal_division"></div>
+  </div>
+  
+  <%= render 'layouts/footer' %>
+   
+</body>
