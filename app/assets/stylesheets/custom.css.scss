@@ -25,7 +25,6 @@ textarea {
 }
   
   
-  
 /********** Header **********/
 
 #nombre_proyecto {
@@ -101,65 +100,53 @@ footer ul li {
 #menu_user_button {
   font-size: 1.2em;
   color: #fff;
-  margin-top: 6px;
   font-weight: bold;
-  border-left: solid;
   border-width: 1px;
   
-  &:hover{
-    text-decoration: none;
-  }
-}
-
-#menu_user_dropdown{
-  margin-top: 43px;
-  margin-right: 0px;
- 
-  left: auto;
-  right: 0;
-  
-}
-
-#menu_user_dropdown:after{
- 
-  position: absolute;
-  top: -6px;
-  left: 151px;
-  display: inline-block;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #ffffff;
-  border-left: 6px solid transparent;
-  content: '';
 
 }
 
 /****************************/
 
 
-.login{
-  width:40%; 
-  margin: 0 auto;
-  font-size: 0.4em;
-  placeholder: 1px;
+/***** INICIO DE SESION *****/
+
+.horizontal_division{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-top: 1px solid #eaeaea;
 }
+
+.vertical_division{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border-right: 1px solid #eaeaea;
+}
+  
+/****************************/
+
+
 
 /* typography */
 
+$gray-medium-light: #eaeaea;
+
 h1, h2, h3, h4, h5, h6 {
-  line-height: 2;
+  line-height: 1;
 }
 
 h1 {
   font-size: 3em;
-  letter-spacing: 1px;
+  letter-spacing: -2px;
   margin-bottom: 30px;
- 
+  text-align: center;
 }
 
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
+  text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
@@ -168,11 +155,9 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
-big {
-   font-size: 3em !important;
-     width:40%; 
-  margin: 0 auto;
-}
+
+
+
 
 /* forms */
 
@@ -222,3 +207,4 @@ input {
     color: $state-danger-text;
   }
 }
+

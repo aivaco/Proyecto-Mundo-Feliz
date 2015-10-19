@@ -4,8 +4,13 @@
     
    <a id="nombre_proyecto" href="home">Mundo Feliz</a>
 
-  
-  <%= render 'layouts/menus/menu_user' %>
+    <nav>
+        <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Iniciar Sesión", login_path  %></li>
+            <li><%= link_to "Registrarse", "#"  %></li>
+        </ul>
+    </nav>
+    
   
   </div>
 
