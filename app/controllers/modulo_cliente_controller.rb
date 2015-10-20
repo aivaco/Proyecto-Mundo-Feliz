@@ -2,9 +2,15 @@ class ModuloClienteController < ApplicationController
 
   def modulo_cliente
   	#@cliente = Cliente.find(params[:id])
-  	@cliente = {nombreEmp: "JP", ubicacion: "Guadalupe", contacto: "Ing. Ruiz", email: "jpabloruiz@gmail.com", telefono:"8870"}
+  	@cliente = {nombreEmp: "Ruby Code", ubicacion: "Guadalupe", contacto: "Ing. Adolfo", email: "jpabloruiz@gmail.com", telefono:"2511-8547"}
   	#@listaProyectos = Proyecto.find(@cliente.proyectos)
-  	@listaProyectos = [{nombre: "Proyecto 1"}, {nombre: "Proyecto 2"}, {nombre: "Proyecto 3"}, {nombre: "Proyecto 4"}, {nombre: "Proyecto 5"}]
+  	@listaProyectos = [{id: 0, nombre: "Proyecto Contabilidad", razon: "Contabilidad", tiempo: "6 meses", administrador: "Francisco C", costo: "$4000"}, {id: 1, nombre: "Proyecto Secreto", razon: "Facturacion", tiempo: "2 meses", administrador: "Juan Ruiz", costo: "$1000"}, {id: 2, nombre: "Proyecto 3 Impresion", razon: "Impresion de Facturas", tiempo: "2 semanas", administrador: "Carlos López C", costo: "$800"}]
+    
+    @proyecto = {id: "", nombre: "", razon: "", tiempo: "", administrador: "", costo: ""}
+    if params[:idProyecto]
+      @proyecto = @listaProyectos[params[:idProyecto].to_i]
+    end
+
   end
 
   def lista_clientes
@@ -14,6 +20,6 @@ class ModuloClienteController < ApplicationController
   end
 
   def nuevo_cliente
-  	
   end
+
 end
