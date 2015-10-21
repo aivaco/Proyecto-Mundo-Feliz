@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018191418) do
+ActiveRecord::Schema.define(version: 20151021022127) do
+
+  create_table "Users", force: :cascade do |t|
+    t.string   "usuario"
+    t.string   "remember_session"
+    t.boolean  "estado"
+    t.string   "IdTipo"
+    t.string   "IdPersona"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "password_digest"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "password"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "remember_digest"
+    t.integer  "persona_id"
+    t.string   "activation_digest"
+    t.boolean  "activated",              default: false
+    t.datetime "activated_at"
+    t.string   "reset_digest"
+    t.string   "password_reset_sent_at"
+    t.string   "reset_sent_at"
+  end
+
+  add_index "Users", ["persona_id"], name: "index_users_on_persona_id"
 
   create_table "activos", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -203,25 +229,5 @@ ActiveRecord::Schema.define(version: 20151018191418) do
   end
 
   add_index "telefonos", ["persona_id"], name: "index_telefonos_on_persona_id"
-
-  create_table "users", force: :cascade do |t|
-    t.string   "usuario"
-    t.string   "remember_session"
-    t.boolean  "estado"
-    t.string   "IdTipo"
-    t.string   "IdPersona"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.string   "password_digest"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.string   "password"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "remember_digest"
-    t.integer  "persona_id"
-  end
-
-  add_index "users", ["persona_id"], name: "index_users_on_persona_id"
 
 end

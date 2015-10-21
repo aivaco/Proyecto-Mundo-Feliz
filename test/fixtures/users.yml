@@ -17,6 +17,24 @@ two:
   IdPersona: MyString
   
 michael:
-  usuario: michael134
-  password_digest: <%= User.digest('password') %>
+  usuario: michael@example.com
+  password_digest: <%= User.digest('12345678') %>
   password: 61516665156416
+  activated: true
+  activated_at: <%= Time.zone.now %>
+  
+mundofeliz:
+  usuario: mundofelizoficial@gmail.com
+  password_digest: <%= User.digest('12345678') %>
+  password: 61516665156416
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  usuario: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+<% end %>

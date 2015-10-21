@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
 =begin <<<<<<< HEAD
   
   root  'pages#mientras'       #Mientras
@@ -29,6 +33,10 @@ Rails.application.routes.draw do
   post  'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :users
+  #Para activar la cuenta.
+  resources :account_activations, only: [:edit]
+  #Para reiniciar contraseña.
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   
 
   
