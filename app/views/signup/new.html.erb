@@ -1,0 +1,56 @@
+<body>
+  
+  <h1>Registrarse</h1>
+    
+    <p>Los campos marcados con un asterisco(*) son de llenado obligatorio.</p>
+    
+    <div class="centered">
+      
+    <%= simple_form_for :persona ,defaults: {wrapper: :inline_field2} do |f| %>
+
+      <div class="form-group row row-centered">
+        <%= f.input :idPersona, label: 'Id' %>
+      </div>
+        
+      <div class="form-group row row-centered">
+        <%= f.input :nombre, label: 'Nombre', as: :string%>
+        <%= f.input :apellido1, label: 'Primer Apellido', as: :string%>
+        <%= f.input :apellido2, label: 'Segundo Apellido', as: :string,  required: false%>
+      </div>
+        
+      <div class="form-group row row-centered">
+        <%= f.input :fechaNac, label: 'Fecha de nacimiento', 
+          as: :date, start_year: Date.today.year - 12,
+          end_year: Date.today.year - 110,
+          order: [:day, :month, :year] %>
+      </div>
+      
+      <div class="form-group row row-centered">
+        <%= f.input :pais, label: 'País', as: :string%>
+        <%= f.input :provincia, label: 'Provincia', as: :string%>
+        <%= f.input :ciudad, label: 'Ciudad', as: :string%>
+      </div>
+        
+      <div class="form-group row row-centered"> 
+        <%= f.input :dirExac, label: 'Dirección exacta', as: :string, wrapper: :inline_field6 %>
+      </div>
+      
+      <div class="form-group row row-centered">
+        <%= f.input :numero, label: 'Teléfono', as: :string%>
+        </div>
+        
+      <div class="form-group row row-centered">
+        <%= f.input :email, label: 'Correo electrónico', as: :string%>
+        <%= f.input :password, label: 'Contraseña', as: :password %>
+        <%= f.input :password_confirmation, label: 'Repetir contraseña', as: :password %>
+      </div>
+      
+      <div class="form-group row row-centered">
+        <%= f.button :submit, "Registrarse"%>
+      </div>
+      
+    <% end %>
+    
+    </div>
+
+</body>
