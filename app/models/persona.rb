@@ -1,6 +1,6 @@
 class Persona < ActiveRecord::Base
     has_one :juridica, dependent: :destroy #Tiene una Jurídica, que se destruye si Persona es destruida
-    has_one :fisica, dependent: :destroy #Tiene una Física, que se destruye si Persona es destruida
+    has_one :fisica, dependent: :destroy, autosave: true #Tiene una Física, que se destruye si Persona es destruida
     has_many :direccions, dependent: :destroy #Tiene muchas Direccions, que se destruyen si Persona es destruida
     has_many :telefonos, dependent: :destroy  #Tiene muchos Teléfonod, que se destruyen si Persona es destruida
     has_one :cliente, dependent: :destroy  #Tiene un Cliente, que se destruye si Persona es destruida
@@ -22,6 +22,8 @@ class Persona < ActiveRecord::Base
     validates_associated :telefonos #Valida que se cumplan las validaciones de Teléfonos
     validates_associated :cliente #Valida que se cumplan las validaciones de Cliente
     #validates_associated :user #Valida que se cumplen las validaciones de User
+    
+    accepts_nested_attributes_for :fisica
     
     validates :idPersona, :email, :tipoPersona, presence: true #Valida que esos atributos no sean nulos
     validates :idPersona, uniqueness: true #Valida que idpersona sea único

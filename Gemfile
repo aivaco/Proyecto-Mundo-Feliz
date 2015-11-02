@@ -40,3 +40,13 @@ gem 'jquery-turbolinks'
 gem 'omniauth-facebook'
 gem "font-awesome-rails"
 
+
+#Formulario
+gem 'simple_form'
+
+#DatePicker
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+
+#Debugger
+gem 'rails-footnotes', '>=3.7.9', :group => :development
