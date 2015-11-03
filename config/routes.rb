@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
-  get 'password_resets/new'
+  get 'new_client/new'
 
+  get 'new_client/new'
+
+  get 'password_resets/new'
   get 'password_resets/edit'
 
 =begin <<<<<<< HEAD
@@ -12,7 +15,6 @@ Rails.application.routes.draw do
 
 =end ======
   get 'sessions/view_login'
-  
 
 =begin get 'sessions/new'
 
@@ -46,8 +48,10 @@ Rails.application.routes.draw do
   
   post 'formBuscarCliente' => 'modulo_cliente#lista_clientes'
   
-  
   get 'signup' => 'signup#new'
   post 'signup' => 'signup#create'
+  
+  post 'newclient' => 'new_client#create'
+  get 'newclient' => 'new_client#new'
   
 end

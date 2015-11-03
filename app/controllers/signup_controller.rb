@@ -14,7 +14,7 @@ class SignupController < ApplicationController
       @fisica=Fisica.new(:nombre=>params[:persona]["nombre"],
                        :apellido1=>params[:persona]["apellido1"],
                        :apellido2=>params[:persona]["apellido2"],
-                       :sexo=>"m",
+                       :sexo=>params[:persona]["sexo"],
                        :fechaNac=>Date.new(params[:persona]["fechaNac(1i)"].to_i, params[:persona]["fechaNac(2i)"].to_i, params[:persona]["fechaNac(3i)"].to_i),
                        :persona=>@persona)
       if @fisica.save!
@@ -37,7 +37,9 @@ class SignupController < ApplicationController
                            :persona=>@persona)
             if @user.save!
               
-              redirect_to root_path  
+              UserMailer.account_activation(@user).deliver_now
+              flash[:info] = "Porfavor revise su correo electrónico para activar la cuenta."
+              redirect_to root_url
               return
               
             end
