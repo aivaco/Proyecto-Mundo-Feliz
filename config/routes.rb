@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  
-  get 'new_client/new'
-
-  get 'new_client/new'
 
   get 'password_resets/new'
   get 'password_resets/edit'
@@ -51,7 +47,8 @@ Rails.application.routes.draw do
   get 'signup' => 'signup#new'
   post 'signup' => 'signup#create'
   
-  post 'newclient' => 'new_client#create'
   get 'newclient' => 'new_client#new'
+  post 'newclient' => 'new_client#create'
+  
   
 end

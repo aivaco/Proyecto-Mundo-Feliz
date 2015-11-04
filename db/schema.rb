@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151019052723) do
+ActiveRecord::Schema.define(version: 20151104190716) do
 
   create_table "activos", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -193,6 +193,15 @@ ActiveRecord::Schema.define(version: 20151019052723) do
     t.integer  "recurso_id"
     t.string   "papel"
   end
+
+  create_table "simple_captcha_data", force: :cascade do |t|
+    t.string   "key",        limit: 40
+    t.string   "value",      limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "simple_captcha_data", ["key"], name: "idx_key"
 
   create_table "telefonos", force: :cascade do |t|
     t.string   "tipo"

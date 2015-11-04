@@ -6,6 +6,12 @@ GIT
       railties (>= 3.1)
 
 GIT
+  remote: git://github.com/glebtv/simple-captcha.git
+  revision: 1c8334f783bc7fccfa6bd7b7432ce9091315cc93
+  specs:
+    glebtv-simple_captcha (0.6.7)
+
+GIT
   remote: git://github.com/zpaulovics/datetimepicker-rails.git
   revision: 36d21cec5da7f5b214925804f60e63c61c747023
   branch: master
@@ -111,7 +117,7 @@ GEM
       turbolinks
     json (1.8.3)
     jwt (1.5.2)
-    listen (3.0.3)
+    listen (3.0.4)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     loofah (2.0.3)
@@ -248,6 +254,7 @@ DEPENDENCIES
   coffee-rails (= 4.1.0)
   datetimepicker-rails!
   font-awesome-rails
+  glebtv-simple_captcha!
   guard-minitest (= 2.3.1)
   jbuilder (= 2.2.3)
   jquery-rails (= 4.0.3)

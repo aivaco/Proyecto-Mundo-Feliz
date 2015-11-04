@@ -11,7 +11,7 @@ class NewClientController < ApplicationController
                                             :tipoPersona=>"j")
     if @persona.save!
       
-      @juridica=Juridica.new(:razonSocial=>params[:persona]["nombre"],
+      @juridica=Juridica.new(:razonSocial=>params[:persona]["razonSocial"],
                        :fechaCreac=>Date.new(params[:persona]["fechaCreac(1i)"].to_i, params[:persona]["fechaCreac(2i)"].to_i, params[:persona]["fechaCreac(3i)"].to_i),
                        :persona=>@persona)
       if @juridica.save!

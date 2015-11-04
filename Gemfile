@@ -40,13 +40,19 @@ gem 'jquery-turbolinks'
 gem 'omniauth-facebook'
 gem "font-awesome-rails"
 
-
 #Formulario
+#run: $ rails generate simple_form:install --bootstrap
 gem 'simple_form'
+
+#Captcha
+#run: $ sudo apt-get install imagemagick libmagickwand-dev
+gem 'glebtv-simple_captcha', github: 'glebtv/simple-captcha'
 
 #DatePicker
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+#run: $ rails generate datetimepicker_rails:install Font-Awesome
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 
 #Debugger
+#run: $ rails generate rails_footnotes:install
 gem 'rails-footnotes', '>=3.7.9', :group => :development

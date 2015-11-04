@@ -54,6 +54,8 @@
         <%= f.input :password_confirmation, label: 'Repetir contraseña', as: :password %>
       </div>
       
+      <%= show_simple_captcha%>
+      
       <div class="form-group row row-centered">
         <%= f.button :submit, "Registrarse"%>
       </div>
