@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'administrar_entregable/vistageneral'
+
 =begin <<<<<<< HEAD
   
   root  'pages#mientras'       #Mientras
