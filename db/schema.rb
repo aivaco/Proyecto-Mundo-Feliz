@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018191418) do
+ActiveRecord::Schema.define(version: 20151019052723) do
 
   create_table "activos", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20151018191418) do
     t.string   "apellido1"
     t.string   "apellido2"
     t.string   "sexo"
-    t.date     "fechaNac"
+    t.string   "fechaNac"
     t.integer  "persona_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -210,8 +210,8 @@ ActiveRecord::Schema.define(version: 20151018191418) do
     t.boolean  "estado"
     t.string   "IdTipo"
     t.string   "IdPersona"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
@@ -220,6 +220,11 @@ ActiveRecord::Schema.define(version: 20151018191418) do
     t.string   "uid"
     t.string   "remember_digest"
     t.integer  "persona_id"
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   add_index "users", ["persona_id"], name: "index_users_on_persona_id"

@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
     def logged_in_user
       unless logged_in?
-        flash[:danger] = "Antes de acceder a cualquier sección, por favor inicie sesión."
+        #flash[:danger] = "Antes de acceder a cualquier sección, por favor inicie sesión."
         redirect_to login_url
       end
     end

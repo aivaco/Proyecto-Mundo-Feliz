@@ -28,6 +28,9 @@
             <%= f.label :remember_me, class: "checkbox inline" do %>
               <%= f.check_box :remember_me %>
               <span>Recordarme</span>
+            <i><div class=font-size: 0.5em>
+            <%= link_to "Olvidé mi contraseña", new_password_reset_path %>
+            </i></div>
             <% end %>
             
             <%= f.submit "Iniciar sesión", class: "btn btn-success" %>
@@ -40,11 +43,19 @@
         <!--Sección del botones de redes sociales (Columna Derecha) -->  
         <div class="col-md-4" style="margin-left: 60px; margin-top: 50px;">
         
-            <%= button_to_with_icon(signin_path(:facebook), '| Connect with Facebook', 'btn btn-facebook', 'fa fa-facebook')%>
+            <%= link_to "/auth/facebook", id: "sign_in" do %>
+            <div class="btn btn-facebook"> 
+            <i class="fa fa-facebook"></i> | Sign in with Facebook
+            </div>
+			      <%end%>
+            <br><br>
+            <%= link_to "callto://mundoFeliz",  id: "sign_in" do %>
+            <div class="btn btn-info"> 
+            <i class="fa fa-skype"></i> | Soporte en vivo
+            </div>
+            <%end%>
+        
             
-            <%= button_to_with_icon("callto://mundoFeliz",' | Soporte en vivo', 'btn-skype', 'fa fa-skype')%>
-            
-            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
           
           <% end %>
           

@@ -1,0 +1,10 @@
+<h1>Mundo Feliz</h1>
+
+<p>Hi <%= @user.usuario %>,</p>
+
+<p>
+Bienvenido a Mundo Feliz! Ingrese al siguiente link para activar su cuenta:
+</p>
+
+<%= link_to "Activar cuenta", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.usuario) %>

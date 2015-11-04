@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get 'administrar_entregable/vistageneral'
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
 
 =begin <<<<<<< HEAD
   
@@ -31,7 +34,16 @@ Rails.application.routes.draw do
   post  'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :users
+  #Para activar la cuenta.
+  resources :account_activations, only: [:edit]
+  #Para reiniciar contraseña.
+  resources :password_resets,     only: [:new, :create, :edit, :update]
   
-
+get 'modulo_cliente/modulo_cliente'
+  get 'modulo_cliente/nuevo_cliente'
+  get 'modulo_cliente/actualizar_proyectos'
+  get 'modulo_cliente/lista_clientes'
+  
+  post 'formBuscarCliente' => 'modulo_cliente#lista_clientes'
   
 end

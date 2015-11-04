@@ -37,7 +37,7 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test "Inició Sesión? Retorna falso para un usuario que tiene null en password_digest" do
-    assert_not @user.authenticated?('')
+    assert_not @user.authenticated?(:remember, '')
   end
 
 
