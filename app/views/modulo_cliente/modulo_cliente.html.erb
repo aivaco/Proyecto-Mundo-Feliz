@@ -61,12 +61,14 @@
 
 				</ul>
 
+				
+
 				<div>
 					<%= form_for(:buscarCliente, url: formBuscarCliente_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
 
 					<div class="input-group">
 
-					<%= f.text_field :cliente, class: 'form-control', placeholder: 'Buscar Cliente' %> 
+						<%= f.text_field :cliente, class: 'form-control', placeholder: 'Buscar Cliente' %> 
 
 
 						<span class="input-group-btn">
@@ -74,9 +76,11 @@
 							<%= f.submit "Buscar", class: "btn btn-default" %> 
 						</span>
 						<% end %>
+
 					</div>
 				</div>
 
+<div class="results" id="cliente-search-results"></div>
 			</div>
 
 		</div> <!-- /.navbar-collapse -->
@@ -106,7 +110,7 @@
 						<div class="panel-body">
 							<ul class="list-group">
 								<% @listaProyectos.each do |proyecto| %>
-								<li class="list-group-item"> <%= link_to proyecto[:nombre], { :action => 'modulo_cliente', :idProyecto => proyecto[:id] } %> </li>
+								<li class="list-group-item"> <%= link_to proyecto[:nombre], { :action => 'modulo_cliente', :idProyecto => proyecto[:id], :idCliente => @cliente[:id] } %> </li>
 								<% end %>
 							</ul>
 						</div>
@@ -153,9 +157,16 @@
 	</div>
 
 
+
+
 	<%= render 'layouts/footer' %>
 </body>
 
 </html>
 
 
+<script>
+					$(function() {
+						new app.Autocompletar;
+					});
+				</script>
