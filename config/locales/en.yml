@@ -20,4 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  simple_captcha:
+    placeholder: "Escriba el valor de la imagen."
+    label: "Escriba el código en el campo de texto:"
+    message:
+      default: "El código introducido no concuerda con la imagen."
+      user: "El código y la imagen son diferentes."
+      
+  datepicker:
+    dformat: '%d/%m/%Y'

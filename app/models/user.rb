@@ -1,13 +1,19 @@
 class User < ActiveRecord::Base
-   belongs_to :persona #Pertenece a Persona
-    attr_accessor :remember_token, :activation_token, :reset_token
-    before_save   :downcase_email
-    before_create :create_activation_digest
-    before_save { self.usuario = usuario.downcase }  
-    validates :usuario, presence: true, length: { maximum: 50 }, uniqueness: true
-    has_secure_password
-    validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
-    
+  
+  ##PICTURE
+  has_attached_file :foto, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  do_not_validate_attachment_file_type :foto
+  
+  belongs_to :persona #Pertenece a Persona
+  attr_accessor :remember_token, :activation_token, :reset_token
+  before_save   :downcase_email
+  before_create :create_activation_digest
+  before_save { self.usuario = usuario.downcase }  
+  
+  validates :usuario, presence: true, length: { maximum: 50 }, uniqueness: true
+  has_secure_password
+  validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
+  
   # Devuelve una string encriptada por MD5.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -101,9 +107,6 @@ private
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
-
-
-
 end
 
 
