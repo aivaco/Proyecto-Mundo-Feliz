@@ -54,6 +54,10 @@
         <%= f.input :password_confirmation, label: 'Repetir contraseña', as: :password %>
       </div>
       
+      <%= f.label 'Fotografía', required: false %>
+      <%= f.file_field :foto, wrapper: :inline_bool3, required: false%>
+      
+      <%= f.label 'Captcha' %>
       <%= show_simple_captcha%>
       
       <div class="form-group row row-centered">

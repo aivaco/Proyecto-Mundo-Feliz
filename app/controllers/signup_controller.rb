@@ -10,7 +10,7 @@ class SignupController < ApplicationController
       @persona=Persona.new(:idPersona=>params[:persona]["idPersona"], 
                                               :email=>params[:persona]["email"],
                                               :tipoPersona=>"f")
-      if @persona.save!
+      if @persona.save
       
         @fisica=Fisica.new(:nombre=>params[:persona]["nombre"],
                          :apellido1=>params[:persona]["apellido1"],
@@ -18,7 +18,7 @@ class SignupController < ApplicationController
                          :sexo=>params[:persona]["sexo"],
                          :fechaNac=>Date.new(params[:persona]["fechaNac(1i)"].to_i, params[:persona]["fechaNac(2i)"].to_i, params[:persona]["fechaNac(3i)"].to_i),
                          :persona=>@persona)
-        if @fisica.save!
+        if @fisica.save
         
           @direccion=Direccion.new(:tipo=>"Principal",
                                    :pais=>params[:persona]["pais"],
@@ -26,17 +26,18 @@ class SignupController < ApplicationController
                                    :ciudad=>params[:persona]["ciudad"],
                                    :dirExac=>params[:persona]["dirExac"],
                                    :persona=>@persona)
-          if @direccion.save!
+          if @direccion.save
           
             @telefono=Telefono.new(:tipo=>"Principal",
                                    :numero=>params[:persona]["numero"],
                                    :persona=>@persona)
-            if @telefono.save!
+            if @telefono.save
             
               @user=User.new(:usuario=>params[:persona]["email"],
                              :password=>params[:persona]["password"],
+                             ##:foto=>params[:persona]["foto"],
                              :persona=>@persona)
-              if @user.save!
+              if @user.save
               
                 UserMailer.account_activation(@user).deliver_now
                 flash[:info] = "Porfavor revise su correo electrónico para activar la cuenta."
@@ -44,31 +45,36 @@ class SignupController < ApplicationController
                 return
               
               end
-            
+              
+              @persona.destroy
               flash.now[:danger] = 'Problemas guardando el usuario'
               render 'new'
               return
             
             end
           
+            @persona.destroy
             flash.now[:danger] = 'Problemas guardando el telefono'
             render 'new'
             return
           
           end
         
+          @persona.destroy
           flash.now[:danger] = 'Problemas guardando la direccion'
           render 'new'
           return
         
         end
       
+        @persona.destroy
         flash.now[:danger] = 'Problemas guardando los datos fisicos'
         render 'new'
         return
       
       end
     
+      
       flash.now[:danger] = 'Problemas guardando la persona'
       render 'new'
       return

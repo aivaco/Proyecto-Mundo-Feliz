@@ -44,8 +44,11 @@ gem "font-awesome-rails"
 #run: $ rails generate simple_form:install --bootstrap
 gem 'simple_form'
 
-#Captcha
+#Imagenes
 #run: $ sudo apt-get install imagemagick libmagickwand-dev
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+#Captcha
 gem 'glebtv-simple_captcha', github: 'glebtv/simple-captcha'
 
 #DatePicker

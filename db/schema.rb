@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104190716) do
+ActiveRecord::Schema.define(version: 20151104204217) do
 
   create_table "activos", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -234,6 +234,10 @@ ActiveRecord::Schema.define(version: 20151104190716) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "foto_file_name"
+    t.string   "foto_content_type"
+    t.integer  "foto_file_size"
+    t.datetime "foto_updated_at"
   end
 
   add_index "users", ["persona_id"], name: "index_users_on_persona_id"
