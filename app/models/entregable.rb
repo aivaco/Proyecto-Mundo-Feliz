@@ -1,4 +1,4 @@
-uclass Entregable < ActiveRecord::Base
+class Entregable < ActiveRecord::Base
   belongs_to :proyecto #Pertenece a Proyecto 
   has_many :activos #Tiene muchos activos
   has_many :recursos, through: :activos #Tiene muchos recursos a través de activos
