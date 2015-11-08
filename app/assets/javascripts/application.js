@@ -11,20 +11,12 @@
 // about supported directives.
 //
 
-//= require bootstrap
-
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require jquery.turbolinks
-//= require_tree .
-<<<<<<< HEAD
-//= require jquery-ui/autocomplete
-
-//= require autocompletar
-=======
-
+//= require_tree 
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers
 
->>>>>>> sign_up

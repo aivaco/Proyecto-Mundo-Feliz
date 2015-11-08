@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
 /*@include box-sizing(border-box);*/
 
 /* universal */
@@ -23,7 +25,7 @@ textarea {
 .center h1 {
   margin-bottom: 10px
 }
-  
+
   
 /********** Header **********/
 
@@ -212,4 +214,14 @@ input {
     color: #FFFFFF;
     text-decoration: none;
 }
-
+/*Para hacer texto con scroll*/
+#elementId{
+    background: white;
+    width: 850px;
+    height: 500px;
+    overflow-y: scroll;
+}
+/*Para ocultar una sección*/
+#documentos{
+  display: none;
+}

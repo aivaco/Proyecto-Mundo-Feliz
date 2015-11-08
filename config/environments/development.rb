@@ -62,4 +62,6 @@ Rails.application.configure do
     #:password => 'Mund0Feliz!',
     :authentication => 'plain',
     :enable_starttls_auto => true} 
+  #Para utilizar el menú de las tablas.  
+  config.gem "simple-navigation"
 end

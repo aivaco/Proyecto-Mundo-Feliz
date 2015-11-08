@@ -59,3 +59,13 @@ gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: '
 #Debugger
 #run: $ rails generate rails_footnotes:install
 gem 'rails-footnotes', '>=3.7.9', :group => :development
+
+
+#Gemas markdown
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
+gem 'simple-navigation'
+gem 'ajaxify_rails'
+#Gema Scroll
+#gem 'scrollbar-rails'

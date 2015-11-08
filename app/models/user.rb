@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
-  
+	  
 #Para autenticarse con facebook.
 def self.from_omniauth(auth)
   existe = defined? auth.uid
@@ -52,10 +52,17 @@ def self.from_omniauth(auth)
     if user = User.find_by_uid(auth.uid)
       return user
     else
-      user = User.create(
+      #Crea a la persona en la base de datos.
+      persona = Persona.create(
+      idPersona: "0000000000000", 
+      email: auth.info.email,
+      tipoPersona: "f"
+       )
+      #Crea al usuario en la base de datos.
+      user = persona.create_user(
       provider: auth.provider,
       uid: auth.uid,
-      usuario: auth.uid,
+      usuario: auth.info.nickname  || auth.info.name,
       oauth_token:  auth.credentials.token,
       oauth_expires_at: Time.at(auth.credentials.expires_at),
       password: "Faceb00k!",
@@ -63,6 +70,7 @@ def self.from_omniauth(auth)
       activated: true,
       activated_at: Time.zone.now
       )
+
     return  user
     end
   end

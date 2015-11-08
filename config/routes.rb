@@ -3,13 +3,14 @@ Rails.application.routes.draw do
   get 'password_resets/new'
   get 'password_resets/edit'
 
-=begin <<<<<<< HEAD
+=begin 
   
   root  'pages#mientras'       #Mientras
   
   get 'home' => 'pages#home'
 
-=end ======
+=end
+
   get 'sessions/view_login'
 
 =begin get 'sessions/new'
@@ -39,9 +40,8 @@ Rails.application.routes.draw do
   
   get 'modulo_cliente/modulo_cliente'
   get 'modulo_cliente/nuevo_cliente'
-  get 'modulo_cliente/actualizar_proyectos'
+  get 'modulo_cliente/actualizar_proyectos' 
   get 'modulo_cliente/lista_clientes'
-  
   post 'formBuscarCliente' => 'modulo_cliente#lista_clientes'
   
   get 'signup' => 'signup#new'
