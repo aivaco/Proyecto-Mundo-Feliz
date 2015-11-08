@@ -40,9 +40,8 @@ Rails.application.routes.draw do
   
 get 'modulo_cliente/modulo_cliente'
   get 'modulo_cliente/nuevo_cliente'
-  get 'modulo_cliente/actualizar_proyectos'
+  get 'modulo_cliente/actualizar_proyectos' 
   get 'modulo_cliente/lista_clientes'
-  
   post 'formBuscarCliente' => 'modulo_cliente#lista_clientes'
   
 end

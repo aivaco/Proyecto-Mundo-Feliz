@@ -40,3 +40,13 @@ gem 'jquery-turbolinks'
 gem 'omniauth-facebook'
 gem "font-awesome-rails"
 
+
+
+#Gemas markdown
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
+gem 'simple-navigation'
+gem 'ajaxify_rails'
+#Gema Scroll
+#gem 'scrollbar-rails'
