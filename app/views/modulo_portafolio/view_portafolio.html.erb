@@ -1,0 +1,112 @@
+<!--Cambia a visible la sección de documentos-->    
+    <script>
+       function ShowIt(){
+          var obj = document.getElementById("documentos");
+          if(obj.style.display == "none")
+             obj.style.display = "true";
+          else
+             obj.style.display = "block";
+       };
+    </script>
+    
+
+
+<!--Incluye a los archivos de js para el menú-->
+<%= javascript_include_tag "easytree"%>
+<!--Obtiene al cliente del cual se desean mostrar sus proyectos-->
+<% @cliente = Cliente.find(1)%>
+<!--Obtiene el portafolio del cliente-->
+<% @portafolio = Portafolio.find_by(cliente_id: @cliente.id)%>
+<!--Obtiene las hojas pertenecientes -->
+<% @hojas = Hoja.where("portafolio_id == :id", {id: @portafolio.id}).all %>
+<h6 onclick="ShowIt()">click here</h6>
+<%= link_to "Prueba", id: "link-documentos" %>    
+<h3>Portafolio</h3>
+<p>Prueba de pestañas para el módulo portafolio</p>
+<div class= "col-md-3">
+   <!--Muestra el nombre del cliente-->
+   <h4>Cliente: <%= @cliente.nombreEmp%></h4>
+   <h5>Proyectos</h5>
+   <div id="demo1_menu">
+      <ul>
+      <!--Recorre cada hoja del portafolio-->
+      <%  @hojas.each do |hoja| %>
+      <!--Obtiene el proyecto según la hoja-->
+      <% @proyecto = Proyecto.find(hoja.id)%>
+      <li class="isFolder" title="Documentos">
+         <!--Coloca el nombre del proyecto en el menú-->
+         <%= @proyecto.nombre%>
+         <ul>
+            <li class="isFolder" title="Riesgos">
+              Riesgos
+               <ul>
+                  <!--Obtiene todos los documentos de riesgo y los coloca en el menú-->
+                  <% @riesgos = Riesgo.where("proyecto_id == :id", {id: @proyecto.id}).all%>    
+                  
+                  <% if !@riesgos.empty? then%>
+                  <%  @riesgos.each do |riesgo| %>
+                  <li><a href="http://www.google.com" target="_blank"><%= riesgo.tipo %></a></li>
+                  <%end%>
+                  <%else%>
+                  <li><img src="/content/images/google.ico" />No existen documentos asociados a este proyecto.</a></li>
+                  <%end%>
+               </ul>
+                <li class="isFolder" title="Alianza">
+               Alianzas
+               <ul>                   
+               <!--Obtiene todos los documentos de alianza y los coloca en el menú-->
+                  <% @alianzas = Alianza.where("proyecto_id == :id", {id: @proyecto.id}).all%>    
+                  
+                  <% if !@alianzas.empty? then%>
+                  <%  @alianzas.each do |alianza| %>
+                  <li><a href="http://www.google.com" target="_blank"><%= alianza.tipo %></a></li>
+                  <%end%>
+                  <%else%>
+                  <li><img src="/content/images/google.ico" />No existen documentos asociados a este proyecto.</a></li>
+                  <%end%></ul>
+         </ul>
+      </li>
+      <% end %>
+   </div>
+   <!--Carga el javascript del menú-->
+   <script>
+      $('#demo1_menu').easytree();
+   </script>
+</div>
+
+
+
+
+<!--Markdown con las especificaciones del proyecto-->
+<div class = "col-md-8">
+   <section id = "documentos">
+   <%= render partial: 'layouts/modulos/view_info', locals: {titulo: "Punto de Venta",
+   razon: "La empresa Femsa S.A presenta la necesidad de un software que maneje transacciones de caja - cliente. Para ello se ha decidido desarrollar un software de punto de venta que controle todo lo referente a la facturación y el flujo de caja, el inventario, la lista de clientes y la bitácora. Es necesario crear un software que presente todas las funciones comunes en este tipo de programas", 
+   tiempo: "Aproximadamente son necesarios seis meses a partir del 15 de noviembre de 2015", 
+   precio: 4151518.00, 
+   costo: 151513.00, 
+   estado: "c" } %>
+   </section>
+   <br>
+   <!--Botones con las distintas acciones-->      
+   <%= link_to "/auth/facebook", id: "sign_in" do %>
+   <div class="btn btn-default"> 
+      <i class="fa fa-tasks"></i>  Administrar entregables
+   </div>
+   <%end%>
+   <%= link_to "callto://mundoFeliz",  id: "sign_in" do %>
+   <div class="btn btn-default"> 
+      <i class="fa fa-file"></i>  Administrar documentos
+   </div>
+   <%end%>
+   <%= link_to "callto://mundoFeliz",  id: "sign_in" do %>
+   <div class="btn btn-default"> 
+      <i class="fa fa-plus-square"></i>  Añadir nuevo proyecto
+   </div>
+   <%end%>
+</div>
+<br><br>  
+
+ <!-- Inserta el contenido del header -->
+  <%= render 'layouts/header_user' %>
+    <%= render 'layouts/menus/menu_tabs' %>

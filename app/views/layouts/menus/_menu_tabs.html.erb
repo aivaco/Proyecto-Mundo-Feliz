@@ -1,34 +1,9 @@
 <div id="menu_tabs" class="container">
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#opcion_cliente"><span class="glyphicon glyphicon-book"></span> Clientes</a></li>
-      <li><a data-toggle="tab" href="#opcion_portafolio"><span class="glyphicon glyphicon-briefcase"></span> Portafolio</a></li>
-      <li><a data-toggle="tab" href="#opcion_entregables"><span class="glyphicon glyphicon-file"></span> Entregables</a></li>
-      <li><a data-toggle="tab" href="#opcion_recursos"><span class="glyphicon glyphicon-user"></span> Recursos</a></li>
-      <li><a data-toggle="tab" href="#opcion_bitacora"><span class="glyphicon glyphicon-edit"></span> Bitácora</a></li>
+    <li class="<%= 'active' if params[:controller] == 'modulo_cliente' %>"><a href="/modulo_cliente/modulo_cliente.html"><span class="glyphicon glyphicon-book"></span> Clientes</a></li>
+    <li class="<%= 'active' if params[:controller] == 'modulo_portafolio' %>"><a href="/modulo_portafolio/view_portafolio.html"><span class="glyphicon glyphicon-briefcase"></span> Portafolio</a></li>    
+    <li class="<%= 'active' if params[:controller] == 'modulo_entregable' %>"><a href="/modulo_entregable/view_entregable.html"><span class="glyphicon glyphicon-file"></span> Entregables</a></li>  
+    <li class="<%= 'active' if params[:controller] == 'modulo_recurso' %>"><a href="/modulo_recurso/view_recurso.html"><span class="glyphicon glyphicon-user"></span> Recursos</a></li>  
+    <li class="<%= 'active' if params[:controller] == 'modulo_bitacora' %>"><a href="/modulo_bitacora/view_bitacora.html"><span class="glyphicon glyphicon-edit"></span> Bitácora</a></li>  
     </ul>
-    
-    <div class="tab-content">
-      
-      <div id="opcion_cliente" class="tab-pane fade in active">
-       <%= render 'layouts/modulos/view_cliente' %>
-      </div>
-      
-      <div id="opcion_portafolio" class="tab-pane fade">
-       <%= render 'layouts/modulos/view_portafolio' %>
-      </div>
-      
-      <div id="opcion_entregables" class="tab-pane fade">
-        <%= render 'layouts/modulos/view_entregables' %>
-      </div>
-      
-      <div id="opcion_recursos" class="tab-pane fade">
-        <%= render 'layouts/modulos/view_recursos' %>
-      </div>
-      
-      <div id="opcion_bitacora" class="tab-pane fade">
-        <%= render 'layouts/modulos/view_bitacora' %>
-      </div>
-      
-    </div>
-    <%= render 'layouts/footer' %>
 </div>

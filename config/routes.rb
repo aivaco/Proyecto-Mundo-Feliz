@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'modulo_bitacora/view_bitacora'
+
+  get 'modulo_recurso/view_recurso'
+
+  get 'modulo_entregable/view_entregable'
+
   get 'password_resets/new'
   get 'password_resets/edit'
 
@@ -49,6 +55,9 @@ Rails.application.routes.draw do
   
   get 'newclient' => 'new_client#new'
   post 'newclient' => 'new_client#create'
-  
+  #Prueba
+  get 'modulo_portafolio/view_portafolio'
+  #Para crear una ruta con el nombre home
+  get 'home' => 'pages#home', :as => "home"
   
 end
