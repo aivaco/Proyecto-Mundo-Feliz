@@ -1,0 +1,2 @@
+class ModuloPortafolioController < ApplicationController
+end

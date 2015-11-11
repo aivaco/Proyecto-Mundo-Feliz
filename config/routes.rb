@@ -1,18 +1,25 @@
 Rails.application.routes.draw do
-  get 'administrar_entregable/vistageneral'
-  get 'password_resets/new'
 
+  get 'administrar_entregable/vistageneral'
+
+  get 'modulo_bitacora/view_bitacora'
+
+  get 'modulo_recurso/view_recurso'
+
+  get 'modulo_entregable/view_entregable'
+
+  get 'password_resets/new'
   get 'password_resets/edit'
 
-=begin <<<<<<< HEAD
+=begin 
   
   root  'pages#mientras'       #Mientras
   
   get 'home' => 'pages#home'
 
-=end ======
+=end
+
   get 'sessions/view_login'
-  
 
 =begin get 'sessions/new'
 
@@ -39,11 +46,22 @@ Rails.application.routes.draw do
   #Para reiniciar contraseña.
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
-get 'modulo_cliente/modulo_cliente'
+  get 'modulo_cliente/modulo_cliente'
   get 'modulo_cliente/nuevo_cliente'
-  get 'modulo_cliente/actualizar_proyectos'
+  get 'modulo_cliente/actualizar_proyectos' 
   get 'modulo_cliente/lista_clientes'
-  
   post 'formBuscarCliente' => 'modulo_cliente#lista_clientes'
+  
+  get 'signup' => 'signup#new'
+  post 'signup' => 'signup#create'
+  
+  get 'newclient' => 'new_client#new'
+  post 'newclient' => 'new_client#create'
+  #Prueba
+  get 'modulo_portafolio/view_portafolio'
+  #Para crear una ruta con el nombre home
+  get 'home' => 'pages#home', :as => "home"
+  
+  get '/documento/:id', to: 'documento#show', as: 'documento'
   
 end

@@ -21,7 +21,7 @@ def create
             message  = "La cuenta no ha sido activada."
             message += "Por favor revise el correo que se ha enviado a su cuenta."
             flash[:warning] = message
-            redirect_to 'new'
+            render 'new'
         end
       else
         # Crea un mensaje de error.

@@ -1,3 +1,36 @@
+GIT
+  remote: git://github.com/derekprior/momentjs-rails.git
+  revision: 3d35d16b03dc2a19658f3e26a37bb3d09fb38d9a
+  specs:
+    momentjs-rails (2.10.6)
+      railties (>= 3.1)
+
+GIT
+  remote: git://github.com/glebtv/simple-captcha.git
+  revision: 1c8334f783bc7fccfa6bd7b7432ce9091315cc93
+  specs:
+    glebtv-simple_captcha (0.6.7)
+
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 7eec87bf99e2b94688b1182979b04e27abf88ac7
+  specs:
+    paperclip (4.3.1)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
+
+GIT
+  remote: git://github.com/zpaulovics/datetimepicker-rails.git
+  revision: 36d21cec5da7f5b214925804f60e63c61c747023
+  branch: master
+  submodules: true
+  specs:
+    datetimepicker-rails (4.7.16)
+      momentjs-rails (>= 2.9.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,6 +69,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    ajaxify_rails (0.9.7)
+      rails (>= 3.2.0)
+    albino (1.3.3)
+      posix-spawn (>= 0.3.6)
     ansi (1.5.0)
     arel (6.0.3)
     bcrypt (3.1.10)
@@ -48,6 +85,10 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.7)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -81,7 +122,7 @@ GEM
     guard-minitest (2.3.1)
       guard (~> 2.0)
       minitest (>= 3.0)
-    hashie (3.4.2)
+    hashie (3.4.3)
     i18n (0.7.0)
     jbuilder (2.2.3)
       activesupport (>= 3.0.0, < 5)
@@ -93,9 +134,11 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.3)
-    jwt (1.5.1)
-    listen (3.0.3)
+    jwt (1.5.2)
+    listen (3.0.4)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     loofah (2.0.3)
@@ -106,11 +149,12 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.6.2)
+    mimemagic (0.3.0)
     mini_backtrace (0.1.3)
       minitest (> 1.2.0)
       rails (>= 2.3.3)
     mini_portile (0.6.2)
-    minitest (5.8.1)
+    minitest (5.8.2)
     minitest-reporters (1.0.5)
       ansi
       builder
@@ -134,12 +178,13 @@ GEM
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
-    omniauth-facebook (2.0.1)
+    omniauth-facebook (3.0.0)
       omniauth-oauth2 (~> 1.2)
-    omniauth-oauth2 (1.3.1)
+    omniauth-oauth2 (1.4.0)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     pg (0.17.1)
+    posix-spawn (0.3.11)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -164,6 +209,8 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-footnotes (4.1.7)
+      rails (>= 3.2)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     rails_12factor (0.0.2)
@@ -181,6 +228,7 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rdoc (4.2.0)
+    redcarpet (3.3.3)
     ruby-progressbar (1.7.5)
     sass (3.4.19)
     sass-rails (5.0.2)
@@ -193,6 +241,11 @@ GEM
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
     shellany (0.0.1)
+    simple-navigation (4.0.3)
+      activesupport (>= 2.3.2)
+    simple_form (3.2.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     slop (3.6.0)
     spring (1.1.3)
     sprockets (3.4.0)
@@ -222,26 +275,40 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ajaxify_rails
+  albino
   bcrypt (= 3.1.10)
   bootstrap-sass (= 3.2.0.0)
   byebug (= 3.4.0)
   coffee-rails (= 4.1.0)
+  datetimepicker-rails!
   font-awesome-rails
+  glebtv-simple_captcha!
   guard-minitest (= 2.3.1)
   jbuilder (= 2.2.3)
   jquery-rails (= 4.0.3)
   jquery-turbolinks
-  magnific-popup-rails
+  jquery-ui-rails
   mini_backtrace (= 0.1.3)
   minitest-reporters (= 1.0.5)
+  momentjs-rails (~> 2.9)!
+  nokogiri
   omniauth-facebook
+  paperclip!
   pg (= 0.17.1)
   rails (= 4.2.2)
+  rails-footnotes (>= 3.7.9)
   rails_12factor (= 0.0.2)
+  redcarpet
   sass-rails (= 5.0.2)
   sdoc (= 0.4.0)
+  simple-navigation
+  simple_form
   spring (= 1.1.3)
   sqlite3 (= 1.3.9)
   turbolinks (= 2.3.0)
   uglifier (= 2.5.3)
   web-console (= 2.0.0.beta3)
+
+BUNDLED WITH
+   1.10.6

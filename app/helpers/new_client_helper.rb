@@ -1,0 +1,2 @@
+module NewClientHelper
+end

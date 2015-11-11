@@ -1,4 +1,8 @@
 Rails.application.configure do
+  
+  ##Paperclip
+  Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -58,4 +62,6 @@ Rails.application.configure do
     #:password => 'Mund0Feliz!',
     :authentication => 'plain',
     :enable_starttls_auto => true} 
+  #Para utilizar el menú de las tablas.  
+  config.gem "simple-navigation"
 end

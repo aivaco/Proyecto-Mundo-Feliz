@@ -2,12 +2,12 @@
     
   <div class="container">
     
-   <a id="nombre_proyecto" href="home">Mundo Feliz</a>
+<%= link_to "Mundo Feliz", login_path, id: "nombre_proyecto"   %>
 
     <nav>
         <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Iniciar Sesión", login_path  %></li>
-            <li><%= link_to "Registrarse", "#"  %></li>
+            <li><%= link_to "Registrarse", signup_path  %></li>
         </ul>
     </nav>
     

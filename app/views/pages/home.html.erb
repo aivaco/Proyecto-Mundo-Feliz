@@ -13,9 +13,9 @@
     
   <!-- Inserta el contenido del header -->
   <%= render 'layouts/header_user' %>
-  
-  <%= render 'layouts/menus/menu_tabs' %>
 
+  <%= render 'layouts/menus/menu_tabs' %>
+  <center><h2>Bienvenido(a) <%=@current_user.usuario.to_s.split.map(&:capitalize).join(' ') %>!</h2></center>
   
   </body>
   
