@@ -60,4 +60,6 @@ Rails.application.routes.draw do
   #Para crear una ruta con el nombre home
   get 'home' => 'pages#home', :as => "home"
   
+  get '/documento/:id', to: 'documento#show', as: 'documento'
+  
 end

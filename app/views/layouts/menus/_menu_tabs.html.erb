@@ -1,7 +1,7 @@
 <div id="menu_tabs" class="container">
     <ul class="nav nav-tabs">
     <li class="<%= 'active' if params[:controller] == 'modulo_cliente' %>"><a href="/modulo_cliente/modulo_cliente.html"><span class="glyphicon glyphicon-book"></span> Clientes</a></li>
-    <li class="<%= 'active' if params[:controller] == 'modulo_portafolio' %>"><a href="/modulo_portafolio/view_portafolio.html"><span class="glyphicon glyphicon-briefcase"></span> Portafolio</a></li>    
+    <li class="<%= 'active' if params[:controller] == 'modulo_portafolio' || params[:controller] =='documento'%>"><a href="/modulo_portafolio/view_portafolio.html"><span class="glyphicon glyphicon-briefcase"></span> Portafolio</a></li>    
     <li class="<%= 'active' if params[:controller] == 'modulo_entregable' %>"><a href="/modulo_entregable/view_entregable.html"><span class="glyphicon glyphicon-file"></span> Entregables</a></li>  
     <li class="<%= 'active' if params[:controller] == 'modulo_recurso' %>"><a href="/modulo_recurso/view_recurso.html"><span class="glyphicon glyphicon-user"></span> Recursos</a></li>  
     <li class="<%= 'active' if params[:controller] == 'modulo_bitacora' %>"><a href="/modulo_bitacora/view_bitacora.html"><span class="glyphicon glyphicon-edit"></span> Bitácora</a></li>  

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104204217) do
+ActiveRecord::Schema.define(version: 20151111024949) do
 
   create_table "activos", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -72,6 +72,18 @@ ActiveRecord::Schema.define(version: 20151104204217) do
   end
 
   add_index "direccions", ["persona_id"], name: "index_direccions_on_persona_id"
+
+  create_table "documentos", force: :cascade do |t|
+    t.string   "titulo"
+    t.string   "razon"
+    t.string   "tiempo"
+    t.float    "precio"
+    t.float    "costo"
+    t.string   "estado"
+    t.integer  "proyecto_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "entregables", force: :cascade do |t|
     t.integer  "numero"

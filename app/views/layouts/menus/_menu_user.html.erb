@@ -2,7 +2,7 @@
 <li class="dropdown">
   
    <!-- Botón del menu de usuario -->
-  <a id="menu_user_button" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.usuario %><b class="caret"></b></a>
+  <a id="menu_user_button" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.usuario.to_s.split.map(&:capitalize).join(' ') %><b class="caret"></b></a>
  
   <!-- Opciones del menu de usuario -->
   <ul id="menu_user_dropdown" class="dropdown-menu" role="menu" aria-labelledby="menu1">
