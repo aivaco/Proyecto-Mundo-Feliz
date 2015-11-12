@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'recursos/lista_recursos'
+
+  get 'recursos/agregar_recurso'
+
+  get 'recursos/opciones_recurso'
+
 =begin <<<<<<< HEAD
   
   root  'pages#mientras'       #Mientras
@@ -38,5 +44,6 @@ Rails.application.routes.draw do
   get 'modulo_cliente/lista_clientes'
   
   post 'formBuscarCliente' => 'modulo_cliente#lista_clientes'
+  post 'formBuscarRecurso' => 'recursos#lista_recursos'
 
 end
