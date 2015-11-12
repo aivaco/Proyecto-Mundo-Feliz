@@ -82,7 +82,38 @@ Proyecto.create(nombre: "Segundo Punto de Venta",
                   precio: 1000.00,
                   estado: "p",
                   hoja_id: 3)
+Entregable.create(numero: 1,
+                  fechaEnt: Date.new(2015,2,3),
+                  descripcion: "Creación de la base de datos",
+                  proyecto_id: 3
+                  )
+Entregable.create(numero: 2,
+                  fechaEnt: Date.new(2015,2,4),
+                  descripcion: "Creación de módulo cliente",
+                  proyecto_id: 3
+                  )
+Entregable.create(numero: 3,
+                  fechaEnt: Date.new(2016,2,4),
+                  descripcion: "Creación de sistema de descuentos",
+                  proyecto_id: 3
+                  )
 
+Entregable.create(numero: 1,
+                  fechaEnt: Date.new(2015,2,9),
+                  descripcion: "Creación de módulo cliente",
+                  proyecto_id: 1
+                  )
+                  
+Entregable.create(numero: 1,
+                  fechaEnt: Date.new(2016,1,1),
+                  descripcion: "Creación de módulo cliente",
+                  proyecto_id: 2
+                  )
+Entregable.create(numero: 2,
+                  fechaEnt: Date.new(2016,1,2),
+                  descripcion: "Creación de módulo visitante",
+                  proyecto_id: 2
+                  )                 
 Riesgo.create(tipo: "Prueba",
                 descripcion: "Algunos riesgos que podrían afectar el rendimiento son: el costo económico y los recursos limitados de hardware.",
                 proyecto_id: 1)

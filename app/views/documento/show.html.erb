@@ -71,12 +71,93 @@
    </div>
    </span>
       <br>
-   <!--Botones con las distintas acciones-->      
-   <%= link_to "/auth/facebook", id: "sign_in" do %>
-   <div class="btn btn-default"> 
-      <i class="fa fa-tasks"></i>  Administrar entregables
+   <!--Botones con las distintas acciones--> 
+   
+   <!--Empieza código para Editar entregables-->
+   <% @hojas = Hoja.find(@documento.proyecto_id) %>
+   <% @proyectos = Proyecto.where("hoja_id == :id", {id: @hojas.id}).first %>
+   <% @entregables = Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all %>
+   <!--Botón de Editar entregables-->
+   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editarEntregablesmodal"> <i class="fa fa-tasks"></i> Administrar entregables</button>
+   <!-- Popup de editarEntregables -->
+   <!-- Modal -->
+   <div id="editarEntregablesmodal" class="modal fade" role="dialog">
+     <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title"> Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </h4>
+         </div>
+         <div class="modal-body">
+           <head> Por favor seleccione el entregable: </head>
+           <p>
+             <div class="dropdown">
+             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Entregables del proyecto
+               <span class="caret"></span></button>
+               <ul class="dropdown-menu">
+                  <% @entregables.each do |entregable|%>
+                     <li><a href="#"> Número: <%= entregable.numero %> Fecha: <%= entregable.fechaEnt %></a></li>
+                  <%end%>
+               </ul>
+            </div>
+           </p>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default btn" data-toggle="modal" data-target="#editarEntregablesRecursomodal">Modificar recursos asignados</button>
+           <button type="button" class="btn btn-default btn" data-toggle="modal" data-target="#editarEntregablesNuevoEntregablemodal">Añadir nuevo entregable</button>
+         </div>
+       </div>
+   
+     </div>
    </div>
-   <%end%>
+   
+   <!-- Popup de editarEntregableRecurso -->
+   <!-- Modal -->
+   <div id="editarEntregablesRecursomodal" class="modal fade" role="dialog">
+     <div class="modal-dialog modal-sm">
+   
+       <!-- Modal content-->
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Recursos</h4>
+         </div>
+         <div class="modal-body">
+           <head> Descripción </head>
+           <p>Some text in the modal.</p>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+       </div>
+   
+       </div>
+     </div>
+   </div>
+   
+   <!-- Popup de editarEntregableNuevoEntregable -->
+   <!-- Modal -->
+   <div id="editarEntregablesNuevoEntregablemodal" class="modal fade" role="dialog">
+     <div class="modal-dialog modal-sm">
+   
+       <!-- Modal content-->
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Añadir nuevo entregable</h4>
+         </div>
+         <div class="modal-body">
+           <head> Descripción </head>
+           <p>Some text in the modal.</p>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
+       </div>
+   
+     </div>
+   </div>
+   </div>
+   <!--Termina código para Editar entregables-->
    <%= link_to "callto://mundoFeliz",  id: "sign_in" do %>
    <div class="btn btn-default"> 
       <i class="fa fa-file"></i>  Administrar documentos
