@@ -95,18 +95,15 @@
          <div class="modal-body">
            <head> Por favor seleccione el entregable: </head>
            <p>
-             <div class="form-group">
-              <label for="sel1">Select list:</label>
-              <select class="form-control" id="sel1">
-                 <% @entregables.each do |entregable|%>
-                     <option> Número: <%= entregable.numero %> Fecha: <%= entregable.fechaEnt %>  Descripción: <%= entregable.descripcion %></option>
-                  <%end%>
-              </select>
-            </div>
+             <div class="input-group">
+             <%= form_for(:seleccionarEntregable, url: entregableSeleccionado_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
+             <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :descripcion) %>
+             <%= f.submit "Aceptar", class: "btn btn-default" %>
+             <%end%>
+             </div>
            </p>
          </div>
          <div class="modal-footer">
-           <button type="button" class="btn btn-default btn" data-toggle="modal" data-target="#editarEntregablesRecursomodal">Modificar recursos asignados</button>
         
          </div>
        </div>

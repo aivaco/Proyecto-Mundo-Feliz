@@ -32,6 +32,12 @@ class DocumentoController < ApplicationController
             end   
         end
     end
+    #Este es el controlador donde tiene que hacer la redirección Eduardo, params[:seleccionarEntregable][:id] es el id del recurso seleccionado
+    def entregableSeleccionado
+        prueba = params[:seleccionarEntregable][:id].to_s
+        flash[:info] = prueba
+        redirect_to :back #Por mientras
+    end
     
 
 end

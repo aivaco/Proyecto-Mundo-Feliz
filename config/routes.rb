@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'password_resets/new'
   get 'password_resets/edit'
   post 'nuevoEntregable' => 'documento#nuevoEntregable'
-
+  post 'entregableSeleccionado' => 'documento#entregableSeleccionado'
 =begin 
   
   root  'pages#mientras'       #Mientras
