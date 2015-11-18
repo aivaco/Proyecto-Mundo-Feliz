@@ -1,0 +1,11 @@
+<!--Carga los entregables de un usuario que aún no han sido entregados-->
+<% @entregables = Persona.find(current_user.id).fisica.recurso.entregables.where('entregado = ?', false).all%>
+<!--Formulario para la elección de un entregable según su proyecto -->
+<%= form_for :entregable, :url => agregar_entrega_path, method: :post do |f| %>
+  <%= f.label :"Por favor seleccione un entregable:" %>
+  <%= f.select :entregable_id, options_for_select(@entregables.collect { |entregable|
+    ["Proyecto: #{entregable.proyecto.nombre} --- #{entregable.descripcion}", entregable.id] }, 0), {}, { id: 'entregables_select' } %>
+  <%= f.label :"Descripción de la entrega:" %>
+  <%= f.text_area :entrega, cols: "30", rows: "10", class: 'form-control'%>
+   <%= f.submit "Añadir entrega", data: { confirm: '¿Está seguro(a) de realizar esta entrega?' } , class: "btn btn-default" %>
+<% end %>

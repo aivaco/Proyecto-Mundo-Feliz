@@ -77,11 +77,15 @@
       <i class="fa fa-tasks"></i>  Administrar entregables
    </div>
    <%end%>
-   <%= link_to "callto://mundoFeliz",  id: "sign_in" do %>
-   <div class="btn btn-default"> 
-      <i class="fa fa-file"></i>  Administrar documentos
+    <%= link_to "add_documento/#{@documento.id}",:id_proyecto => @documento.id do%> 
+     <div class="btn btn-default">  
+      <i class="fa fa-file"></i>  Agregar documentos
    </div>
    <%end%>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEliminarDocumentos">
+      <i class="fa fa-file-excel-o"></i>  Eliminar documentos
+   </button>
+   
    <%= link_to "callto://mundoFeliz",  id: "sign_in" do %>
    <div class="btn btn-default"> 
       <i class="fa fa-plus-square"></i>  Añadir nuevo proyecto
@@ -91,3 +95,26 @@
 
  <!-- Inserta el contenido del header -->
   <%= render 'layouts/header_user' %>
+  
+ 
+
+<!-- Modal Eliminar documentos -->
+
+<div id="modalEliminarDocumentos" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 400px">
+
+    <!-- Contenido dentro del Modal -->
+    <div class="modal-content">
+       <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Agregar Documentos</h4>
+        </div>
+        
+        <div class="modal-body">
+        
+            <%= render partial: "documento/delete_documento", :locals => { idProyecto: @documento.id } %>
+        </div>
+
+  </div>
+</div>
+
