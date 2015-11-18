@@ -4,13 +4,11 @@
 <!--Carga las pestañas de la aplicación-->
 <%= render 'layouts/menus/menu_tabs' %>
 <!--Se selecicona un id de cliente-->
-<div class = "col-md-8">
-<% id = 1%>  
 <!--Mientras, esta es la sintaxis para enviar variables a través de link_to-->
 <%= link_to "Cliente1", :controller => 'documento', :action => 'show',:id => 2, :id_cliente => 2%>  
 <%= link_to "Cliente2", :controller => 'documento', :action => 'show',:id => 1, :id_cliente => 1%> 
 
-</div>
+
 
  <!-- Inserta el contenido del header -->
   <%= render 'layouts/header_user' %>
