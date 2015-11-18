@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 # Para correr las semillas:
 # bundle exec rake db:migrate:reset
 # bundle exec rake db:migrate
@@ -194,6 +195,7 @@ e5 = Entregable.create(numero: 5,
     e5.activos.create(recurso: r1, estado: false)
 #Proyecto 3
     e3.activos.create(recurso: r3, estado: false)
+
 
 #Datos Ruiz. 
 User.create(usuario: "pj045", password: "12345678")

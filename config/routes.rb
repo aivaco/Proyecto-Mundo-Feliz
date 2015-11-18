@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'administrar_entregable/vistageneral'
+
   get 'modulo_bitacora/view_bitacora'
 
   get 'modulo_recurso/view_recurso'

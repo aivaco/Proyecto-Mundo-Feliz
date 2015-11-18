@@ -51,6 +51,11 @@ class UserTest < ActiveSupport::TestCase
     @user.password = "a" * 21
     assert_not @user.valid?
 =end  end
-
+  test 'agregar existente' do
+    u1 = User.create(usuario: 'abc', password: 'elteketekeataca')
+    p1 = Persona.create(:idPersona => '123', :email => 'lola@lolesca.com', :tipoPersona => 'f')
+    u2 = p1.create_user(usuario: u1)
+    assert u2.valid?, "u1 no válida #{u1.errors.inspect}"
+ end
 
 end

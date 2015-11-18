@@ -6,4 +6,30 @@
     <li class="<%= 'active' if params[:controller] == 'modulo_recurso' %>"><a href="/modulo_recurso/view_recurso.html"><span class="glyphicon glyphicon-user"></span> Recursos</a></li>  
     <li class="<%= 'active' if params[:controller] == 'modulo_bitacora' %>"><a href="/modulo_bitacora/view_bitacora.html"><span class="glyphicon glyphicon-edit"></span> Bitácora</a></li>  
     </ul>
+    
+    <div class="tab-content">
+      
+      <div id="opcion_cliente" class="tab-pane fade in active">
+       <%= render 'layouts/modulos/view_cliente' %>
+      </div>
+      
+      <div id="opcion_portafolio" class="tab-pane fade">
+       <%= render 'layouts/modulos/view_portafolio' %>
+      </div>
+      
+      <div id="opcion_entregables" class="tab-pane fade">
+        <%= render 'layouts/modulos/view_entregables' %>
+      </div>
+      
+      <div id="opcion_recursos" class="tab-pane fade">
+        <%= render 'layouts/modulos/view_recursos' %>
+      </div>
+      
+      <div id="opcion_bitacora" class="tab-pane fade">
+        <%= render 'layouts/modulos/view_bitacora' %>
+      </div>
+      
+    </div>
+    <%= render 'layouts/footer' %>
+</div>
 </div>
