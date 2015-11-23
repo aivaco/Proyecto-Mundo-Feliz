@@ -1,16 +1,16 @@
 <script>
     $(document).ready(function(){
 
-    $("#seccion_alianza").hide();
+    $("#seccion_alianza2").hide();
 
     $(":radio").change(function(){  
 
             if(this.value == 'r' && this.checked){
-              $("#seccion_riesgo").show();
-              $("#seccion_alianza").hide();
+              $("#seccion_riesgo2").show();
+              $("#seccion_alianza2").hide();
             }else{
-              $("#seccion_riesgo").hide();
-              $("#seccion_alianza").show();
+              $("#seccion_riesgo2").hide();
+              $("#seccion_alianza2").show();
             }
 
     });
@@ -35,7 +35,7 @@
 <br><br>
 <!--Form Riesgos-->
 
-<div id="seccion_riesgo">
+<div id="seccion_riesgo2">
 <%= form_for @riesgo , :url => delete_riesgo_path, method: :post do |r| %>
     <%= r.label :"Documentos de riesgos:" %>
    <%=r.collection_select(:tipo, @ries.all,:tipo,'tipo')%>
@@ -46,7 +46,7 @@
 
 <br>
 <!--Form Alianza-->
-<div id="seccion_alianza">
+<div id="seccion_alianza2">
 <%= form_for @alianza , :url => delete_alianza_path, method: :post do |a| %>
  <%= a.label :"Documentos de alianzas:" %>
    <%=a.collection_select(:tipo, @alian.all,:tipo,'tipo')%>

@@ -4,7 +4,7 @@
   <%= render 'layouts/menus/menu_tabs' %>
   
   <h1>Entregables</h1>
-  
+   <%= render partial: 'modulo_entregable/fichas' %>
    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalAddEntrega">
       <i class="fa  fa-plus-square"></i>  Agregar entrega
    </button>
@@ -22,12 +22,11 @@
         </div>
         
         <div class="modal-body">
-        
+           
              <%= render partial: 'modulo_entregable/add_entrega' %>
         </div>
 
-      
+   
 
   </div>
 </div>
- 

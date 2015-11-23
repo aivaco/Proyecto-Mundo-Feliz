@@ -18,10 +18,11 @@
 
 });
 </script>
+
 <% @alianza = Alianza.new %>
 <% @riesgo = Riesgo.new %>
 <!--Temporal-->
-<% id_Proyecto = 1 %>
+
 <!--Secciones de formulario para lo distintos documentos-->
  <%= simple_form_for :documento, defaults: {wrapper: :inline_field2}  do |f| %>
  
