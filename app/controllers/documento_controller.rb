@@ -6,7 +6,4 @@ class DocumentoController < ApplicationController
         @documento = Documento.find(params[:id])
         @id = params[:id_cliente]
     end
-
-    
-
 end
