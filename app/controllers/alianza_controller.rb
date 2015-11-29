@@ -1,4 +1,5 @@
 class AlianzaController < ApplicationController
+    
     #Crea un nuevo documento de Alianza
     def create
          @alianza = Alianza.new(alianza_params)

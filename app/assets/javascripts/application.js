@@ -15,13 +15,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require jquery.turbolinks
-<<<<<<< HEAD
-//= require_tree .
-//= require magnific-popup
-=======
+//= require_tree 
 //= require_tree 
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers
 
->>>>>>> 7af04da95073044a4f5dbed4812fec84dd96286a

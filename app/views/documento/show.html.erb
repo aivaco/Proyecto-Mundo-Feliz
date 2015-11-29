@@ -32,7 +32,7 @@
                   
                   <% if !@riesgos.empty? then%>
                   <%  @riesgos.each do |riesgo| %>
-                  <li><a href="http://www.google.com" target="_blank"><%= riesgo.tipo %></a></li>
+                  <li><%= link_to riesgo.tipo, 'google.com', :target => '_blank' %></li>
                   <%end%>
                   <%else%>
                   <li><img src="/content/images/google.ico" />No existen documentos asociados a este proyecto.</a></li>
