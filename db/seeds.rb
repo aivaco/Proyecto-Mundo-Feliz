@@ -26,7 +26,10 @@ Persona.create(idPersona: "646465156",
 Persona.create(idPersona: "41651305",
               email: "sutano@sutano.com",
               tipoPersona: "f")
-              
+Persona.create(idPersona: "987987987",
+              email: "daniela@daniela.com",
+              tipoPersona: "f")
+                      
 Fisica.create(nombre: "Juan",
               apellido1: "Pérez",
               apellido2: "Soto",
@@ -39,12 +42,18 @@ Fisica.create(nombre: "Maria",
               sexo: "f",
               fechaNac: Date.new(1992,2,3),
               persona_id: 2)
+Fisica.create(nombre: "Daniela",
+              apellido1: "Gonzalez",
+              apellido2: "Mora",
+              sexo: "f",
+              fechaNac: Date.new(1995,8,7),
+              persona_id: 4 )              
 Fisica.create(nombre: "Sutano",
               apellido1: "Mengano",
               apellido2: "Soto",
               sexo: "m",
               fechaNac: Date.new(1964,5,2),
-              persona_id: 3)
+              persona_id: 3)              
               
 Cliente.create(nombreEmp: "Vaina S.A",
                 persona_id: 1)
@@ -120,6 +129,37 @@ Riesgo.create(tipo: "Prueba",
 Riesgo.create(tipo: "Prueba",
                 descripcion: "Algunos riesgos que podrían afectar el rendimiento son: el costo económico y los recursos limitados de hardware.",
                 proyecto_id: 2)
+
+
+
+Recurso.create( almaMater: "UCR",
+                fisica_id: 1)
+Recurso.create( almaMater: "TEC",
+                fisica_id: 2)   
+Recurso.create( almaMater: "UCR",
+                fisica_id: 4)            
+Recurso.create( almaMater: "UNA",
+                fisica_id: 3)                  
+   
+Rol.create( proyecto_id: 2 , recurso_id: 1, papel: "Tester" ) 
+Rol.create( proyecto_id: 1 , recurso_id: 2, papel: "Desarrollador" )    
+Rol.create( proyecto_id: 2 , recurso_id: 3, papel: "Desarrollador" )     
+Rol.create( proyecto_id: 2 , recurso_id: 4, papel: "Scrum Master" )
+                
+                
+Activo.create( entregable_id: 5,
+                recurso_id: 1,
+                estado: true)
+                
+Activo.create( entregable_id: 5,
+                recurso_id: 3,
+                estado: true)
+                
+Activo.create( entregable_id: 6,
+                recurso_id: 4,
+                estado: true)
+
+
 
 
 #Datos Ruiz. 
