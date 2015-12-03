@@ -73,32 +73,31 @@
    </span>
       <br>
    <!--Botones con las distintas acciones--> 
-   <button onclick="myFunction()">Try it</button>
 
    <!--Empieza código para Editar entregables-->
    <% @hojas = Hoja.find(@documento.proyecto_id) %>
    <% @proyectos = Proyecto.where("hoja_id == :id", {id: @hojas.id}).first %>
    <% @entregables = Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all %>
    <!--Botón de Editar entregables-->
-   <button type="button" class="btn btn-default btn" data-toggle="modal" data-target="#editarEntregablesNuevoEntregablemodal">Añadir nuevo entregable</button>
+   <button type="button" class="btn btn-default btn" data-toggle="modal" data-target="#editarEntregablesNuevoEntregablemodal"> <i class="fa fa-plus-square"></i> Añadir nuevo entregable</button>
    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editarEntregablesmodal"> <i class="fa fa-tasks"></i> Administrar entregables</button>
    <!-- Popup de editarEntregables -->
    <!-- Modal -->
    <div id="editarEntregablesmodal" class="modal fade" role="dialog">
-     <div class="modal-dialog">
+     <div class="modal-dialog modal-sm">
        <!-- Modal content-->
        <div class="modal-content">
-         <div class="modal-header">
+         <div class="modal-header" style="text-align: center">
            <button type="button" class="close" data-dismiss="modal">&times;</button>
            <h4 class="modal-title"> Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </h4>
          </div>
-         <div class="modal-body">
-           <head> Por favor seleccione el entregable: </head>
+         <div class="modal-body" style="text-align: center">
+           <head> Seleccione el entregable a modificar: </head>
            <p>
              <div class="input-group">
-             <%= form_for(:seleccionarEntregable, url: entregableSeleccionado_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
-             <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :descripcion) %>
-             <%= f.submit "Aceptar", class: "btn btn-default" %>
+             <%= form_for(:seleccionarEntregable, url: entregableSeleccionado_path ) do |f| %>
+             <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :fechayDescripcion) %>
+             <%= f.submit "Modificar", class: "btn btn-default" %>
              <%end%>
              </div>
            </p>
@@ -114,10 +113,10 @@
    <!-- Popup de editarEntregableNuevoEntregable -->
    <!-- Modal -->
    <div id="editarEntregablesNuevoEntregablemodal" class="modal fade" role="dialog">
-     <div class="modal-dialog">
+     <div class="modal-dialog modal-sm">
    
        <!-- Modal content-->
-       <div class="modal-content">
+       <div class="modal-content" style="text-align: center">
          <div class="modal-header">
            <button type="button" class="close" data-dismiss="modal">&times;</button>
            <h4 class="modal-title">Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </br> Añadir nuevo entregable</h4>
@@ -126,15 +125,15 @@
            <p>
             <div class="input-group">
                 <%= form_for(:agregarNuevoEntregable, url: nuevoEntregable_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
-                    <p> Descripción </p>
+                    <p> Digite la descripción: </p>
                     <%= f.text_field :descripcion, placeholder: 'Descripción' %> 
                     <%= f.hidden_field :id, :value => @proyectos.id %>
-                    <p> Fecha de Entrega: </p>
+                    <p> Seleccione la fecha de entrega: </p>
                     <%= date_select('range', 'start_date', :order => [:day, :month, :year])%>
                     <span class="input-group-btn">
                         <%= f.submit "Aceptar", class: "btn btn-default" %>
                     </span>
-            <%end%>
+                <%end%>
             </div>
            </p>
          </div>
