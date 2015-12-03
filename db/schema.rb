@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111024949) do
+ActiveRecord::Schema.define(version: 20151118140456) do
 
   create_table "activos", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -90,8 +90,10 @@ ActiveRecord::Schema.define(version: 20151111024949) do
     t.date     "fechaEnt"
     t.string   "descripcion"
     t.integer  "proyecto_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "entrega"
+    t.boolean  "entregado",   default: false
   end
 
   add_index "entregables", ["proyecto_id"], name: "index_entregables_on_proyecto_id"
@@ -250,6 +252,7 @@ ActiveRecord::Schema.define(version: 20151111024949) do
     t.string   "foto_content_type"
     t.integer  "foto_file_size"
     t.datetime "foto_updated_at"
+    t.string   "tipo_usuario"
   end
 
   add_index "users", ["persona_id"], name: "index_users_on_persona_id"

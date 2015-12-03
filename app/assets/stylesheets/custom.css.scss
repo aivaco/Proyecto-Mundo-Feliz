@@ -225,3 +225,8 @@ input {
 #documentos{
   display: none;
 }
+
+/*Cambia color de un custom panel*/
+.panel-default > .panel-heading-custom {
+background: #000000; color: #fff
+}

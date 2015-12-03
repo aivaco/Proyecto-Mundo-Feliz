@@ -62,8 +62,18 @@ Rails.application.routes.draw do
   get 'modulo_portafolio/view_portafolio'
   #Para crear una ruta con el nombre home
   get 'home' => 'pages#home', :as => "home"
-  
+  #Muestra información principal del proyecto
   get '/documento/:id', to: 'documento#show', as: 'documento'
+  #Rutas para crear documentos
+  match '/alianza/create' => 'alianza#create', :as => :create_alianza, :via => [:post]
+  match '/riesgo/create' => 'riesgo#create', :as => :create_riesgo, :via => [:post]
+  #Rutas para borrar documentos
+  match '/alianza/delete' => 'alianza#delete', :as => :delete_alianza, :via => [:post]
+  match '/riesgo/delete' => 'riesgo#delete', :as => :delete_riesgo, :via => [:post]
+  #Ruta para agregar una entrega de un entregable
+  match '/modulo_entregable/agregar_entrega' => 'modulo_entregable#agregar_entrega', :as => :agregar_entrega, :via => [:post]
+
+
   post 'borrarEntregableSeleccionado' => 'documento#borrarEntregableSeleccionado'
   
   

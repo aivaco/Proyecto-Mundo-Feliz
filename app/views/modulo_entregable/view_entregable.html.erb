@@ -2,5 +2,31 @@
   <!-- Inserta el contenido del header -->
   <%= render 'layouts/header_user' %>
   <%= render 'layouts/menus/menu_tabs' %>
-  <!-- Acá comienza el código -->
+  
   <h1>Entregables</h1>
+   <%= render partial: 'modulo_entregable/fichas' %>
+   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalAddEntrega">
+      <i class="fa  fa-plus-square"></i>  Agregar entrega
+   </button>
+   
+   <!-- Modal agregar entrega -->
+
+<div id="modalAddEntrega" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 400px">
+
+    <!-- Contenido dentro del Modal -->
+    <div class="modal-content">
+       <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Agregar Entrega</h4>
+        </div>
+        
+        <div class="modal-body">
+           
+             <%= render partial: 'modulo_entregable/add_entrega' %>
+        </div>
+
+   
+
+  </div>
+</div>

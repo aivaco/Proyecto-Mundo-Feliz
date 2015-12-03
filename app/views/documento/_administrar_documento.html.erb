@@ -1,0 +1,16 @@
+<ul class="nav nav-tabs">
+  <li role="add_documento" class="active"><a href="#">Añadir documento</a></li>
+  <li role="delete_documento"><a href="#">Eliminar documento</a></li>
+</ul>
+    
+    <div class="tab-content">
+      
+      <div id="add_documento" class="tab-pane fade in active">
+       <%= render 'documento/add_documento',  :locals => { id_Proyecto: idProyecto}%>
+      </div>
+      
+      <div id="delete_documento" class="tab-pane fade">
+       <%= render 'documento/delete_documento', :locals => { idProyecto: idProyecto } %>
+      </div>
+
+</div>
