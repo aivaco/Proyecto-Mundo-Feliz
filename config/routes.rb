@@ -64,5 +64,12 @@ Rails.application.routes.draw do
   get 'home' => 'pages#home', :as => "home"
   
   get '/documento/:id', to: 'documento#show', as: 'documento'
+  post 'borrarEntregableSeleccionado' => 'documento#borrarEntregableSeleccionado'
+  
+  
+  #Administrar recursos de entregables
+  get '/recursos_asignados/:id', to: 'recursos_asignados#administrar', as: 'recursos_entregable'
+  get 'agregarRecursoSeleccionado' => 'recursos_asignados#agregarRecursoSeleccionado'
+  get 'removerRecursoSeleccionado' => 'recursos_asignados#removerRecursoSeleccionado'
   
 end

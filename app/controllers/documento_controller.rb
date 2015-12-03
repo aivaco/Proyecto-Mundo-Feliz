@@ -18,7 +18,7 @@ class DocumentoController < ApplicationController
                 flash[:info] = "Nuevo entregable creado al proyecto actual."
                 redirect_to :back
             else
-               flash.now[:danger] = 'Ocurrió un eror.' 
+               flash.now[:danger] = 'Ocurrió un error.' 
                redirect_to :back
             end
         else
@@ -27,17 +27,25 @@ class DocumentoController < ApplicationController
                 flash[:info] = "Nuevo entregable creado al proyecto actual."
                 redirect_to :back
             else
-               flash.now[:danger] = 'Ocurrió un eror.' 
+               flash.now[:danger] = 'Ocurrió un error.' 
                redirect_to :back
             end   
         end
     end
+    
     #Este es el controlador donde tiene que hacer la redirección Eduardo, params[:seleccionarEntregable][:id] es el id del recurso seleccionado
     def entregableSeleccionado
-        prueba = params[:seleccionarEntregable][:id].to_s
-        flash[:info] = prueba
-        redirect_to :back #Por mientras
+        @id_entregable = params[:seleccionarEntregable][:id]
+        
+        redirect_to :controller => 'recursos_asignados', :action => 'administrar', :id => @id_entregable
     end
     
+    def borrarEntregableSeleccionado
+        @id_entregable = params[:seleccionarEntregable][:id]
+        
+        Entregable.delete(@id_entregable)
+        redirect_to :back
+    end
 
+  
 end
