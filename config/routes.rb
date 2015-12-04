@@ -60,6 +60,8 @@ Rails.application.routes.draw do
   
   get 'newclient' => 'new_client#new'
   post 'newclient' => 'new_client#create'
+  
+  get 'profile' => 'profile#view'
   #Prueba
   get 'modulo_portafolio/view_portafolio'
   #Para crear una ruta con el nombre home

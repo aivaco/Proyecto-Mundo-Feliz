@@ -34,7 +34,7 @@
       
         <!-- Nombres de las columnas de la tabla -->
         <thead>
-           <tr>
+           <tr> 
               <th>ID</th>
               <th>Nombre</th>
               <th>Apellido</th>
@@ -50,14 +50,21 @@
             <th><%= personas[:apellido1] %> <%= personas[:apellido2] %></th>
             <th>
               <%= link_to :controller => 'recursos_asignados', :action => 'removerRecursoSeleccionado', :id => personas[:id] , :id_entregable => @entregable.id do %>
-                <div class="btn btn-danger btn-xs"> 
+                <div class="btn btn-danger btn-xs" data-toggle="tooltip" title="Eliminar recurso del entregable"> 
                   <i class="fa fa-times"></i>
+                </div>
+              <% end %>
+              
+              <%= link_to :controller => 'profile', :action => 'view', :usuario => personas[:id]  do %>
+                <div class="btn btn-info btn-xs" data-toggle="tooltip" title="Ver perfil"> 
+                  <i class="glyphicon glyphicon-user"></i>
                 </div>
               <% end %>
             </th>
           </tr>
           <% end %>
         </tbody>
+        
       <% end %>
     </table>
     
@@ -97,10 +104,17 @@
               <th><%= personas[:apellido1] %> <%= personas[:apellido2] %></th>
               <th>
                 <%= link_to :controller => 'recursos_asignados', :action => 'agregarRecursoSeleccionado', :id => personas[:id] , :id_entregable => @entregable.id do %>
-                  <div class="btn btn-primary btn-xs"> 
+                  <div class="btn btn-primary btn-xs" data-toggle="tooltip" title="Agregar recurso al entregable"> 
                     <i class="fa fa-plus"></i>
                   </div>
                 <% end %>
+                
+                <%= link_to :controller => 'profile', :action => 'view', :usuario => personas[:id]  do %>
+                <div class="btn btn-info btn-xs" data-toggle="tooltip" title="Ver perfil"> 
+                  <i class="glyphicon glyphicon-user"></i>
+                </div>
+              <% end %>
+              
               </th>
             </tr>
           <% end %>
