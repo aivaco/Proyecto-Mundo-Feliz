@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAgAfAwIAGwMCAAQDAgAAAAAAAAMCAAADAgAEAwAAGwkZGx8srssfMsfoGzLF5gQyxeYAAAAAAAAAAAAAAAAAAwIA4gMCAMYDAgAbAwIAAAAAAAADAgAAAwIAGwMAAMUJGRviLK7L4jLH6MUyxeYbMsXmAAAAAAAAAAAAAAAAAAMCAP8DAgDhAwIAHwMCAAAAAAAAAwIAAAMCAB8DAADgCRkb/yyuy/8yx+jgMsXmHzLF5gAAAAAAAAAAAAAAAAADAgD/AwIA4QMCAB4DAgACAwIAFwMCAAIDAgAeAwAA4AkZG/8srsv/Msfo4DLF5h8yxeYAAAAAAAAAAAAAAAAAAwIA/wMCAOADAgAhAwIAMgMCALIDAgAyAwIAIQMAAOAJGRv/LK7L/zLH6OQyxeY6MsXmHTLF5h8yxeYbMsXmBAMCAP8DAgDjAwIAUQMCAMsDAgD7AwIAywMCAFEDAADjCRkb/yyuyv8yx+j8MsXm5jLF5uIyxebkMsXmxjLF5h8DAgD/AwIA+wMCAOgDAgD3AwIA6AMCAPcDAgDoAwAA+wkZHP8srsr/Msfo+zLF5uQyxebgMsXm4jLF5sQyxeYfAwIA/wMCAP8DAgD9AwIAywMCAE0DAgDLAwIA/QMAAP8JGRz/LK7L/zLH6OgyxeZVMsXmPDLF5j4yxeY5MsXmIwMCAP8DAgD9AwIAzQMCADIDAgAEAwIAMgMCAM0DAAD9CRkc/yyuyv8yx+j7MsXm5DLF5uAyxebgMsXm4TLF5uIDAgDiAwIAyQMCADIDAgACAwIAAAMCAAIDAgAyAwAAyQkZG+IsrsrgMsfo4TLF5uIyxebiMsXm4jLF5uIyxebiAwIAHwMCABsDAgAEAwIAAAAAAAADAgAAAwIABAMAABsJGRsfLK7KHzLH6B8yxeYfMsXmHzLF5h8yxeYfMsXmHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AAD//wAAHA8AABwPAAAcDwAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAABwAAAD//wAA//8AAA==" rel="icon" type="image/x-icon" />
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
   
 <head>
   <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAgAfAwIAGwMCAAQDAgAAAAAAAAMCAAADAgAEAwAAGwkZGx8srssfMsfoGzLF5gQyxeYAAAAAAAAAAAAAAAAAAwIA4gMCAMYDAgAbAwIAAAAAAAADAgAAAwIAGwMAAMUJGRviLK7L4jLH6MUyxeYbMsXmAAAAAAAAAAAAAAAAAAMCAP8DAgDhAwIAHwMCAAAAAAAAAwIAAAMCAB8DAADgCRkb/yyuy/8yx+jgMsXmHzLF5gAAAAAAAAAAAAAAAAADAgD/AwIA4QMCAB4DAgACAwIAFwMCAAIDAgAeAwAA4AkZG/8srsv/Msfo4DLF5h8yxeYAAAAAAAAAAAAAAAAAAwIA/wMCAOADAgAhAwIAMgMCALIDAgAyAwIAIQMAAOAJGRv/LK7L/zLH6OQyxeY6MsXmHTLF5h8yxeYbMsXmBAMCAP8DAgDjAwIAUQMCAMsDAgD7AwIAywMCAFEDAADjCRkb/yyuyv8yx+j8MsXm5jLF5uIyxebkMsXmxjLF5h8DAgD/AwIA+wMCAOgDAgD3AwIA6AMCAPcDAgDoAwAA+wkZHP8srsr/Msfo+zLF5uQyxebgMsXm4jLF5sQyxeYfAwIA/wMCAP8DAgD9AwIAywMCAE0DAgDLAwIA/QMAAP8JGRz/LK7L/zLH6OgyxeZVMsXmPDLF5j4yxeY5MsXmIwMCAP8DAgD9AwIAzQMCADIDAgAEAwIAMgMCAM0DAAD9CRkc/yyuyv8yx+j7MsXm5DLF5uAyxebgMsXm4TLF5uIDAgDiAwIAyQMCADIDAgACAwIAAAMCAAIDAgAyAwAAyQkZG+IsrsrgMsfo4TLF5uIyxebiMsXm4jLF5uIyxebiAwIAHwMCABsDAgAEAwIAAAAAAAADAgAAAwIABAMAABsJGRsfLK7KHzLH6B8yxeYfMsXmHzLF5h8yxeYfMsXmHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AAD//wAAHA8AABwPAAAcDwAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAABwAAAD//wAA//8AAA==" rel="icon" type="image/x-icon" />
@@ -20,7 +26,77 @@
   <div id="menu_tabs" class="container">
     <%= render 'layouts/footer' %>
     </div>
-    
+      
+    <div id="proyectosAsignados" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+                <!-- Modal content-->
+              <div class="modal-content">
+                  
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title"> </h4>
+                  </div>
+                  
+                  <div class="modal-body">
+                      <head> Sus proyectos asignados son: </head>
+                      <p>
+                      <div class="input-group">
+                        <% if current_user %>
+                          <% @fisica = Fisica.where("persona_id == :id", {id: current_user.persona_id}).first  %>
+                          <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
+                          <% if !@proyectos.empty? then%>
+                            <% @proyectos = @recurso.proyectos.all %>
+                            <%  @proyectos.each do |proyecto| %>
+                              Nombre: <%= proyecto.nombre %> Estado: <%= proyecto.estado %>  </br>
+                            <%end%>
+                          <%end%>
+                        <% end %>
+                      </div>
+                      </p>
+                  </div>
+                  
+                  <div class="modal-footer">
+                  </div>
+              </div>
+          
+          </div>
+      </div>
+      
+    <div id="ultimosEntregables" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+                <!-- Modal content-->
+              <div class="modal-content">
+                  
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title"> </h4>
+                  </div>
+                  
+                  <div class="modal-body">
+                      <head> Sus últimos entregables son: </head>
+                      <p>
+                      <div class="input-group">
+                        <% if current_user %>
+                          <% @fisica = Fisica.where("persona_id == :id", {id: current_user.persona_id}).first  %>
+                          <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
+                          <% if !@entregables.empty? then%>
+                          <% @entregables = @recurso.entregables.all %>
+                            <%  @entregables.each do |entregable| %>
+                            <% @proyecto = Proyecto.find(entregable.proyecto_id) %>
+                              Descripcion: <%= entregable.descripcion %> Proyecto: <%= @proyecto.nombre %>   </br>
+                            <%end%>
+                          <%end%>
+                        <% end %>
+                      </div>
+                      </p>
+                  </div>
+                  
+                  <div class="modal-footer">
+                  </div>
+              </div>
+          
+          </div>
+      </div>
     
 </body>
 </html>
