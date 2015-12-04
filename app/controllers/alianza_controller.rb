@@ -1,5 +1,10 @@
 class AlianzaController < ApplicationController
     
+    #Recibe un id de documento de alianza para desplegarlo.
+     def show
+        @alianza = Alianza.find(params[:aid])
+    end
+    
     #Crea un nuevo documento de Alianza
     def create
          @alianza = Alianza.new(alianza_params)

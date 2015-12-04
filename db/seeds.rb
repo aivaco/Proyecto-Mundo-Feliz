@@ -61,7 +61,6 @@ Persona.create(idPersona: "41651305",
 Persona.create(idPersona: "987987987",
               email: "daniela@daniela.com",
               tipoPersona: "f")
-                      
 Persona.create(idPersona: "481189416",
               email: "momba@momba.com",
               tipoPersona: "f")
@@ -86,7 +85,7 @@ Fisica.create(nombre: "Daniela",
               apellido2: "Mora",
               sexo: "f",
               fechaNac: Date.new(1995,8,7),
-              persona_id: 4 )              
+              persona_id: 6 )              
 Fisica.create(nombre: "Sutano",
               apellido1: "Mengano",
               apellido2: "Soto",
@@ -106,6 +105,47 @@ Fisica.create(nombre: "Yahir",
               fechaNac: Date.new(1974,5,2),
               persona_id: 5)
               
+#Agrega usuarios de ejemplo
+User.create(usuario: "juan@juan.com",
+             password:              "12345678",
+             password_confirmation: "12345678",
+             activated: true,
+             activated_at: Time.zone.now,
+             persona_id: 1)
+             
+User.create(usuario: "maria@maria.com",
+             password:              "12345678",
+             password_confirmation: "12345678",
+             activated: true,
+             activated_at: Time.zone.now,
+             persona_id: 2)
+
+User.create(usuario: "sutano@sutano.com",
+             password:              "12345678",
+             password_confirmation: "12345678",
+             activated: true,
+             activated_at: Time.zone.now,
+             persona_id: 3)
+             
+User.create(usuario: "momba@momba.com",
+             password:              "12345678",
+             password_confirmation: "12345678",
+             activated: true,
+             activated_at: Time.zone.now,
+             persona_id: 4)
+        
+User.create(usuario: "yahir@yahir.com",
+             password:              "12345678",
+             password_confirmation: "12345678",
+             activated: true,
+             activated_at: Time.zone.now,
+             persona_id: 5)          
+#usuario de prueba
+User.create(usuario: "example@mundofeliz.com",
+             password:              "12345678",
+             password_confirmation: "12345678",
+             activated: true,
+             activated_at: Time.zone.now)
 #Crea  clientes              
 Cliente.create(nombreEmp: "Vaina S.A",
                 persona_id: 4)
@@ -160,7 +200,7 @@ pr1.rols.create(recurso: r2, papel: 'Desarrollador')
 pr2.rols.create(recurso: r2, papel: 'Scrum Master')
 pr2.rols.create(recurso: r1, papel: 'QA')
 #Proyecto 3
-pr2.rols.create(recurso: r3, papel: 'Scrum Master')
+pr3.rols.create(recurso: r3, papel: 'Scrum Master')
 
 #Crea documento de riesgo
 Riesgo.create(tipo: "Prueba",
@@ -208,46 +248,23 @@ e5 = Entregable.create(numero: 5,
     e3.activos.create(recurso: r3, estado: false)
 
 
-
-Recurso.create( almaMater: "UCR",
-                fisica_id: 1)
-Recurso.create( almaMater: "TEC",
-                fisica_id: 2)   
-Recurso.create( almaMater: "UCR",
-                fisica_id: 4)            
-Recurso.create( almaMater: "UNA",
-                fisica_id: 3)                  
-   
-Rol.create( proyecto_id: 2 , recurso_id: 1, papel: "Tester" ) 
-Rol.create( proyecto_id: 1 , recurso_id: 2, papel: "Desarrollador" )    
-Rol.create( proyecto_id: 2 , recurso_id: 3, papel: "Desarrollador" )     
-Rol.create( proyecto_id: 2 , recurso_id: 4, papel: "Scrum Master" )
-                
-                
-Activo.create( entregable_id: 5,
-                recurso_id: 1,
-                estado: true)
-                
-Activo.create( entregable_id: 5,
-                recurso_id: 3,
-                estado: true)
-                
-Activo.create( entregable_id: 6,
-                recurso_id: 4,
-                estado: true)
-
-
-
-
 #Datos Ruiz. 
 User.create(usuario: "pj045", password: "12345678")
 Cliente.create(nombreEmp: "Cosa S.A", persona_id: 3) 
-Direccion.create(tipo: "f", pais: "Costa Rica", provincia: "San Jose", ciudad: "Sabanilla", dirExac: "Frente al AMPM", persona_id: 1)
-Direccion.create(tipo: "f", pais: "Costa Rica", provincia: "San Jose", ciudad: "Guadalupe", dirExac: "Costado norte de Novacentro", persona_id: 2)
-Direccion.create(tipo: "f", pais: "Costa Rica", provincia: "San Jose", ciudad: "Montes de Oca", dirExac: "100m este de la iglesia", persona_id: 3)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Sabanilla", dirExac: "Frente al AMPM", persona_id: 1)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Guadalupe", dirExac: "Costado norte de Novacentro", persona_id: 2)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Montes de Oca", dirExac: "100m este de la iglesia", persona_id: 3)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Sabanilla", dirExac: "Frente al AMPM", persona_id: 4)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Guadalupe", dirExac: "Costado norte de Novacentro", persona_id: 5)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Guadalupe", dirExac: "Costado norte de Novacentro", persona_id: 6)
 Telefono.create(tipo: "casa", numero: 34586797, persona_id: 1)
 Telefono.create(tipo: "celular", numero: 45656776, persona_id: 1)
 Telefono.create(tipo: "oficina", numero: 90764534, persona_id: 1)
 Telefono.create(tipo: "celular", numero: 22314134, persona_id: 2)
 Telefono.create(tipo: "oficina", numero: 88714134, persona_id: 2)
 Telefono.create(tipo: "oficina", numero: 54311234, persona_id: 3)
+Telefono.create(tipo: "celular", numero: 45656776, persona_id: 4)
+Telefono.create(tipo: "oficina", numero: 90764534, persona_id: 5)
+Telefono.create(tipo: "celular", numero: 22314134, persona_id: 6)
+Telefono.create(tipo: "oficina", numero: 88714134, persona_id: 5)
+Telefono.create(tipo: "oficina", numero: 54311234, persona_id: 6)

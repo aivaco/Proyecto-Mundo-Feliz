@@ -1,0 +1,258 @@
+  
+<!DOCTYPE html>
+<html>
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+
+	<%= stylesheet_link_tag 'application', media: 'all',
+	'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+
+
+	<div class="container">
+
+		<a id="nombre_proyecto" href="home">Mundo Feliz</a>
+
+		<nav>
+			<ul class="nav navbar-nav navbar-right">
+				<%= render 'layouts/menus/menu_user' %>
+			</ul>
+		</nav>
+
+	</div>
+
+
+</header>
+
+<body>
+
+	<% if params[:recursoParaEditar] %>
+	<% recursoEditar = params[:recursoParaEditar] %>
+
+		<h1> Editar un recurso </h1>
+	<p>Los campos marcados con un asterisco(*) son de llenado obligatorio.</p>
+	
+	<%= form_for(:editarRecurso, url: formEditarRecurso_path, html: {class: 'form-horizontal'} ) do |f| %>
+
+	<div class="form-group" style="width:500px">
+
+		<div class="form-group">
+			<div class="col-sm-8">
+				<%= f.text_field :idRecurso, class: 'form-control', placeholder: 'Id Recurso', required: true, value: recursoEditar[:idRecurso], type: :hidden %>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<%= f.label :"Nombre: *", class: 'control-label col-sm-4' %>
+			<div class="col-sm-8">
+				<%= f.text_field :nombre, class: 'form-control', placeholder: 'Nombre', required: true, value: recursoEditar[:nombre] %>
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<%= f.label :"Identificación: *", class: 'control-label col-sm-4'%>
+
+			<div class="col-sm-8">
+				<%= f.text_field :idPersona, class: 'form-control', placeholder: 'ID' , required: true, value: recursoEditar[:id] %> 
+
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :"Primer apellido: *", class: 'control-label col-sm-4' %>
+
+			<div class="col-sm-8">
+				<%= f.text_field :apellido1, class: 'form-control', placeholder: 'Primer apellido' , required: true , value: recursoEditar[:primerApellido]%>
+
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :"Segundo apellido:", class: 'control-label col-sm-4' %>
+
+			<div class="col-sm-8">
+				<%= f.text_field :apellido2, placeholder: 'Segundo apellido', class: 'form-control',  required: false, value: recursoEditar[:segundoApellido]%>
+
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :"Fecha de nacimiento: *", class: 'control-label col-sm-5' %>
+			<div class="col-sm-7">
+				<%=	f.date_select(:fechaDeNacimiento,:start_year => 1950, :order => [:year, :month, :day], :default => recursoEditar[:fechaDeNacimiento].to_time) %>
+			</div>
+		</div>
+
+
+
+		<div class="form-group">
+			<%= f.label "Sexo: *", class: 'control-label col-sm-4'%>
+			<%= f.radio_button :sexo, 'm', class: 'control-label col-sm-1', checked: true %> 
+			<%= f.label :sexo, 'Masculino', :value => 'm', class: 'control-label col-sm-3' %>
+			<%= f.radio_button :sexo, 'f', class: 'control-label col-sm-1' %>
+			<%= f.label :sexo, 'Femenino', :value => 'f' , class: 'control-label col-sm-3'%>
+		</div>
+		<br>
+
+		<div class="form-group">
+			<%= f.label :"Correo electrónico: *", class: 'control-label col-sm-5' %>
+
+			<div class="col-sm-7">
+				<%= f.text_field :correo,class: 'form-control',  placeholder: 'Correo', required: true, value: recursoEditar[:correo]%>
+
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<%= f.label :"Alma Mater: *", class: 'control-label col-sm-4' %>
+
+			<div class="col-sm-8">
+				<%= f.text_field :almaMater, class: 'form-control', placeholder: 'Alma Mater', required: true, value: recursoEditar[:almaMater] %>      
+
+			</div>
+		</div>
+		<p> Separe cada habilidad con una coma ( , ) </p>
+		<div class="form-group">
+			<%= f.label :"Habilidades: *", class: 'control-label col-sm-4' %>
+
+			<div class="col-sm-8">
+				<%= f.text_area :habilidades, class: 'form-control', placeholder: 'Habilidades', rows: 6, required: true, value: recursoEditar[:habilidades] %>      
+
+			</div>
+		</div>
+
+		
+
+
+		<div class="form-group">
+			<div class="col-sm-8">
+			</div>
+			<div class="col-sm-8">
+
+				<div style="width:170px"> 
+					<%= f.submit "Editar recurso", class: "btn btn-default"  %> 
+				</div>
+			</div>
+		</div>
+
+
+		<% end %>
+
+	<% else %>
+
+	<h1> Creación de nuevo recurso </h1>
+	<p>Los campos marcados con un asterisco(*) son de llenado obligatorio.</p>
+	
+	<%= form_for(:crearRecurso, url: formCrearRecurso_path, html: {class: 'form-horizontal'} ) do |f| %>
+
+	<div class="form-group" style="width:500px">
+
+		
+		<div class="form-group">
+			<%= f.label :"Nombre: *", class: 'control-label col-sm-4' %>
+			<div class="col-sm-8">
+				<%= f.text_field :nombre, class: 'form-control', placeholder: 'Nombre', required: true %>
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<%= f.label :"Identificación: *", class: 'control-label col-sm-4'%>
+
+			<div class="col-sm-8">
+				<%= f.text_field :idPersona, class: 'form-control', placeholder: 'ID' , required: true %> 
+
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :"Primer apellido: *", class: 'control-label col-sm-4' %>
+
+			<div class="col-sm-8">
+				<%= f.text_field :apellido1, class: 'form-control', placeholder: 'Primer apellido' , required: true%>
+
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :"Segundo apellido:", class: 'control-label col-sm-4' %>
+
+			<div class="col-sm-8">
+				<%= f.text_field :apellido2, placeholder: 'Segundo apellido', class: 'form-control',  required: false%>
+
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :"Fecha de nacimiento: *", class: 'control-label col-sm-5' %>
+			<div class="col-sm-7">
+				<%=	f.date_select(:fechaDeNacimiento,:start_year => 1940) %>
+			</div>
+		</div>
+
+
+
+		<div class="form-group">
+			<%= f.label "Sexo: *", class: 'control-label col-sm-4'%>
+			<%= f.radio_button :sexo, 'm', class: 'control-label col-sm-1', checked: true %> 
+			<%= f.label :sexo, 'Masculino', :value => 'm', class: 'control-label col-sm-3' %>
+			<%= f.radio_button :sexo, 'f', class: 'control-label col-sm-1' %>
+			<%= f.label :sexo, 'Femenino', :value => 'f' , class: 'control-label col-sm-3'%>
+		</div>
+		<br>
+
+		<div class="form-group">
+			<%= f.label :"Correo electrónico: *", class: 'control-label col-sm-5' %>
+
+			<div class="col-sm-7">
+				<%= f.text_field :correo,class: 'form-control',  placeholder: 'Correo', required: true%>
+
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<%= f.label :"Alma Mater: *", class: 'control-label col-sm-4' %>
+
+			<div class="col-sm-8">
+				<%= f.text_field :almaMater, class: 'form-control', placeholder: 'Alma Mater', required: true %>      
+
+			</div>
+		</div>
+		<p> Separe cada habilidad con una coma ( , ) </p>
+		<div class="form-group">
+			<%= f.label :"Habilidades: *", class: 'control-label col-sm-4' %>
+
+			<div class="col-sm-8">
+				<%= f.text_area :habilidades, class: 'form-control', placeholder: 'Habilidades', rows: 6, required: true %>      
+
+			</div>
+		</div>
+
+
+
+		<div class="form-group">
+			<div class="col-sm-8">
+			</div>
+			<div class="col-sm-8">
+
+				<div style="width:170px"> 
+					<%= f.submit "Agregar recurso", class: "btn btn-default"  %> 
+				</div>
+			</div>
+		</div>
+
+
+		<% end %>
+	<% end %>
+
+	</div>
+
+	<%= render 'layouts/footer' %>
+</body>
+
+</html>
+
