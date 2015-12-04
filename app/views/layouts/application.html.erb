@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAgAfAwIAGwMCAAQDAgAAAAAAAAMCAAADAgAEAwAAGwkZGx8srssfMsfoGzLF5gQyxeYAAAAAAAAAAAAAAAAAAwIA4gMCAMYDAgAbAwIAAAAAAAADAgAAAwIAGwMAAMUJGRviLK7L4jLH6MUyxeYbMsXmAAAAAAAAAAAAAAAAAAMCAP8DAgDhAwIAHwMCAAAAAAAAAwIAAAMCAB8DAADgCRkb/yyuy/8yx+jgMsXmHzLF5gAAAAAAAAAAAAAAAAADAgD/AwIA4QMCAB4DAgACAwIAFwMCAAIDAgAeAwAA4AkZG/8srsv/Msfo4DLF5h8yxeYAAAAAAAAAAAAAAAAAAwIA/wMCAOADAgAhAwIAMgMCALIDAgAyAwIAIQMAAOAJGRv/LK7L/zLH6OQyxeY6MsXmHTLF5h8yxeYbMsXmBAMCAP8DAgDjAwIAUQMCAMsDAgD7AwIAywMCAFEDAADjCRkb/yyuyv8yx+j8MsXm5jLF5uIyxebkMsXmxjLF5h8DAgD/AwIA+wMCAOgDAgD3AwIA6AMCAPcDAgDoAwAA+wkZHP8srsr/Msfo+zLF5uQyxebgMsXm4jLF5sQyxeYfAwIA/wMCAP8DAgD9AwIAywMCAE0DAgDLAwIA/QMAAP8JGRz/LK7L/zLH6OgyxeZVMsXmPDLF5j4yxeY5MsXmIwMCAP8DAgD9AwIAzQMCADIDAgAEAwIAMgMCAM0DAAD9CRkc/yyuyv8yx+j7MsXm5DLF5uAyxebgMsXm4TLF5uIDAgDiAwIAyQMCADIDAgACAwIAAAMCAAIDAgAyAwAAyQkZG+IsrsrgMsfo4TLF5uIyxebiMsXm4jLF5uIyxebiAwIAHwMCABsDAgAEAwIAAAAAAAADAgAAAwIABAMAABsJGRsfLK7KHzLH6B8yxeYfMsXmHzLF5h8yxeYfMsXmHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AAD//wAAHA8AABwPAAAcDwAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAABwAAAD//wAA//8AAA==" rel="icon" type="image/x-icon" />
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
   
-<head>
-  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAgAfAwIAGwMCAAQDAgAAAAAAAAMCAAADAgAEAwAAGwkZGx8srssfMsfoGzLF5gQyxeYAAAAAAAAAAAAAAAAAAwIA4gMCAMYDAgAbAwIAAAAAAAADAgAAAwIAGwMAAMUJGRviLK7L4jLH6MUyxeYbMsXmAAAAAAAAAAAAAAAAAAMCAP8DAgDhAwIAHwMCAAAAAAAAAwIAAAMCAB8DAADgCRkb/yyuy/8yx+jgMsXmHzLF5gAAAAAAAAAAAAAAAAADAgD/AwIA4QMCAB4DAgACAwIAFwMCAAIDAgAeAwAA4AkZG/8srsv/Msfo4DLF5h8yxeYAAAAAAAAAAAAAAAAAAwIA/wMCAOADAgAhAwIAMgMCALIDAgAyAwIAIQMAAOAJGRv/LK7L/zLH6OQyxeY6MsXmHTLF5h8yxeYbMsXmBAMCAP8DAgDjAwIAUQMCAMsDAgD7AwIAywMCAFEDAADjCRkb/yyuyv8yx+j8MsXm5jLF5uIyxebkMsXmxjLF5h8DAgD/AwIA+wMCAOgDAgD3AwIA6AMCAPcDAgDoAwAA+wkZHP8srsr/Msfo+zLF5uQyxebgMsXm4jLF5sQyxeYfAwIA/wMCAP8DAgD9AwIAywMCAE0DAgDLAwIA/QMAAP8JGRz/LK7L/zLH6OgyxeZVMsXmPDLF5j4yxeY5MsXmIwMCAP8DAgD9AwIAzQMCADIDAgAEAwIAMgMCAM0DAAD9CRkc/yyuyv8yx+j7MsXm5DLF5uAyxebgMsXm4TLF5uIDAgDiAwIAyQMCADIDAgACAwIAAAMCAAIDAgAyAwAAyQkZG+IsrsrgMsfo4TLF5uIyxebiMsXm4jLF5uIyxebiAwIAHwMCABsDAgAEAwIAAAAAAAADAgAAAwIABAMAABsJGRsfLK7KHzLH6B8yxeYfMsXmHzLF5h8yxeYfMsXmHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AAD//wAAHA8AABwPAAAcDwAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAABwAAAD//wAA//8AAA==" rel="icon" type="image/x-icon" />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-  
-<div class="container">
-  <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
-<%= yield %>
-</div>
-
-  <div id="menu_tabs" class="container">
-    <%= render 'layouts/footer' %>
-    </div>
-    
-    
-</body>
+    <body>
+        <div class="container">
+          <% flash.each do |message_type, message| %>
+              <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+        <%= yield %>
+        </div>
+        
+        <div id="menu_tabs" class="container">
+          <%= render 'layouts/footer' %>
+        </div>
+        
+        <!-- Popup de Entradas de bitacora -->
+        <!-- Modal -->
+        <div id="entradasDeBitacora" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+        
+                    </div>
+                    
+                    <div class="modal-body">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

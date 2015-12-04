@@ -133,38 +133,38 @@
         </div>
     </div>
 
-   <!-- Popup de editarEntregableNuevoEntregable -->
-   <!-- Modal -->
-   <div id="editarEntregablesNuevoEntregablemodal" class="modal fade" role="dialog">
-     <div class="modal-dialog modal-sm">
-   
-       <!-- Modal content-->
-       <div class="modal-content" style="text-align: center">
-         <div class="modal-header">
-           <button type="button" class="close" data-dismiss="modal">&times;</button>
-           <h4 class="modal-title">Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </br> Añadir nuevo entregable</h4>
-         </div>
-         <div class="modal-body">
-           <p>
-            <div class="input-group">
-                <%= form_for(:agregarNuevoEntregable, url: nuevoEntregable_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
-                    <p> Digite la descripción: </p>
-                    <%= f.text_field :descripcion, placeholder: 'Descripción' %> 
-                    <%= f.hidden_field :id, :value => @proyectos.id %>
-                    <p> Seleccione la fecha de entrega: </p>
-                    <%= date_select('range', 'start_date', :order => [:day, :month, :year])%>
-                    <span class="input-group-btn">
-                        <%= f.submit "Aceptar", class: "btn btn-default" %>
-                    </span>
-                <%end%>
+    <!-- Popup de editarEntregableNuevoEntregable -->
+    <!-- Modal -->
+    <div id="editarEntregablesNuevoEntregablemodal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm">
+        
+            <!-- Modal content-->
+            <div class="modal-content" style="text-align: center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </br> Añadir nuevo entregable</h4>
+                </div>
+                
+                <div class="modal-body">
+                    <p>
+                    <div class="input-group">
+                        <%= form_for(:agregarNuevoEntregable, url: nuevoEntregable_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
+                            <p> Digite la descripción: </p>
+                            <%= f.text_field :descripcion, placeholder: 'Descripción' %> 
+                            <%= f.hidden_field :id, :value => @proyectos.id %>
+                            <p> Seleccione la fecha de entrega: </p>
+                            <%= date_select('range', 'start_date', :order => [:day, :month, :year])%>
+                            <span class="input-group-btn">
+                                <%= f.submit "Aceptar", class: "btn btn-default" %>
+                            </span>
+                        <%end%>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    </div>
-    </div>
     
-    
-     <!-- Popup de de borrar Entregables -->
+    <!-- Popup de de borrar Entregables -->
     <!-- Modal -->
     <div id="editarEntregablesmodalBorrarEntregable" class="modal fade" role="dialog">
         <div class="modal-dialog" style="width: 375px">
@@ -191,52 +191,49 @@
    <!--Termina código para Editar entregables-->
 
 
- <!-- Inserta el contenido del header -->
-  <%= render 'layouts/header_user' %>
-  
- 
-<!-- Modal agregar documentos -->
+    <!-- Inserta el contenido del header -->
+    <%= render 'layouts/header_user' %>
+    
+    <!-- Modal agregar documentos -->
 
-<div id="modalAgregarDocumentos" class="modal fade" role="dialog">
-  <div class="modal-dialog" style="width: 400px">
-
-    <!-- Contenido dentro del Modal -->
-    <div class="modal-content">
-       <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Añadir Documentos</h4>
-        </div>
+    <div id="modalAgregarDocumentos" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 400px">
         
-        <div class="modal-body">
-        
-            <%= render partial: "documento/add_documento", :locals => { id_Proyecto: @documento.id } %>
+            <!-- Contenido dentro del Modal -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Añadir Documentos</h4>
+                </div>
+            
+                <div class="modal-body">
+                    <%= render partial: "documento/add_documento", :locals => { id_Proyecto: @documento.id } %>
+                </div>
+            </div>
         </div>
-
-  </div>
-</div>
-</div> 
+    </div> 
  
 
-<!-- Modal Eliminar documentos -->
+    <!-- Modal Eliminar documentos -->
 
-<div id="modalEliminarDocumentos" class="modal fade" role="dialog">
-  <div class="modal-dialog" style="width: 400px">
-
-    <!-- Contenido dentro del Modal -->
-    <div class="modal-content">
-       <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Eliminar Documentos</h4>
-        </div>
+    <div id="modalEliminarDocumentos" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 400px">
         
-        <div class="modal-body">
-        
-            <%= render partial: "documento/delete_documento", :locals => { idProyecto: @documento.id } %>
+            <!-- Contenido dentro del Modal -->
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Eliminar Documentos</h4>
+                </div>
+                
+                <div class="modal-body">
+                    <%= render partial: "documento/delete_documento", :locals => { idProyecto: @documento.id } %>
+                </div>
+            </div>
+            
         </div>
-
-  </div>
-</div>
-</div>
+    </div>
 
 
 
