@@ -11273,3 +11273,994 @@ Processing by ModuloPortafolioController#view_portafolio as HTML
   Rendered modulo_portafolio/view_portafolio.html.erb within layouts/application (27.6ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 1321ms (Views: 1044.7ms | ActiveRecord: 2.3ms)
+  [1m[36m (11.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (3.3ms)[0m  select sqlite_version(*)
+  [1m[36m (11.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20151011192152)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "usuario" varchar, "password" varchar, "remember_session" varchar, "estado" boolean, "IdTipo" varchar, "IdPersona" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151011192152"]]
+  [1m[35m (23.3ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20151011221717)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151011221717"]]
+  [1m[35m (7.5ms)[0m  commit transaction
+Migrating to CreatePersonas (20151012175014)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "personas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "idpersona" varchar, "email" varchar, "tipopersona" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151012175014"]]
+  [1m[35m (11.0ms)[0m  commit transaction
+Migrating to CreateJuridicas (20151012192800)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "juridicas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "razonsocial" varchar, "fechacreac" date, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_juridicas_on_persona_id" ON "juridicas" ("persona_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151012192800"]]
+  [1m[36m (16.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateFisicas (20151012200523)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "fisicas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "apellido1" varchar, "apellido2" varchar, "sexo" varchar, "fechanac" date, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_fisicas_on_persona_id" ON "fisicas" ("persona_id")
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151012200523"]]
+  [1m[35m (21.1ms)[0m  commit transaction
+Migrating to CreateDireccions (20151012211154)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "direccions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar, "pais" varchar, "provincia" varchar, "ciudad" varchar, "direxac" varchar, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_direccions_on_persona_id" ON "direccions" ("persona_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151012211154"]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTelefonos (20151012212942)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "telefonos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar, "numero" integer, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  CREATE  INDEX "index_telefonos_on_persona_id" ON "telefonos" ("persona_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151012212942"]]
+  [1m[35m (21.9ms)[0m  commit transaction
+Migrating to CreateClientes (20151012214941)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "clientes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombreEmp" varchar, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_clientes_on_persona_id" ON "clientes" ("persona_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151012214941"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePortafolios (20151012215554)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "portafolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "fechaCreac" date, "cliente_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_portafolios_on_cliente_id" ON "portafolios" ("cliente_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151012215554"]]
+  [1m[35m (11.4ms)[0m  commit transaction
+Migrating to CreateHojas (20151012221817)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "hojas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tiempoDef" varchar, "razondeser" varchar, "portafolio_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_hojas_on_portafolio_id" ON "hojas" ("portafolio_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151012221817"]]
+  [1m[36m (10.2ms)[0m  [1mcommit transaction[0m
+Migrating to CreateProyectos (20151012223533)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "proyectos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "presupuesto" float, "precio" float, "estado" varchar, "hoja_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_proyectos_on_hoja_id" ON "proyectos" ("hoja_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151012223533"]]
+  [1m[35m (12.8ms)[0m  commit transaction
+Migrating to Migracionquitapassword (20151013001103)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (35.5ms)[0m  CREATE TEMPORARY TABLE "ausers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "usuario" varchar, "password" varchar, "remember_session" varchar, "estado" boolean, "IdTipo" varchar, "IdPersona" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "users"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "usuario" varchar, "remember_session" varchar, "estado" boolean, "IdTipo" varchar, "IdPersona" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ausers"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "ausers"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151013001103"]]
+  [1m[36m (14.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddOauthTokentoUser (20151013002107)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "oauth_token" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "oauth_expires_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151013002107"]]
+  [1m[35m (10.5ms)[0m  commit transaction
+Migrating to AddPasswordToUsers (20151013010514)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "password" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151013010514"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+Migrating to AddProviderToUsers (20151013015131)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "provider" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151013015131"]]
+  [1m[35m (8.5ms)[0m  commit transaction
+Migrating to AddUidToUsers (20151013015134)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "users" ADD "uid" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151013015134"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+Migrating to CreateRiesgos (20151015210450)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "riesgos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar, "descripcion" varchar, "proyecto_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_riesgos_on_proyecto_id" ON "riesgos" ("proyecto_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151015210450"]]
+  [1m[36m (9.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateMaterials (20151015212123)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "materials" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar, "descripcion" varchar, "uso" varchar, "fechaFin" date, "proyecto_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_materials_on_proyecto_id" ON "materials" ("proyecto_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151015212123"]]
+  [1m[35m (10.1ms)[0m  commit transaction
+Migrating to CreateAlianzas (20151015213019)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "alianzas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar, "nombreEmp" varchar, "proposito" varchar, "fechaFin" date, "proyecto_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_alianzas_on_proyecto_id" ON "alianzas" ("proyecto_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151015213019"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRecursos (20151015220837)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "recursos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "almaMater" varchar, "fisica_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_recursos_on_fisica_id" ON "recursos" ("fisica_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151015220837"]]
+  [1m[35m (15.0ms)[0m  commit transaction
+Migrating to CreateCertificacions (20151015222316)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "certificacions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descripcion" varchar, "recurso_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_certificacions_on_recurso_id" ON "certificacions" ("recurso_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151015222316"]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateHabilidads (20151015222350)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "habilidads" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descripcion" varchar, "recurso_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_habilidads_on_recurso_id" ON "habilidads" ("recurso_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151015222350"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+Migrating to AddRememberDigestToUsers (20151017164148)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "remember_digest" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151017164148"]]
+  [1m[35m (11.6ms)[0m  commit transaction
+Migrating to CreateEntregables (20151017200031)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "entregables" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "numero" integer, "fechaEnt" date, "descripcion" varchar, "proyecto_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_entregables_on_proyecto_id" ON "entregables" ("proyecto_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151017200031"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateRols (20151017201127)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "rols" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151017201127"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddColumnToRol (20151017201311)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "rols" ADD "proyecto_id" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "rols" ADD "recurso_id" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "rols" ADD "papel" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151017201311"]]
+  [1m[36m (6.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateActivos (20151017234143)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "activos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151017234143"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddColumnToActivo (20151017234201)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "activos" ADD "entregable_id" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "activos" ADD "recurso_id" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "activos" ADD "estado" boolean[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151017234201"]]
+  [1m[36m (17.7ms)[0m  [1mcommit transaction[0m
+Migrating to CreateBitacoras (20151018004306)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "bitacoras" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151018004306"]]
+  [1m[36m (16.2ms)[0m  [1mcommit transaction[0m
+Migrating to AddColumnToBitacora (20151018004547)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "bitacoras" ADD "entregable_id" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "bitacoras" ADD "recurso_id" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "bitacoras" ADD "descripcion" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "bitacoras" ADD "fecha" date
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151018004547"]]
+  [1m[35m (11.8ms)[0m  commit transaction
+Migrating to ChangeColumnName (20151018013307)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "apersonas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "idPersona" varchar, "email" varchar, "tipopersona" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "personas"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "personas"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "personas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "idPersona" varchar, "email" varchar, "tipopersona" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "apersonas"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "apersonas"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "apersonas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "idPersona" varchar, "email" varchar, "tipoPersona" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "personas"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "personas"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "personas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "idPersona" varchar, "email" varchar, "tipoPersona" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "apersonas"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "apersonas"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "ajuridicas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "razonSocial" varchar, "fechacreac" date, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "tindex_ajuridicas_on_persona_id" ON "ajuridicas" ("persona_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "juridicas"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "juridicas"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "juridicas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "razonSocial" varchar, "fechacreac" date, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ajuridicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ajuridicas_on_persona_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_juridicas_on_persona_id" ON "juridicas" ("persona_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ajuridicas"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "ajuridicas"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "ajuridicas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "razonSocial" varchar, "fechaCreac" date, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "tindex_ajuridicas_on_persona_id" ON "ajuridicas" ("persona_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "juridicas"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "juridicas"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "juridicas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "razonSocial" varchar, "fechaCreac" date, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ajuridicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ajuridicas_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_juridicas_on_persona_id" ON "juridicas" ("persona_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "ajuridicas"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "ajuridicas"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "afisicas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "apellido1" varchar, "apellido2" varchar, "sexo" varchar, "fechaNac" date, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fisicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fisicas_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "tindex_afisicas_on_persona_id" ON "afisicas" ("persona_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "fisicas"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "fisicas"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "fisicas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "apellido1" varchar, "apellido2" varchar, "sexo" varchar, "fechaNac" date, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_afisicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_afisicas_on_persona_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_fisicas_on_persona_id" ON "fisicas" ("persona_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "afisicas"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "afisicas"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fisicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fisicas_on_persona_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "adireccions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar, "pais" varchar, "provincia" varchar, "ciudad" varchar, "dirExac" varchar, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_direccions_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_direccions_on_persona_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_adireccions_on_persona_id" ON "adireccions" ("persona_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "direccions"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "direccions"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "direccions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar, "pais" varchar, "provincia" varchar, "ciudad" varchar, "dirExac" varchar, "persona_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_adireccions_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_adireccions_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_direccions_on_persona_id" ON "direccions" ("persona_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "adireccions"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "adireccions"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_direccions_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_direccions_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "ahojas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tiempoDef" varchar, "razonDeSer" varchar, "portafolio_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_hojas_on_portafolio_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_hojas_on_portafolio_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "tindex_ahojas_on_portafolio_id" ON "ahojas" ("portafolio_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "hojas"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "hojas"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "hojas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tiempoDef" varchar, "razonDeSer" varchar, "portafolio_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_ahojas_on_portafolio_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_ahojas_on_portafolio_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_hojas_on_portafolio_id" ON "hojas" ("portafolio_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "ahojas"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "ahojas"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_hojas_on_portafolio_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_hojas_on_portafolio_id' AND type='index'
+
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151018013307"]]
+  [1m[35m (12.5ms)[0m  commit transaction
+Migrating to AddPersonaToUser (20151018191418)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "persona_id" integer
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_users_on_persona_id" ON "users" ("persona_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151018191418"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddActivationToUsers (20151019024954)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (3.3ms)[0m  [1mALTER TABLE "users" ADD "activation_digest" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "activated" boolean DEFAULT 'f'
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "activated_at" datetime[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151019024954"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+Migrating to AddResetToUsers (20151019052723)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "reset_digest" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "reset_sent_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151019052723"]]
+  [1m[35m (16.9ms)[0m  commit transaction
+Migrating to CreateSimpleCaptchaData (20151104190716)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /home/ubuntu/workspace/db/migrate/20151104190716_create_simple_captcha_data.rb:6)
+  [1m[35m (0.5ms)[0m  CREATE TABLE "simple_captcha_data" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(40), "value" varchar(6), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "idx_key" ON "simple_captcha_data" ("key")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151104190716"]]
+  [1m[36m (16.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddAttachmentFotoToUsers (20151104204217)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "users" ADD "foto_file_name" varchar[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "foto_content_type" varchar
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "foto_file_size" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "foto_updated_at" datetime
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151104204217"]]
+  [1m[35m (10.3ms)[0m  commit transaction
+Migrating to CreateDocumentos (20151111024949)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "documentos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "titulo" varchar, "razon" varchar, "tiempo" varchar, "precio" float, "costo" float, "estado" varchar, "proyecto_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151111024949"]]
+  [1m[35m (10.5ms)[0m  commit transaction
+Migrating to AddEntregaToEntregables (20151118011630)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "entregables" ADD "entrega" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151118011630"]]
+  [1m[35m (8.5ms)[0m  commit transaction
+Migrating to AddTipoUsuarioToUsers (20151118011903)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "tipo_usuario" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151118011903"]]
+  [1m[35m (7.8ms)[0m  commit transaction
+Migrating to AddEntregadoToEntregables (20151118140456)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "entregables" ADD "entregado" boolean DEFAULT 'f'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151118140456"]]
+  [1m[35m (12.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_alianzas_on_proyecto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_alianzas_on_proyecto_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_certificacions_on_recurso_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_certificacions_on_recurso_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_clientes_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_clientes_on_persona_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_direccions_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_direccions_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entregables_on_proyecto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entregables_on_proyecto_id' AND type='index'
+
+  [1m[36m (6.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fisicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fisicas_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_habilidads_on_recurso_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_habilidads_on_recurso_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_hojas_on_portafolio_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_hojas_on_portafolio_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_materials_on_proyecto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_materials_on_proyecto_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_portafolios_on_cliente_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_portafolios_on_cliente_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_proyectos_on_hoja_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_proyectos_on_hoja_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recursos_on_fisica_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recursos_on_fisica_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_riesgos_on_proyecto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_riesgos_on_proyecto_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='idx_key' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='idx_key' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_telefonos_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_telefonos_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_persona_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_alianzas_on_proyecto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_alianzas_on_proyecto_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_certificacions_on_recurso_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_certificacions_on_recurso_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_clientes_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_clientes_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_direccions_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_direccions_on_persona_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_entregables_on_proyecto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_entregables_on_proyecto_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_fisicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_fisicas_on_persona_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_habilidads_on_recurso_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_habilidads_on_recurso_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_hojas_on_portafolio_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_hojas_on_portafolio_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_juridicas_on_persona_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_materials_on_proyecto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_materials_on_proyecto_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_portafolios_on_cliente_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_portafolios_on_cliente_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_proyectos_on_hoja_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_proyectos_on_hoja_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_recursos_on_fisica_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_recursos_on_fisica_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_riesgos_on_proyecto_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_riesgos_on_proyecto_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='idx_key' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='idx_key' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_telefonos_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_telefonos_on_persona_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_persona_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_persona_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'juan@juan.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("usuario", "password_digest", "activated", "activated_at", "persona_id", "created_at", "updated_at", "activation_digest") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["usuario", "juan@juan.com"], ["password_digest", "$2a$10$W/eLiiSMTqbSyhkF3nAOHOUqOZZ7EsQvtxbs5OIrHEJ9tq4ETHJhC"], ["activated", "t"], ["activated_at", "2015-12-04 22:08:00.218852"], ["persona_id", 1], ["created_at", "2015-12-04 22:08:00.362935"], ["updated_at", "2015-12-04 22:08:00.362935"], ["activation_digest", "$2a$10$jDm..SGNTSjAN4nvoXP4GemQEqHYVMmaJb0wLhElHVFe9lVUXz/eC"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'maria@maria.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("usuario", "password_digest", "activated", "activated_at", "persona_id", "created_at", "updated_at", "activation_digest") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["usuario", "maria@maria.com"], ["password_digest", "$2a$10$bMNKG.04z1gjAAbMq0T6.OmXZJfWMATU/n0zabXbtkoEDJwX8HiD2"], ["activated", "t"], ["activated_at", "2015-12-04 22:08:00.533094"], ["persona_id", 2], ["created_at", "2015-12-04 22:08:00.613318"], ["updated_at", "2015-12-04 22:08:00.613318"], ["activation_digest", "$2a$10$1S0doRxlWTK70gvieztBeOtFdQ.23CvBk6l7Rn.VEB4ZW4MRqCJHe"]]
+  [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'sutano@sutano.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("usuario", "password_digest", "activated", "activated_at", "persona_id", "created_at", "updated_at", "activation_digest") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["usuario", "sutano@sutano.com"], ["password_digest", "$2a$10$8/xOKgeRvFjDSVg68AN3g.GnLTOdtv4T1Y5mQiXvMyvIJbYaeX.DK"], ["activated", "t"], ["activated_at", "2015-12-04 22:08:00.778927"], ["persona_id", 3], ["created_at", "2015-12-04 22:08:00.865569"], ["updated_at", "2015-12-04 22:08:00.865569"], ["activation_digest", "$2a$10$KUB.vNLHK47SVjyKo353nOhIH27iBV9ROwsYRvdwZRTx/K1Etp8v6"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'momba@momba.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("usuario", "password_digest", "activated", "activated_at", "persona_id", "created_at", "updated_at", "activation_digest") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["usuario", "momba@momba.com"], ["password_digest", "$2a$10$cFAEt4rH6yiCVsR8Gf49u.xXRjPxMu3KxMiA2EMUxnR66lXlxhluS"], ["activated", "t"], ["activated_at", "2015-12-04 22:08:01.034605"], ["persona_id", 4], ["created_at", "2015-12-04 22:08:01.115265"], ["updated_at", "2015-12-04 22:08:01.115265"], ["activation_digest", "$2a$10$m4EsgpDBFSCJVc.6CyAvGOQ11C1Iz6QrhBCx03VaqS.nbTjAAWdDG"]]
+  [1m[36m (24.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'yahir@yahir.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("usuario", "password_digest", "activated", "activated_at", "persona_id", "created_at", "updated_at", "activation_digest") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["usuario", "yahir@yahir.com"], ["password_digest", "$2a$10$VqBQcwNmuPLvPMRyUPZd5.V90khI5/fAEUpj7YjGx4.gE9qd0Z58G"], ["activated", "t"], ["activated_at", "2015-12-04 22:08:01.295565"], ["persona_id", 5], ["created_at", "2015-12-04 22:08:01.374806"], ["updated_at", "2015-12-04 22:08:01.374806"], ["activation_digest", "$2a$10$q8Rm2kaT8MlQqhZuintIceUfoxvh/i4NwwMKIw8vllYP9yo/XJnYa"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'example@mundofeliz.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("usuario", "password_digest", "activated", "activated_at", "created_at", "updated_at", "activation_digest") VALUES (?, ?, ?, ?, ?, ?, ?)  [["usuario", "example@mundofeliz.com"], ["password_digest", "$2a$10$WGU56TIOYdJvYOoNHTimWOFnOlMUXE0CXSEiW573XKwr4CLHa/yGu"], ["activated", "t"], ["activated_at", "2015-12-04 22:08:01.540650"], ["created_at", "2015-12-04 22:08:01.621798"], ["updated_at", "2015-12-04 22:08:01.621798"], ["activation_digest", "$2a$10$qhI8u7uDzif8KWmFxe0A7eeFMi5h6NtxBKbG5GonC8vk7KbXqXmRG"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "personas" WHERE "personas"."idPersona" = '12321321321' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "personas" ("idPersona", "email", "tipoPersona", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["idPersona", "12321321321"], ["email", "juan@juan.com"], ["tipoPersona", "f"], ["created_at", "2015-12-04 22:08:01.891804"], ["updated_at", "2015-12-04 22:08:01.891804"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "personas" WHERE "personas"."idPersona" = '646465156' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "personas" ("idPersona", "email", "tipoPersona", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["idPersona", "646465156"], ["email", "maria@maria.com"], ["tipoPersona", "f"], ["created_at", "2015-12-04 22:08:01.904205"], ["updated_at", "2015-12-04 22:08:01.904205"]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "personas" WHERE "personas"."idPersona" = '41651305' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "personas" ("idPersona", "email", "tipoPersona", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["idPersona", "41651305"], ["email", "sutano@sutano.com"], ["tipoPersona", "f"], ["created_at", "2015-12-04 22:08:01.915756"], ["updated_at", "2015-12-04 22:08:01.915756"]]
+  [1m[36m (11.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "personas" WHERE "personas"."idPersona" = '987987987' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "personas" ("idPersona", "email", "tipoPersona", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["idPersona", "987987987"], ["email", "daniela@daniela.com"], ["tipoPersona", "f"], ["created_at", "2015-12-04 22:08:01.929936"], ["updated_at", "2015-12-04 22:08:01.929936"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "personas" WHERE "personas"."idPersona" = '481189416' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "personas" ("idPersona", "email", "tipoPersona", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["idPersona", "481189416"], ["email", "momba@momba.com"], ["tipoPersona", "f"], ["created_at", "2015-12-04 22:08:01.942500"], ["updated_at", "2015-12-04 22:08:01.942500"]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "personas" WHERE "personas"."idPersona" = '981161818' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "personas" ("idPersona", "email", "tipoPersona", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["idPersona", "981161818"], ["email", "yahir@yahir.com"], ["tipoPersona", "f"], ["created_at", "2015-12-04 22:08:01.953424"], ["updated_at", "2015-12-04 22:08:01.953424"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.2ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "fisicas" ("nombre", "apellido1", "apellido2", "sexo", "fechaNac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["nombre", "Juan"], ["apellido1", "Pérez"], ["apellido2", "Soto"], ["sexo", "m"], ["fechaNac", "2001-02-03"], ["persona_id", 1], ["created_at", "2015-12-04 22:08:02.020851"], ["updated_at", "2015-12-04 22:08:02.020851"]]
+  [1m[36m (12.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fisicas" ("nombre", "apellido1", "apellido2", "sexo", "fechaNac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["nombre", "Maria"], ["apellido1", "Pérez"], ["apellido2", "Soto"], ["sexo", "f"], ["fechaNac", "1992-02-03"], ["persona_id", 2], ["created_at", "2015-12-04 22:08:02.036877"], ["updated_at", "2015-12-04 22:08:02.036877"]]
+  [1m[36m (10.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fisicas" ("nombre", "apellido1", "apellido2", "sexo", "fechaNac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["nombre", "Daniela"], ["apellido1", "Gonzalez"], ["apellido2", "Mora"], ["sexo", "f"], ["fechaNac", "1995-08-07"], ["persona_id", 6], ["created_at", "2015-12-04 22:08:02.049820"], ["updated_at", "2015-12-04 22:08:02.049820"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fisicas" ("nombre", "apellido1", "apellido2", "sexo", "fechaNac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["nombre", "Sutano"], ["apellido1", "Mengano"], ["apellido2", "Soto"], ["sexo", "m"], ["fechaNac", "1964-05-02"], ["persona_id", 3], ["created_at", "2015-12-04 22:08:02.061196"], ["updated_at", "2015-12-04 22:08:02.061196"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fisicas" ("nombre", "apellido1", "apellido2", "sexo", "fechaNac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["nombre", "Momba"], ["apellido1", "Momba"], ["apellido2", "Momba"], ["sexo", "f"], ["fechaNac", "1984-05-02"], ["persona_id", 4], ["created_at", "2015-12-04 22:08:02.073729"], ["updated_at", "2015-12-04 22:08:02.073729"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "fisicas" ("nombre", "apellido1", "apellido2", "sexo", "fechaNac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["nombre", "Yahir"], ["apellido1", "Rojas"], ["apellido2", "Ruíz"], ["sexo", "m"], ["fechaNac", "1974-05-02"], ["persona_id", 5], ["created_at", "2015-12-04 22:08:02.085240"], ["updated_at", "2015-12-04 22:08:02.085240"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'juan@juan.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'maria@maria.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'sutano@sutano.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'momba@momba.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'yahir@yahir.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'example@mundofeliz.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "clientes" ("nombreEmp", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["nombreEmp", "Vaina S.A"], ["persona_id", 4], ["created_at", "2015-12-04 22:08:02.580111"], ["updated_at", "2015-12-04 22:08:02.580111"]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.2ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "clientes" ("nombreEmp", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["nombreEmp", "Cerca S.A"], ["persona_id", 5], ["created_at", "2015-12-04 22:08:02.593485"], ["updated_at", "2015-12-04 22:08:02.593485"]]
+  [1m[36m (11.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "portafolios" ("fechaCreac", "cliente_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["fechaCreac", 1975], ["cliente_id", 1], ["created_at", "2015-12-04 22:08:02.620615"], ["updated_at", "2015-12-04 22:08:02.620615"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mCliente Load (0.1ms)[0m  [1mSELECT  "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "portafolios" ("fechaCreac", "cliente_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["fechaCreac", 1978], ["cliente_id", 2], ["created_at", "2015-12-04 22:08:02.633142"], ["updated_at", "2015-12-04 22:08:02.633142"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPortafolio Load (0.2ms)[0m  [1mSELECT  "portafolios".* FROM "portafolios" WHERE "portafolios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "hojas" ("tiempoDef", "razonDeSer", "portafolio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["tiempoDef", "1 año"], ["razonDeSer", "Es necesario un software que administre los movimientos de caja de la empresa."], ["portafolio_id", 1], ["created_at", "2015-12-04 22:08:02.657170"], ["updated_at", "2015-12-04 22:08:02.657170"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPortafolio Load (0.1ms)[0m  [1mSELECT  "portafolios".* FROM "portafolios" WHERE "portafolios"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "hojas" ("tiempoDef", "razonDeSer", "portafolio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["tiempoDef", "6 meses"], ["razonDeSer", "Se necesita un sitio web que presente al cliente todas las fortalezas de la empresa."], ["portafolio_id", 2], ["created_at", "2015-12-04 22:08:02.668979"], ["updated_at", "2015-12-04 22:08:02.668979"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPortafolio Load (0.2ms)[0m  [1mSELECT  "portafolios".* FROM "portafolios" WHERE "portafolios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "hojas" ("tiempoDef", "razonDeSer", "portafolio_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["tiempoDef", "Aproximadamente son necesarios seis meses a partir del 15 de noviembre de 2015."], ["razonDeSer", "La empresa Vaina S.A presenta la necesidad de un software que maneje transacciones de caja - cliente. Para ello se ha decidido desarrollar un software de punto de venta que controle todo lo referente a la facturación y el flujo de caja, el inventario, la lista de clientes y la bitácora. Es necesario crear un software que presente todas las funciones comunes en este tipo de programas."], ["portafolio_id", 1], ["created_at", "2015-12-04 22:08:02.680720"], ["updated_at", "2015-12-04 22:08:02.680720"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFisica Load (0.2ms)[0m  [1mSELECT  "fisicas".* FROM "fisicas" WHERE "fisicas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recursos" ("almaMater", "fisica_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["almaMater", "UCR"], ["fisica_id", 1], ["created_at", "2015-12-04 22:08:02.713431"], ["updated_at", "2015-12-04 22:08:02.713431"]]
+  [1m[36m (20.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFisica Load (0.1ms)[0m  [1mSELECT  "fisicas".* FROM "fisicas" WHERE "fisicas"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "recursos" ("almaMater", "fisica_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["almaMater", "UNA"], ["fisica_id", 2], ["created_at", "2015-12-04 22:08:02.738481"], ["updated_at", "2015-12-04 22:08:02.738481"]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFisica Load (0.2ms)[0m  [1mSELECT  "fisicas".* FROM "fisicas" WHERE "fisicas"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "recursos" ("almaMater", "fisica_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["almaMater", "TEC"], ["fisica_id", 3], ["created_at", "2015-12-04 22:08:02.753041"], ["updated_at", "2015-12-04 22:08:02.753041"]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mHoja Load (0.1ms)[0m  [1mSELECT  "hojas".* FROM "hojas" WHERE "hojas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mHoja Load (0.2ms)[0m  SELECT  "hojas".* FROM "hojas" WHERE "hojas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "documentos" ("titulo", "razon", "tiempo", "precio", "costo", "estado", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["titulo", "Punto de venta"], ["razon", "Es necesario un software que administre los movimientos de caja de la empresa."], ["tiempo", "1 año"], ["precio", 1000.0], ["costo", 2500.698], ["estado", "d"], ["proyecto_id", 1], ["created_at", "2015-12-04 22:08:02.841726"], ["updated_at", "2015-12-04 22:08:02.841726"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "proyectos" ("nombre", "presupuesto", "precio", "estado", "hoja_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["nombre", "Punto de venta"], ["presupuesto", 2500.698], ["precio", 1000.0], ["estado", "d"], ["hoja_id", 1], ["created_at", "2015-12-04 22:08:02.843157"], ["updated_at", "2015-12-04 22:08:02.843157"]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mHoja Load (0.2ms)[0m  [1mSELECT  "hojas".* FROM "hojas" WHERE "hojas"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mHoja Load (0.1ms)[0m  SELECT  "hojas".* FROM "hojas" WHERE "hojas"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "documentos" ("titulo", "razon", "tiempo", "precio", "costo", "estado", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["titulo", "Sitio Web"], ["razon", "Se necesita un sitio web que presente al cliente todas las fortalezas de la empresa."], ["tiempo", "6 meses"], ["precio", 1000.0], ["costo", 2500.698], ["estado", "c"], ["proyecto_id", 2], ["created_at", "2015-12-04 22:08:02.862784"], ["updated_at", "2015-12-04 22:08:02.862784"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "proyectos" ("nombre", "presupuesto", "precio", "estado", "hoja_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["nombre", "Sitio Web"], ["presupuesto", 2500.698], ["precio", 1000.0], ["estado", "c"], ["hoja_id", 2], ["created_at", "2015-12-04 22:08:02.864542"], ["updated_at", "2015-12-04 22:08:02.864542"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mHoja Load (0.1ms)[0m  [1mSELECT  "hojas".* FROM "hojas" WHERE "hojas"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mHoja Load (0.0ms)[0m  SELECT  "hojas".* FROM "hojas" WHERE "hojas"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "documentos" ("titulo", "razon", "tiempo", "precio", "costo", "estado", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["titulo", "Segundo Punto de Venta"], ["razon", "La empresa Vaina S.A presenta la necesidad de un software que maneje transacciones de caja - cliente. Para ello se ha decidido desarrollar un software de punto de venta que controle todo lo referente a la facturación y el flujo de caja, el inventario, la lista de clientes y la bitácora. Es necesario crear un software que presente todas las funciones comunes en este tipo de programas."], ["tiempo", "Aproximadamente son necesarios seis meses a partir del 15 de noviembre de 2015."], ["precio", 1000.0], ["costo", 2500.698], ["estado", "p"], ["proyecto_id", 3], ["created_at", "2015-12-04 22:08:02.877660"], ["updated_at", "2015-12-04 22:08:02.877660"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "proyectos" ("nombre", "presupuesto", "precio", "estado", "hoja_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["nombre", "Segundo Punto de Venta"], ["presupuesto", 2500.698], ["precio", 1000.0], ["estado", "p"], ["hoja_id", 3], ["created_at", "2015-12-04 22:08:02.878988"], ["updated_at", "2015-12-04 22:08:02.878988"]]
+  [1m[36m (11.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "rols" ("recurso_id", "papel", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recurso_id", 1], ["papel", "Scrum Master"], ["proyecto_id", 1], ["created_at", "2015-12-04 22:08:02.908421"], ["updated_at", "2015-12-04 22:08:02.908421"]]
+  [1m[35m (9.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rols" ("recurso_id", "papel", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["recurso_id", 2], ["papel", "Desarrollador"], ["proyecto_id", 1], ["created_at", "2015-12-04 22:08:02.920788"], ["updated_at", "2015-12-04 22:08:02.920788"]]
+  [1m[36m (13.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "rols" ("recurso_id", "papel", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recurso_id", 2], ["papel", "Scrum Master"], ["proyecto_id", 2], ["created_at", "2015-12-04 22:08:02.937061"], ["updated_at", "2015-12-04 22:08:02.937061"]]
+  [1m[35m (8.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "rols" ("recurso_id", "papel", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["recurso_id", 1], ["papel", "QA"], ["proyecto_id", 2], ["created_at", "2015-12-04 22:08:02.949324"], ["updated_at", "2015-12-04 22:08:02.949324"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "rols" ("recurso_id", "papel", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recurso_id", 3], ["papel", "Scrum Master"], ["proyecto_id", 3], ["created_at", "2015-12-04 22:08:02.961012"], ["updated_at", "2015-12-04 22:08:02.961012"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProyecto Load (0.3ms)[0m  SELECT  "proyectos".* FROM "proyectos" WHERE "proyectos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRiesgo Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "riesgos" WHERE ("riesgos"."tipo" = 'Prueba' AND "riesgos"."proyecto_id" = 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProyecto Load (0.2ms)[0m  SELECT  "proyectos".* FROM "proyectos" WHERE "proyectos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mRiesgo Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "riesgos" WHERE ("riesgos"."tipo" = 'Prueba' AND "riesgos"."proyecto_id" = 2) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProyecto Load (0.2ms)[0m  SELECT  "proyectos".* FROM "proyectos" WHERE "proyectos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEntregable Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "entregables" WHERE ("entregables"."numero" = 1 AND "entregables"."proyecto_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entregables" ("numero", "fechaEnt", "descripcion", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["numero", 1], ["fechaEnt", "2015-12-05"], ["descripcion", "Módulo de inicio de sesión del programa"], ["proyecto_id", 1], ["created_at", "2015-12-04 22:08:02.997071"], ["updated_at", "2015-12-04 22:08:02.997071"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mProyecto Load (0.2ms)[0m  [1mSELECT  "proyectos".* FROM "proyectos" WHERE "proyectos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mEntregable Exists (0.1ms)[0m  SELECT  1 AS one FROM "entregables" WHERE ("entregables"."numero" = 2 AND "entregables"."proyecto_id" = 2) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entregables" ("numero", "fechaEnt", "descripcion", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["numero", 2], ["fechaEnt", "2015-12-05"], ["descripcion", "Implementación del menú del programa"], ["proyecto_id", 2], ["created_at", "2015-12-04 22:08:03.009972"], ["updated_at", "2015-12-04 22:08:03.009972"]]
+  [1m[35m (10.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProyecto Load (0.2ms)[0m  SELECT  "proyectos".* FROM "proyectos" WHERE "proyectos"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mEntregable Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "entregables" WHERE ("entregables"."numero" = 3 AND "entregables"."proyecto_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entregables" ("numero", "fechaEnt", "descripcion", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["numero", 3], ["fechaEnt", "2016-07-12"], ["descripcion", "Módulo de tipo de cambio"], ["proyecto_id", 3], ["created_at", "2015-12-04 22:08:03.025902"], ["updated_at", "2015-12-04 22:08:03.025902"]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mProyecto Load (0.2ms)[0m  [1mSELECT  "proyectos".* FROM "proyectos" WHERE "proyectos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mEntregable Exists (0.2ms)[0m  SELECT  1 AS one FROM "entregables" WHERE ("entregables"."numero" = 4 AND "entregables"."proyecto_id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "entregables" ("numero", "fechaEnt", "descripcion", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["numero", 4], ["fechaEnt", "2016-07-12"], ["descripcion", "Implementación del módulo de caja"], ["proyecto_id", 1], ["created_at", "2015-12-04 22:08:03.038913"], ["updated_at", "2015-12-04 22:08:03.038913"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mProyecto Load (0.2ms)[0m  SELECT  "proyectos".* FROM "proyectos" WHERE "proyectos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mEntregable Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "entregables" WHERE ("entregables"."numero" = 5 AND "entregables"."proyecto_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "entregables" ("numero", "fechaEnt", "descripcion", "proyecto_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["numero", 5], ["fechaEnt", "2015-12-31"], ["descripcion", "Módulo de inicio de sesión del programa"], ["proyecto_id", 2], ["created_at", "2015-12-04 22:08:03.052730"], ["updated_at", "2015-12-04 22:08:03.052730"]]
+  [1m[36m (33.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "activos" ("recurso_id", "estado", "entregable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recurso_id", 1], ["estado", "t"], ["entregable_id", 1], ["created_at", "2015-12-04 22:08:03.119833"], ["updated_at", "2015-12-04 22:08:03.119833"]]
+  [1m[35m (10.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "activos" ("recurso_id", "estado", "entregable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["recurso_id", 2], ["estado", "t"], ["entregable_id", 4], ["created_at", "2015-12-04 22:08:03.133970"], ["updated_at", "2015-12-04 22:08:03.133970"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "activos" ("recurso_id", "estado", "entregable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recurso_id", 2], ["estado", "f"], ["entregable_id", 2], ["created_at", "2015-12-04 22:08:03.145257"], ["updated_at", "2015-12-04 22:08:03.145257"]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "activos" ("recurso_id", "estado", "entregable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["recurso_id", 1], ["estado", "f"], ["entregable_id", 5], ["created_at", "2015-12-04 22:08:03.156397"], ["updated_at", "2015-12-04 22:08:03.156397"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "activos" ("recurso_id", "estado", "entregable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["recurso_id", 3], ["estado", "f"], ["entregable_id", 3], ["created_at", "2015-12-04 22:08:03.168304"], ["updated_at", "2015-12-04 22:08:03.168304"]]
+  [1m[35m (9.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."usuario" = 'pj045' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("usuario", "password_digest", "created_at", "updated_at", "activation_digest") VALUES (?, ?, ?, ?, ?)[0m  [["usuario", "pj045"], ["password_digest", "$2a$10$780I7EdMrWHeQasNiwvtzuGsrQ9tNR.vNXTzaCbibnbmSgG811r1."], ["created_at", "2015-12-04 22:08:03.261507"], ["updated_at", "2015-12-04 22:08:03.261507"], ["activation_digest", "$2a$10$JHwVEj9w.JzPnT6vtwKgie1LtmCGXK4W/eUVJu5s3fosHitqdT3NK"]]
+  [1m[35m (9.4ms)[0m  commit transaction
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35mPersona Load (0.2ms)[0m  SELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "clientes" ("nombreEmp", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nombreEmp", "Cosa S.A"], ["persona_id", 3], ["created_at", "2015-12-04 22:08:03.432643"], ["updated_at", "2015-12-04 22:08:03.432643"]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPersona Load (0.2ms)[0m  SELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mDireccion Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "direccions" WHERE ("direccions"."tipo" = 'Principal' AND "direccions"."persona_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "direccions" ("tipo", "pais", "provincia", "ciudad", "dirExac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["tipo", "Principal"], ["pais", "Costa Rica"], ["provincia", "San Jose"], ["ciudad", "Sabanilla"], ["dirExac", "Frente al AMPM"], ["persona_id", 1], ["created_at", "2015-12-04 22:08:03.460451"], ["updated_at", "2015-12-04 22:08:03.460451"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mDireccion Exists (0.1ms)[0m  SELECT  1 AS one FROM "direccions" WHERE ("direccions"."tipo" = 'Principal' AND "direccions"."persona_id" = 2) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "direccions" ("tipo", "pais", "provincia", "ciudad", "dirExac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["tipo", "Principal"], ["pais", "Costa Rica"], ["provincia", "San Jose"], ["ciudad", "Guadalupe"], ["dirExac", "Costado norte de Novacentro"], ["persona_id", 2], ["created_at", "2015-12-04 22:08:03.474913"], ["updated_at", "2015-12-04 22:08:03.474913"]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPersona Load (0.1ms)[0m  SELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mDireccion Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "direccions" WHERE ("direccions"."tipo" = 'Principal' AND "direccions"."persona_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "direccions" ("tipo", "pais", "provincia", "ciudad", "dirExac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["tipo", "Principal"], ["pais", "Costa Rica"], ["provincia", "San Jose"], ["ciudad", "Montes de Oca"], ["dirExac", "100m este de la iglesia"], ["persona_id", 3], ["created_at", "2015-12-04 22:08:03.485804"], ["updated_at", "2015-12-04 22:08:03.485804"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mDireccion Exists (0.1ms)[0m  SELECT  1 AS one FROM "direccions" WHERE ("direccions"."tipo" = 'Principal' AND "direccions"."persona_id" = 4) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "direccions" ("tipo", "pais", "provincia", "ciudad", "dirExac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["tipo", "Principal"], ["pais", "Costa Rica"], ["provincia", "San Jose"], ["ciudad", "Sabanilla"], ["dirExac", "Frente al AMPM"], ["persona_id", 4], ["created_at", "2015-12-04 22:08:03.497917"], ["updated_at", "2015-12-04 22:08:03.497917"]]
+  [1m[35m (8.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPersona Load (0.1ms)[0m  SELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mDireccion Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "direccions" WHERE ("direccions"."tipo" = 'Principal' AND "direccions"."persona_id" = 5) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "direccions" ("tipo", "pais", "provincia", "ciudad", "dirExac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["tipo", "Principal"], ["pais", "Costa Rica"], ["provincia", "San Jose"], ["ciudad", "Guadalupe"], ["dirExac", "Costado norte de Novacentro"], ["persona_id", 5], ["created_at", "2015-12-04 22:08:03.510006"], ["updated_at", "2015-12-04 22:08:03.510006"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mDireccion Exists (0.1ms)[0m  SELECT  1 AS one FROM "direccions" WHERE ("direccions"."tipo" = 'Principal' AND "direccions"."persona_id" = 6) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "direccions" ("tipo", "pais", "provincia", "ciudad", "dirExac", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["tipo", "Principal"], ["pais", "Costa Rica"], ["provincia", "San Jose"], ["ciudad", "Guadalupe"], ["dirExac", "Costado norte de Novacentro"], ["persona_id", 6], ["created_at", "2015-12-04 22:08:03.522505"], ["updated_at", "2015-12-04 22:08:03.522505"]]
+  [1m[35m (7.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPersona Load (0.1ms)[0m  SELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTelefono Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'casa' AND "telefonos"."persona_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "telefonos" ("tipo", "numero", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["tipo", "casa"], ["numero", 34586797], ["persona_id", 1], ["created_at", "2015-12-04 22:08:03.541543"], ["updated_at", "2015-12-04 22:08:03.541543"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTelefono Exists (0.1ms)[0m  SELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'celular' AND "telefonos"."persona_id" = 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "telefonos" ("tipo", "numero", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tipo", "celular"], ["numero", 45656776], ["persona_id", 1], ["created_at", "2015-12-04 22:08:03.553948"], ["updated_at", "2015-12-04 22:08:03.553948"]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPersona Load (0.1ms)[0m  SELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTelefono Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'oficina' AND "telefonos"."persona_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "telefonos" ("tipo", "numero", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["tipo", "oficina"], ["numero", 90764534], ["persona_id", 1], ["created_at", "2015-12-04 22:08:03.565446"], ["updated_at", "2015-12-04 22:08:03.565446"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.3ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTelefono Exists (0.1ms)[0m  SELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'celular' AND "telefonos"."persona_id" = 2) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "telefonos" ("tipo", "numero", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tipo", "celular"], ["numero", 22314134], ["persona_id", 2], ["created_at", "2015-12-04 22:08:03.577610"], ["updated_at", "2015-12-04 22:08:03.577610"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPersona Load (0.2ms)[0m  SELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTelefono Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'oficina' AND "telefonos"."persona_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "telefonos" ("tipo", "numero", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["tipo", "oficina"], ["numero", 88714134], ["persona_id", 2], ["created_at", "2015-12-04 22:08:03.590279"], ["updated_at", "2015-12-04 22:08:03.590279"]]
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.2ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTelefono Exists (0.1ms)[0m  SELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'oficina' AND "telefonos"."persona_id" = 3) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "telefonos" ("tipo", "numero", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tipo", "oficina"], ["numero", 54311234], ["persona_id", 3], ["created_at", "2015-12-04 22:08:03.600976"], ["updated_at", "2015-12-04 22:08:03.600976"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPersona Load (0.1ms)[0m  SELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mTelefono Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'celular' AND "telefonos"."persona_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "telefonos" ("tipo", "numero", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["tipo", "celular"], ["numero", 45656776], ["persona_id", 4], ["created_at", "2015-12-04 22:08:03.614531"], ["updated_at", "2015-12-04 22:08:03.614531"]]
+  [1m[36m (6.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mTelefono Exists (0.1ms)[0m  SELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'oficina' AND "telefonos"."persona_id" = 5) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "telefonos" ("tipo", "numero", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tipo", "oficina"], ["numero", 90764534], ["persona_id", 5], ["created_at", "2015-12-04 22:08:03.624811"], ["updated_at", "2015-12-04 22:08:03.624811"]]
+  [1m[35m (7.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPersona Load (0.1ms)[0m  SELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mTelefono Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'celular' AND "telefonos"."persona_id" = 6) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "telefonos" ("tipo", "numero", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["tipo", "celular"], ["numero", 22314134], ["persona_id", 6], ["created_at", "2015-12-04 22:08:03.635685"], ["updated_at", "2015-12-04 22:08:03.635685"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mTelefono Exists (0.1ms)[0m  SELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'oficina' AND "telefonos"."persona_id" = 5) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPersona Load (0.1ms)[0m  [1mSELECT  "personas".* FROM "personas" WHERE "personas"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mTelefono Exists (0.1ms)[0m  SELECT  1 AS one FROM "telefonos" WHERE ("telefonos"."tipo" = 'oficina' AND "telefonos"."persona_id" = 6) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "telefonos" ("tipo", "numero", "persona_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["tipo", "oficina"], ["numero", 54311234], ["persona_id", 6], ["created_at", "2015-12-04 22:08:03.650431"], ["updated_at", "2015-12-04 22:08:03.650431"]]
+  [1m[35m (7.0ms)[0m  commit transaction

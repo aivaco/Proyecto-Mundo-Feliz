@@ -103,7 +103,7 @@
               <th><%= personas[:nombre] %></th>
               <th><%= personas[:apellido1] %> <%= personas[:apellido2] %></th>
               <th>
-                <%= link_to :controller => 'recursos_asignados', :action => 'agregarRecursoSeleccionado', :id => personas[:id] , :id_entregable => @entregable.id do %>
+                <%= link_to :controller => 'recursos_asignados', :action => 'agregarRecursoSeleccionado', :id => personas[:id] , :id_entregable => @entregable.id, :target => "_blank" do %>
                   <div class="btn btn-primary btn-xs" data-toggle="tooltip" title="Agregar recurso al entregable"> 
                     <i class="fa fa-plus"></i>
                   </div>
