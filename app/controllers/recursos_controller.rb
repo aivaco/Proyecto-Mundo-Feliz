@@ -2,9 +2,12 @@ class RecursosController < ApplicationController
   def lista_recursos
 
     if params[:idRecursoEliminar]
-      Habilidad.where(recurso_id: params[:idRecursoEliminar]).destroy_all
-      Recurso.find_by(id: params[:idRecursoEliminar]).destroy
-      #borrar bitacoras
+      #Habilidad.where(recurso_id: params[:idRecursoEliminar]).destroy_all
+      #Recurso.find_by(id: params[:idRecursoEliminar]).destroy
+      #bitacoras
+      recurso = Recurso.find_by(id: params[:idRecursoEliminar])
+      recurso.estado = false
+      recurso.save()
     end
 
     #crea el recurso 
@@ -83,13 +86,15 @@ class RecursosController < ApplicationController
 
   @recursos = []
   listaDeRecursos.each do |recurso|
-    fisica = Fisica.find_by(id: recurso[:fisica_id])
-    habilidades = Habilidad.where(recurso_id: recurso[:id])
-    habilidadesString = ""
-    habilidades.each do |habilidad|
-    	habilidadesString += habilidad[:descripcion] + " "
+    if recurso.estado
+      fisica = Fisica.find_by(id: recurso[:fisica_id])
+      habilidades = Habilidad.where(recurso_id: recurso[:id])
+      habilidadesString = ""
+      habilidades.each do |habilidad|
+    	  habilidadesString += habilidad[:descripcion] + " "
+      end
+      @recursos.push({codigo: recurso[:id].to_s, nombre: fisica[:nombre] +" "+ fisica[:apellido1], egresado: recurso[:almaMater], habilidades: habilidadesString, proyectos: ""})
     end
-    @recursos.push({codigo: recurso[:id].to_s, nombre: fisica[:nombre] +" "+ fisica[:apellido1], egresado: recurso[:almaMater], habilidades: habilidadesString, proyectos: ""})
   end
 
   @opciones = false
