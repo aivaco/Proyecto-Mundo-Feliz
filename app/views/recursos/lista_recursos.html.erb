@@ -1,0 +1,135 @@
+  
+<!DOCTYPE html>
+<html>
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+
+	<%= stylesheet_link_tag 'application', media: 'all',
+	'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+
+
+	<div class="container">
+
+		<a id="nombre_proyecto" href="home">Mundo Feliz</a>
+
+		<nav>
+			<ul class="nav navbar-nav navbar-right">
+				<%= render 'layouts/menus/menu_user' %>
+			</ul>
+		</nav>
+
+	</div>
+
+
+</header>
+
+<body>
+
+
+
+	<div id="menu_tabs" class="container">
+		<ul class="nav nav-tabs">
+			<li><a data-toggle="tab" href="#opcion_cliente"><span class="glyphicon glyphicon-book"></span> Clientes</a></li>
+			<li><a data-toggle="tab" href="#opcion_portafolio"><span class="glyphicon glyphicon-briefcase"></span> Portafolio</a></li>
+			<li><a data-toggle="tab" href="#opcion_entregables"><span class="glyphicon glyphicon-file"></span> Entregables</a></li>
+			<li class="active"><a data-toggle="tab" href="#opcion_recursos"><span class="glyphicon glyphicon-user"></span> Recursos</a></li>
+			<li><a data-toggle="tab" href="#opcion_bitacora"><span class="glyphicon glyphicon-edit"></span> Bitácora</a></li>
+		</ul>
+
+
+
+	</div>
+
+	<nav class="navbar navbar-default">
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="opciones_modulo_cliente">
+
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"> Recursos </a>
+			</div>
+
+			<div>
+				
+				<ul class="nav navbar-nav">
+					<%= link_to 'Nuevo Recurso', {:controller => 'recursos', :action => 'agregar_recurso'},  {:class => 'btn btn-default navbar-btn'} %> 
+
+				</ul>
+
+				<div>
+					<%= form_for(:buscarRecurso, url: formBuscarRecurso_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
+
+					<div class="input-group">
+
+						<%= f.text_field :cliente, class: 'form-control', placeholder: 'Buscar Recurso' %> 
+
+
+						<span class="input-group-btn">
+
+							<%= f.submit "Buscar", class: "btn btn-default" %> 
+						</span>
+						<% end %>
+
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<table id="tabla" class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Nombre</th>
+					<th>Egresado de</th>
+					<th>Habilidades</th>
+					<th>Proyectos</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<% @recursos.each do |recurso| %>
+				<tr>
+					<td> <%= recurso[:codigo] %> </td>	
+					<td> <%= link_to recurso[:nombre] , {:controller => 'recursos', :action => 'lista_recursos', :idRecursoOpciones => recurso[:codigo]} %>  </td>	
+					<td> <%= recurso[:egresado] %> </td>		
+					<td> <%= recurso[:habilidades] %> </td>		
+					<td> <%= recurso[:proyectos] %> </td>		
+
+				</tr>
+				<% end %>
+
+
+			</tbody>
+		</table>
+
+		<% if @opciones %>
+		<div class="alert alert-warning fade in">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong> Opciones para el recurso código <%= @idRecursoOp %> : </strong> 
+			<br>
+			<%= link_to 'Dar de baja' , {:controller => 'recursos', :action => 'lista_recursos', :opcion => "eliminar", :idRecursoEliminar => @idRecursoOp } %> 
+			<br><br>
+			<%= link_to 'Crear usuario' , {:controller => 'recursos', :action => 'opciones_recurso', :opcion => "crear_usuario", :idRecursoCrearUsuario => @idRecursoOp } %> 
+			<br><br>
+			<%= link_to 'Editar usuario' , {:controller => 'recursos', :action => 'agregar_recurso', :opcion => "editar_usuario", :idRecursoEditarUsuario => @idRecursoOp, :recursoParaEditar => @recursoOp } %> 
+		</div>
+		<% end %>
+
+		<% if @usuarioCreado && !@errorUsuario%>
+		<div class="alert alert-success fade in">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong> Se creó el usuario  </strong> 
+		</div>
+		<% elsif @errorUsuario %>
+		<div class="alert alert-error fade in">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong> Error al crear el usuario  </strong> 
+		</div>
+		<% end %>
+
+		<%= render 'layouts/footer' %>
+	</body>
+
+	</html>
+

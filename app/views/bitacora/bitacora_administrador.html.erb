@@ -1,0 +1,78 @@
+  
+<!DOCTYPE html>
+<html>
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+
+	<%= stylesheet_link_tag 'application', media: 'all',
+	'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+
+
+	<div class="container">
+
+		<a id="nombre_proyecto" href="home">Mundo Feliz</a>
+
+		<nav>
+			<ul class="nav navbar-nav navbar-right">
+				<%= render 'layouts/menus/menu_user' %>
+			</ul>
+		</nav>
+
+	</div>
+
+
+</header>
+
+<body>
+
+
+
+	<div id="menu_tabs" class="container">
+		<ul class="nav nav-tabs">
+			<li><a data-toggle="tab" href="#opcion_cliente"><span class="glyphicon glyphicon-book"></span> Clientes</a></li>
+			<li><a data-toggle="tab" href="#opcion_portafolio"><span class="glyphicon glyphicon-briefcase"></span> Portafolio</a></li>
+			<li><a data-toggle="tab" href="#opcion_entregables"><span class="glyphicon glyphicon-file"></span> Entregables</a></li>
+			<li><a data-toggle="tab" href="#opcion_recursos"><span class="glyphicon glyphicon-user"></span> Recursos</a></li>
+			<li class="active"><a data-toggle="tab" href="#opcion_bitacora"><span class="glyphicon glyphicon-edit"></span> Bitácora</a></li>
+		</ul>
+
+	</div>
+
+
+	<table id="tabla" class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th> Proyecto </th>
+					<th>Entregable</th>
+					<th>Recurso</th>
+					<th>Descripción</th>
+					<th>Fecha</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<% @bitacoras.each do |recurso| %>
+				<tr>
+					<td> <%= recurso[:proyecto] %> </td>	
+					<td> <%= recurso[:entregable] %> </td>	
+					<td> <%= recurso[:recurso]%> </td>	
+					<td> <%= recurso[:descripcion] %> </td>		
+					<td> <%= recurso[:fecha] %> </td>		
+
+				</tr>
+				<% end %>
+
+
+			</tbody>
+		</table>
+
+
+
+
+	<%= render 'layouts/footer' %>
+</body>
+
+</html>
+

@@ -86,4 +86,12 @@ Rails.application.routes.draw do
   get 'agregarRecursoSeleccionado' => 'recursos_asignados#agregarRecursoSeleccionado'
   get 'removerRecursoSeleccionado' => 'recursos_asignados#removerRecursoSeleccionado'
   
+  
+  post 'formBuscarRecurso' => 'recursos#lista_recursos'
+  
+  post 'formEnviarReporte' => 'bitacora#bitacora_usuario'
+  post 'formCrearRecurso' => 'recursos#lista_recursos'
+  post 'formCrearUsuario' => 'recursos#lista_recursos'
+  post 'formEditarRecurso' => 'recursos#lista_recursos'
+  
 end

@@ -1,0 +1,91 @@
+  
+<!DOCTYPE html>
+<html>
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+
+	<%= stylesheet_link_tag 'application', media: 'all',
+	'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+
+
+	<div class="container">
+
+		<a id="nombre_proyecto" href="home">Mundo Feliz</a>
+
+		<nav>
+			<ul class="nav navbar-nav navbar-right">
+				<%= render 'layouts/menus/menu_user' %>
+			</ul>
+		</nav>
+
+	</div>
+
+
+</header>
+
+<body>
+
+	<h1> Creación de nuevo usuario para un recurso existente </h1>
+	<p>Los campos marcados con un asterisco(*) son de llenado obligatorio.</p>
+	
+	<%= form_for(:crearUsuario, url: formCrearUsuario_path, html: {class: 'form-horizontal'} ) do |f| %>
+
+	<div class="form-group" style="width:500px">
+
+		<div class="form-group">
+			<%= f.label :"Id Persona: *", class: 'control-label col-sm-4' %>
+			<div class="col-sm-8">
+				<%= f.text_field :idPersona_row, class: 'form-control', disabled: true, required: true, value: @idPersona_row %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :"Id Persona: *", class: 'control-label col-sm-4' %>
+			<div class="col-sm-8">
+				<%= f.text_field :idPersona, class: 'form-control', disabled: true, required: true, value: @idPersona %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :"Usuario: *", class: 'control-label col-sm-4' %>
+			<div class="col-sm-8">
+				<%= f.text_field :usuario, class: 'form-control', disabled: true, required: true, value: @correoRecurso %>
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<%= f.label :"Contraseña: *", class: 'control-label col-sm-4'%>
+
+			<div class="col-sm-8">
+				<%= f.text_field :contrasena, class: 'form-control', placeholder: 'Contraseña' , required: true %> 
+
+			</div>
+		</div>
+
+
+
+
+		<div class="form-group">
+			<div class="col-sm-8">
+			</div>
+			<div class="col-sm-8">
+
+				<div style="width:170px"> 
+					<%= f.submit "Agregar recurso", class: "btn btn-default"  %> 
+				</div>
+			</div>
+		</div>
+
+
+		<% end %>
+
+	</div>
+
+	<%= render 'layouts/footer' %>
+</body>
+
+</html>
+
