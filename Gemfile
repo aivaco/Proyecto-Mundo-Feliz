@@ -48,6 +48,9 @@ gem 'simple_form'
 #run: $ sudo apt-get install imagemagick libmagickwand-dev
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
+#Calendar
+gem "simple_calendar", git: "git://github.com/excid3/simple_calendar"
+
 #Captcha
 gem 'glebtv-simple_captcha', github: 'glebtv/simple-captcha'
 
@@ -69,3 +72,4 @@ gem 'simple-navigation'
 gem 'ajaxify_rails'
 #Gema Scroll
 #gem 'scrollbar-rails'
+

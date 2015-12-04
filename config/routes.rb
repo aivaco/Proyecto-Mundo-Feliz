@@ -55,6 +55,8 @@ Rails.application.routes.draw do
   get 'signup' => 'signup#new'
   post 'signup' => 'signup#create'
   
+  get 'profile' => 'profile#view'
+  
   get 'newclient' => 'new_client#new'
   post 'newclient' => 'new_client#create'
   #Prueba
@@ -71,6 +73,9 @@ Rails.application.routes.draw do
   match '/riesgo/delete' => 'riesgo#delete', :as => :delete_riesgo, :via => [:post]
   #Ruta para agregar una entrega de un entregable
   match '/modulo_entregable/agregar_entrega' => 'modulo_entregable#agregar_entrega', :as => :agregar_entrega, :via => [:post]
+
+  
+  
 
 
 end
