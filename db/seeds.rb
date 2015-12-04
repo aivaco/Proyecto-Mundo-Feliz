@@ -106,7 +106,6 @@ User.create(usuario: "example@mundofeliz.com",
              password_confirmation: "12345678",
              activated: true,
              activated_at: Time.zone.now)
-             
 #Crea  clientes              
 Cliente.create(nombreEmp: "Vaina S.A",
                 persona_id: 4)
