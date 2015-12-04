@@ -11,8 +11,7 @@ gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'bcrypt',       '3.1.10'
 gem 'jquery-ui-rails'
-
-
+gem "simple_calendar", "~> 2.0"
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
   gem 'byebug',      '3.4.0'
@@ -27,7 +26,7 @@ group :test do
 end
 
 group :production do
-  #gem 'pg',             '0.17.1'
+  gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
 end
 
@@ -41,3 +40,32 @@ gem 'jquery-turbolinks'
 gem 'omniauth-facebook'
 gem "font-awesome-rails"
 
+#Formulario
+#run: $ rails generate simple_form:install --bootstrap
+gem 'simple_form'
+
+#Imagenes
+#run: $ sudo apt-get install imagemagick libmagickwand-dev
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+#Captcha
+gem 'glebtv-simple_captcha', github: 'glebtv/simple-captcha'
+
+#DatePicker
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+#run: $ rails generate datetimepicker_rails:install Font-Awesome
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+
+#Debugger
+#run: $ rails generate rails_footnotes:install
+gem 'rails-footnotes', '>=3.7.9', :group => :development
+
+
+#Gemas markdown
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
+gem 'simple-navigation'
+gem 'ajaxify_rails'
+#Gema Scroll
+#gem 'scrollbar-rails'

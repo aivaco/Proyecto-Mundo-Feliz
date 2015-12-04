@@ -29,18 +29,7 @@
 
 
 
-	<div id="menu_tabs" class="container">
-		<ul class="nav nav-tabs">
-			<li class="active"><a data-toggle="tab" href="#opcion_cliente"><span class="glyphicon glyphicon-book"></span> Clientes</a></li>
-			<li><a data-toggle="tab" href="#opcion_portafolio"><span class="glyphicon glyphicon-briefcase"></span> Portafolio</a></li>
-			<li><a data-toggle="tab" href="#opcion_entregables"><span class="glyphicon glyphicon-file"></span> Entregables</a></li>
-			<li><a data-toggle="tab" href="#opcion_recursos"><span class="glyphicon glyphicon-user"></span> Recursos</a></li>
-			<li><a data-toggle="tab" href="#opcion_bitacora"><span class="glyphicon glyphicon-edit"></span> Bitácora</a></li>
-		</ul>
-
-
-
-	</div>
+	<%= render 'layouts/menus/menu_tabs' %>
 
 	<nav class="navbar navbar-default">
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,9 +42,7 @@
 			<div>
 				
 				<ul class="nav navbar-nav">
-					<%= link_to 'Nuevo Cliente', {:controller => 'modulo_cliente', :action => 'nuevo_cliente'},  {:class => 'btn btn-default navbar-btn'} %> 
-
-					<%= link_to 'Actualizar Proyectos', {:controller => 'modulo_cliente', :action => 'actualizar_proyectos'},  {:class => 'btn btn-default navbar-btn'} %> 
+					<%= link_to 'Nuevo Cliente', {:controller => 'new_client', :action => 'new'},  {:class => 'btn btn-default navbar-btn'} %> 
 
 					<%= link_to 'Ver Lista de Clientes', {:controller => 'modulo_cliente', :action => 'lista_clientes'},  {:class => 'btn btn-default navbar-btn'} %> 
 
@@ -137,6 +124,11 @@
 					<tr>
 						<td>Tiempo Definido</td>
 						<td> <%= @proyecto[:tiempo] %> </td>
+
+					</tr>
+					<tr>
+						<td>Administrador</td>
+						<td> <%= @proyecto[:administrador] %> </td>
 
 					</tr>
 					<tr>

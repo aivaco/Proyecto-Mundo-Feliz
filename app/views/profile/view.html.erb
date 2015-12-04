@@ -1,0 +1,48 @@
+<body>
+    <%= render 'layouts/header_user' %>
+    
+    <%= render 'layouts/menus/menu_tabs' %>
+    
+    <% @user ||= User.find(session[:user_id]) if session[:user_id]  %>
+    <% @fisica = Fisica.find_by_persona_id(@user.persona_id)  %>
+    <% @direccion = Direccion.find_by_persona_id_and_tipo(@user.persona_id, "Principal")  %>
+    
+    <h1> <%= @user.usuario %>  </h1>
+    
+    <div class="centered">
+        
+        <table align="center">
+          <tr>
+            <td> 
+                <img alt="Rails" src="/assets/blank-profile-picture.png" alt="Profile picture" style="width:200px;height:200px;">
+            </td>
+            
+            <td> 
+                <table>
+                    <tr>
+                        <td> <h4> Nombre: </h4> </td>
+                        <td> <h5> <%= @fisica.nombre %> <%= @fisica.apellido1 %>  </h5>  </td>
+                    </tr>
+                    <tr>
+                        <td> <h4> País: </h4> </td>
+                        <td> <h5> <%= @direccion.pais %> </h5>  </td>
+                    </tr>
+                    <tr>
+                        <td> <h4> Cumpleaños: </h4> </td>
+                        <td> <h5> <%= @fisica.fechaNac %> </h5>  </td>
+                    </tr>
+                    <tr>
+                        <td> <h4> Tipo: </h4> </td>
+                        <td> <h5> <%= @user.IdTipo %> </h5>  </td>
+                    </tr>
+                </table>
+                    
+            </td>
+          </tr>
+          
+        </table>
+        
+    </div>
+    
+    <%= render 'layouts/footer' %>
+</body>

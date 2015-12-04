@@ -1,0 +1,5 @@
+Hola <%= @user.usuario %>,
+
+Bienvenido al software de Mundo Feliz, para activar su cuenta por favor ingrese al siguiente link:
+
+<%= edit_account_activation_url(@user.activation_token, @user.usuario) %>

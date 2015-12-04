@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018191418) do
+ActiveRecord::Schema.define(version: 20151118140456) do
 
   create_table "activos", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -73,13 +73,27 @@ ActiveRecord::Schema.define(version: 20151018191418) do
 
   add_index "direccions", ["persona_id"], name: "index_direccions_on_persona_id"
 
+  create_table "documentos", force: :cascade do |t|
+    t.string   "titulo"
+    t.string   "razon"
+    t.string   "tiempo"
+    t.float    "precio"
+    t.float    "costo"
+    t.string   "estado"
+    t.integer  "proyecto_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "entregables", force: :cascade do |t|
     t.integer  "numero"
     t.date     "fechaEnt"
     t.string   "descripcion"
     t.integer  "proyecto_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "entrega"
+    t.boolean  "entregado",   default: false
   end
 
   add_index "entregables", ["proyecto_id"], name: "index_entregables_on_proyecto_id"
@@ -194,6 +208,15 @@ ActiveRecord::Schema.define(version: 20151018191418) do
     t.string   "papel"
   end
 
+  create_table "simple_captcha_data", force: :cascade do |t|
+    t.string   "key",        limit: 40
+    t.string   "value",      limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "simple_captcha_data", ["key"], name: "idx_key"
+
   create_table "telefonos", force: :cascade do |t|
     t.string   "tipo"
     t.integer  "numero"
@@ -210,8 +233,8 @@ ActiveRecord::Schema.define(version: 20151018191418) do
     t.boolean  "estado"
     t.string   "IdTipo"
     t.string   "IdPersona"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "password_digest"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
@@ -220,6 +243,16 @@ ActiveRecord::Schema.define(version: 20151018191418) do
     t.string   "uid"
     t.string   "remember_digest"
     t.integer  "persona_id"
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
+    t.string   "foto_file_name"
+    t.string   "foto_content_type"
+    t.integer  "foto_file_size"
+    t.datetime "foto_updated_at"
+    t.string   "tipo_usuario"
   end
 
   add_index "users", ["persona_id"], name: "index_users_on_persona_id"

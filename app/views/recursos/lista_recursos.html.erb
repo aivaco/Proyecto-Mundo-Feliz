@@ -29,18 +29,7 @@
 
 
 
-	<div id="menu_tabs" class="container">
-		<ul class="nav nav-tabs">
-			<li class="active"><a data-toggle="tab" href="#opcion_cliente"><span class="glyphicon glyphicon-book"></span> Clientes</a></li>
-			<li><a data-toggle="tab" href="#opcion_portafolio"><span class="glyphicon glyphicon-briefcase"></span> Portafolio</a></li>
-			<li><a data-toggle="tab" href="#opcion_entregables"><span class="glyphicon glyphicon-file"></span> Entregables</a></li>
-			<li><a data-toggle="tab" href="#opcion_recursos"><span class="glyphicon glyphicon-user"></span> Recursos</a></li>
-			<li><a data-toggle="tab" href="#opcion_bitacora"><span class="glyphicon glyphicon-edit"></span> Bitácora</a></li>
-		</ul>
-
-
-
-	</div>
+	<%= render 'layouts/menus/menu_tabs' %>
 
 	<nav class="navbar navbar-default">
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -91,7 +80,7 @@
 				<% @recursos.each do |recurso| %>
 				<tr>
 					<td> <%= recurso[:codigo] %> </td>	
-					<td> <%= recurso[:nombre]%> </td>	
+					<td> <%= link_to recurso[:nombre] , {:controller => 'recursos', :action => 'lista_recursos', :idRecursoOpciones => recurso[:codigo]} %>  </td>	
 					<td> <%= recurso[:egresado] %> </td>		
 					<td> <%= recurso[:habilidades] %> </td>		
 					<td> <%= recurso[:proyectos] %> </td>		
@@ -103,11 +92,28 @@
 			</tbody>
 		</table>
 
-		<% if @telefonos %>
-		<div class="alert alert-info fade in">
+		<% if @opciones %>
+		<div class="alert alert-warning fade in">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-			<strong> Teléfonos: </strong> 
-			<%= @telefonos %>
+			<strong> Opciones para el recurso código <%= @idRecursoOp %> : </strong> 
+			<br>
+			<%= link_to 'Dar de baja' , {:controller => 'recursos', :action => 'lista_recursos', :opcion => "eliminar", :idRecursoEliminar => @idRecursoOp } %> 
+			<br><br>
+			<%= link_to 'Crear usuario' , {:controller => 'recursos', :action => 'opciones_recurso', :opcion => "crear_usuario", :idRecursoCrearUsuario => @idRecursoOp } %> 
+			<br><br>
+			<%= link_to 'Editar usuario' , {:controller => 'recursos', :action => 'agregar_recurso', :opcion => "editar_usuario", :idRecursoEditarUsuario => @idRecursoOp, :recursoParaEditar => @recursoOp } %> 
+		</div>
+		<% end %>
+
+		<% if @usuarioCreado && !@errorUsuario%>
+		<div class="alert alert-success fade in">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong> Se creó el usuario  </strong> 
+		</div>
+		<% elsif @errorUsuario %>
+		<div class="alert alert-error fade in">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong> Error al crear el usuario  </strong> 
 		</div>
 		<% end %>
 

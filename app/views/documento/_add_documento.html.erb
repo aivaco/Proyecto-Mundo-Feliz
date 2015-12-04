@@ -1,0 +1,63 @@
+<!--Para que oculte las secciones-->
+<script>
+    $(document).ready(function(){
+
+    $("#seccion_alianza").hide();
+
+    $(":radio").change(function(){  
+
+            if(this.value == 'r' && this.checked){
+              $("#seccion_riesgo").show();
+              $("#seccion_alianza").hide();
+            }else{
+              $("#seccion_riesgo").hide();
+              $("#seccion_alianza").show();
+            }
+
+    });
+
+});
+</script>
+
+<% @alianza = Alianza.new %>
+<% @riesgo = Riesgo.new %>
+<!--Temporal-->
+
+<!--Secciones de formulario para lo distintos documentos-->
+ <%= simple_form_for :documento, defaults: {wrapper: :inline_field2}  do |f| %>
+ 
+ <%= f.input :tipo_documento, label: false, collection: [['Riesgo','r'],['Alianza','a']], as: :radio_buttons, wrapper: :inline_bool3, checked:'r' %>
+ <%end%>
+ <!--Formulario si se desea crear un documento de riesgos-->
+  <%= form_for @riesgo , :url => create_riesgo_path, method: :post do |r| %>
+ <br><br><br>
+ <div id="seccion_riesgo">
+      <%= r.label :"Id Proyecto:" %>
+      <%= r.text_field :proyecto_id, value: id_Proyecto, :readonly => true%>
+      <%= r.label :"Tipo:" %>
+      <%= r.text_field :tipo, class: 'form-control'%>
+      <%= r.label :"Descripción:" %>
+      <%= r.text_area :descripcion,cols: "30", rows: "10", class: 'form-control'%>
+      <%= r.submit "Agregar Documento", class: "btn btn-default" %>
+
+ </div>
+ <%end%>
+ <!--Formulario si se desea crear un documento de alianza-->
+ <%= form_for @alianza, :url => create_alianza_path, method: :post do |a| %>
+ <div id="seccion_alianza">
+ 
+      <%= a.label :"Id Proyecto:" %>
+      <%= a.text_field :proyecto_id, value: id_Proyecto, :readonly => true%>
+      <%= a.label :"Tipo:" %>
+      <%= a.text_field :tipo, class: 'form-control'%>
+      <%= a.label :"Nombre de la empresa:" %>
+      <%= a.text_field :nombreEmp, class: 'form-control'%>
+      <%= a.label :"Propósito:" %>
+      <%= a.text_area :proposito, cols: "30", rows: "10", class: 'form-control'%>
+      <%= a.label :"Fecha de finalización:" %>
+      <%= a.date_field :fechaFin %>
+      <%= a.submit "Agregar Documento", class: "btn btn-default" %>
+     
+</div>
+
+<% end %>

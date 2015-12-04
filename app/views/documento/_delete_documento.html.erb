@@ -1,0 +1,58 @@
+<script>
+    $(document).ready(function(){
+
+    $("#seccion_alianza2").hide();
+
+    $(":radio").change(function(){  
+
+            if(this.value == 'r' && this.checked){
+              $("#seccion_riesgo2").show();
+              $("#seccion_alianza2").hide();
+            }else{
+              $("#seccion_riesgo2").hide();
+              $("#seccion_alianza2").show();
+            }
+
+    });
+
+});
+</script>
+
+<!--Carga todos los documentos de riesgo según un proyecto-->
+<% @ries = Riesgo.where("proyecto_id == :id", {id: idProyecto}).all %>
+<!--Carga todos los documentos de alianza según un proyecto-->
+<% @alian = Alianza.where("proyecto_id == :id", {id: idProyecto}).all %>
+
+<% @riesgo = Riesgo.new %>
+<% @alianza = Alianza.new %>
+
+<!--Selección del tipo de documento-->
+ <%= simple_form_for :documento, defaults: {wrapper: :inline_field2}  do |f| %>
+ 
+ <%= f.input :tipo_documento, label: false, collection: [['Riesgo','r'],['Alianza','a']], as: :radio_buttons, wrapper: :inline_bool3, checked:'r' %>
+ <%end%>
+<br>
+<br><br>
+<!--Form Riesgos-->
+
+<div id="seccion_riesgo2">
+<%= form_for @riesgo , :url => delete_riesgo_path, method: :post do |r| %>
+    <%= r.label :"Documentos de riesgos:" %>
+   <%=r.collection_select(:tipo, @ries.all,:tipo,'tipo')%>
+    <% options = options_from_collection_for_select(@ries, 'id', 'tipo') %>
+    <%= r.submit "Borrar Documento", data: { confirm: '¿Está seguro(a) de eliminar este documento?' }, class: "btn btn-default" %>
+    <%end%>
+    </div>
+
+<br>
+<!--Form Alianza-->
+<div id="seccion_alianza2">
+<%= form_for @alianza , :url => delete_alianza_path, method: :post do |a| %>
+ <%= a.label :"Documentos de alianzas:" %>
+   <%=a.collection_select(:tipo, @alian.all,:tipo,'tipo')%>
+    <% options = options_from_collection_for_select(@alian, 'id', 'tipo') %>
+    <%= a.submit "Borrar Documento", data: { confirm: '¿Está seguro(a) de eliminar este documento?' } ,class: "btn btn-default" %>
+
+<%end%>
+</div>
+

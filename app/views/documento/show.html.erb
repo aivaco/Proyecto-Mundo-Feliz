@@ -1,0 +1,243 @@
+<!--Carga las pestañas de la aplicación-->
+<%= render 'layouts/menus/menu_tabs' %>
+<!--Incluye a los archivos de js para el menú-->
+<%= javascript_include_tag "easytree"%>
+<%= javascript_include_tag('administrarEntregables.js') %>
+<!--Obtiene al cliente del cual se desean mostrar sus proyectos-->
+<% @cliente = Cliente.find(@id)%>
+<!--Obtiene el portafolio del cliente-->
+<% @portafolio = Portafolio.find_by(cliente_id: @cliente.id)%>
+<!--Obtiene las hojas pertenecientes -->
+<% @hojas = Hoja.where("portafolio_id == :id", {id: @portafolio.id}).all %>
+<div class= "col-md-3">
+   <!--Muestra el nombre del cliente-->
+   <h4>Cliente: <%= @cliente.nombreEmp%></h4>
+   <h5>Proyectos</h5>
+   <div id="demo1_menu">
+      <ul>
+      <!--Recorre cada hoja del portafolio-->
+      <%  @hojas.each do |hoja| %>
+      <!--Obtiene el proyecto según la hoja-->
+         <% @proyecto = Proyecto.find(hoja.id)%>
+      <li class="isFolder" title="Documentos">
+         <!--Coloca el nombre del proyecto en el menú-->
+          <%= link_to @proyecto.nombre, :controller => 'documento', :action => 'show',:id =>hoja.id, :id_cliente =>@id %>
+
+         
+         <ul>
+            <li class="isFolder" title="Riesgos">
+              Riesgos
+               <ul>
+                  <!--Obtiene todos los documentos de riesgo y los coloca en el menú-->
+                  <% @riesgos = Riesgo.where("proyecto_id == :id", {id: @proyecto.id}).all%>    
+                  
+                  <% if !@riesgos.empty? then%>
+                  <%  @riesgos.each do |riesgo| %>
+                  <li><%= link_to riesgo.tipo, :controller =>'riesgo',:action =>'show',:rid =>riesgo.id, :target => "_blank" %></li>
+                  <%end%>
+                  <%else%>
+                  <li><img src="/content/images/google.ico" />No existen documentos asociados a este proyecto.</a></li>
+                  <%end%>
+               </ul>
+                <li class="isFolder" title="Alianza">
+               Alianzas
+               <ul>                   
+               <!--Obtiene todos los documentos de alianza y los coloca en el menú-->
+                  <% @alianzas = Alianza.where("proyecto_id == :id", {id: @proyecto.id}).all%>    
+                  
+                  <% if !@alianzas.empty? then%>
+                  <%  @alianzas.each do |alianza| %>
+                  <li><%= link_to alianza.tipo, :controller =>'alianza',:action =>'show',:aid =>alianza.id, :target => "_blank" %></li>
+                  <%end%>
+                  <%else%>
+                  <li><img src="/content/images/google.ico" />No existen documentos asociados a este proyecto.</a></li>
+                  <%end%></ul>
+         </ul>
+      </li>
+      <% end %>
+   </div>
+   <!--Carga el javascript del menú-->
+   <script>
+      $('#demo1_menu').easytree();
+   </script>
+</div>
+
+
+<!--Crea un Markdown con las especificaciones del proyecto las especificaciones del proyecto-->
+<div class = "col-md-8">
+   <span id="markdown_area">
+   <div id="elementId" class= "well">
+      <%a=creaMD(@documento.titulo,@documento.razon,@documento.tiempo,@documento.precio,@documento.costo,@documento.estado)%>
+      <%= markdown(a) %>
+   </div>
+   </div>
+   </span>
+    <br>
+   <!--Botones con las distintas acciones-->
+    <div class ="col-md-9 col-md-offset-3">
+   
+   <!--Empieza código para Editar entregables-->
+   <% @hojas = Hoja.find(@documento.proyecto_id) %>
+   <% @proyectos = Proyecto.where("hoja_id == :id", {id: @hojas.id}).first %>
+   <% @entregables = Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all %>
+
+   
+    <!-- Botón Administrar Entregables -->
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Administrar Entregables<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a data-toggle="modal" data-target="#editarEntregablesNuevoEntregablemodal"> <i class="fa fa fa-hand-paper-o"></i> Añadir nuevo entregable</a></li>
+            <li><a data-toggle="modal" data-target="#editarEntregablesmodalBorrarEntregable"> <i class="glyphicon glyphicon-trash"></i> Borrar entregable</a></li>
+            <li><a data-toggle="modal" data-target="#editarEntregablesmodal"> <i class="fa fa-tasks"></i> Modificar Recursos Asignados</a></li>
+        </ul>
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalAgregarDocumentos">
+      <i class="fa fa-file"></i>  Agregar documentos
+   </button>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEliminarDocumentos">
+      <i class="fa fa-file-excel-o"></i>  Eliminar documentos
+      </button>
+    </div>
+
+
+</div>
+   <!--Termina código para Editar entregables-->
+    
+    <!-- Popup de editarEntregables -->
+    <!-- Modal -->
+    <div id="editarEntregablesmodal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </h4>
+                </div>
+                
+                <div class="modal-body">
+                    <head> Por favor seleccione el entregable: </head>
+                    <p>
+                    <div class="input-group">
+                        <%= form_for(:seleccionarEntregable, url: entregableSeleccionado_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
+                            <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :descripcion) %>
+                            <%= f.submit "Aceptar", class: "btn btn-default" %>
+                        <%end%>
+                    </div>
+                    </p>
+                </div>
+                
+                <div class="modal-footer">
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+   <!-- Popup de editarEntregableNuevoEntregable -->
+   <!-- Modal -->
+   <div id="editarEntregablesNuevoEntregablemodal" class="modal fade" role="dialog">
+     <div class="modal-dialog modal-sm">
+   
+       <!-- Modal content-->
+       <div class="modal-content" style="text-align: center">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </br> Añadir nuevo entregable</h4>
+         </div>
+         <div class="modal-body">
+           <p>
+            <div class="input-group">
+                <%= form_for(:agregarNuevoEntregable, url: nuevoEntregable_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
+                    <p> Digite la descripción: </p>
+                    <%= f.text_field :descripcion, placeholder: 'Descripción' %> 
+                    <%= f.hidden_field :id, :value => @proyectos.id %>
+                    <p> Seleccione la fecha de entrega: </p>
+                    <%= date_select('range', 'start_date', :order => [:day, :month, :year])%>
+                    <span class="input-group-btn">
+                        <%= f.submit "Aceptar", class: "btn btn-default" %>
+                    </span>
+                <%end%>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    
+     <!-- Popup de de borrar Entregables -->
+    <!-- Modal -->
+    <div id="editarEntregablesmodalBorrarEntregable" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 375px">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </h4>
+                </div>
+                <div class="modal-body">
+                    <head> Por favor seleccione el entregable que desea borrar: </head>
+                    <p>
+                        <div class="input-group">
+                            <%= form_for(:seleccionarEntregable, url: borrarEntregableSeleccionado_path , html: {class: 'navbar-form navbar-right'} ) do |f| %>
+                                <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :descripcion) %>
+                                <%= f.submit "Aceptar", class: "btn btn-default", data: { confirm: '¿Está seguro que desea borrar este entregable?' } %>
+                            <%end%>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!--Termina código para Editar entregables-->
+
+
+ <!-- Inserta el contenido del header -->
+  <%= render 'layouts/header_user' %>
+  
+ 
+<!-- Modal agregar documentos -->
+
+<div id="modalAgregarDocumentos" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 400px">
+
+    <!-- Contenido dentro del Modal -->
+    <div class="modal-content">
+       <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Añadir Documentos</h4>
+        </div>
+        
+        <div class="modal-body">
+        
+            <%= render partial: "documento/add_documento", :locals => { id_Proyecto: @documento.id } %>
+        </div>
+
+  </div>
+</div>
+</div> 
+ 
+
+<!-- Modal Eliminar documentos -->
+
+<div id="modalEliminarDocumentos" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 400px">
+
+    <!-- Contenido dentro del Modal -->
+    <div class="modal-content">
+       <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Eliminar Documentos</h4>
+        </div>
+        
+        <div class="modal-body">
+        
+            <%= render partial: "documento/delete_documento", :locals => { idProyecto: @documento.id } %>
+        </div>
+
+  </div>
+</div>
+</div>
+
+
+
+

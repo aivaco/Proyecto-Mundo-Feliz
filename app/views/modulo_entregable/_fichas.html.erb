@@ -1,0 +1,54 @@
+<!--Temporal obtiene una fecha-->
+<% @fecha = Date.new(2015,12,6)%>
+<!--Obtiene el id del usuario que está utilizando el programa-->
+<% usuario = current_user.id%>
+<!-- Variable que contiene todos los entregables de un recurso con respecto a una fecha -->
+<% @entregables = Persona.find(usuario).fisica.recurso.entregables.where("fechaEnt == :fecha", {fecha: @fecha}).all %>
+<!-- Recorre todos los entregables desplegando cada uno con su información-->
+<% if @entregables.present? then%>
+    <%  @entregables.each do |cada_entregable| %>
+    <div class= "col-md-6 col-md-offset-2">
+       <div class="panel panel-default">
+          <div class="panel-heading panel-heading-custom">
+             <b>
+                <h3 class="panel-title"><%="Entregable número #{cada_entregable.numero.to_s}        "%><i class="fa fa-calendar-plus-o"></i>
+                </h3>
+             </b>
+          </div>
+          <li class="list-group-item">
+             <b>
+             <%="Nombre del Proyecto: "%>
+             </b>
+             <%=cada_entregable.proyecto.nombre%>
+          </li>
+          <li class="list-group-item">
+             <b>
+             <%="Fecha de inicio: "%>
+             </b>
+             <%=cada_entregable.created_at.to_s%>
+          </li>
+          <li class="list-group-item">
+             <b>
+             <%="Fecha a entregar:"%>
+             </b>
+             <%= cada_entregable.fechaEnt.to_date.to_s%>
+          </li>
+          <div class="panel-body">
+             <b>
+             Descripción:
+             </b>
+             <br>
+             <div class= "col-md-8 col-md-offset-2">
+                <i>
+                <%= "#{cada_entregable.descripcion}."%>
+                </i>
+             </div>
+          </div>
+       </div>
+    </div>
+    <%end%>
+<%else%>
+    <div class= "col-md-8 col-md-offset-2">
+       <h3>No hay entregables disponibles para esta fecha (<%="#{@fecha}"%>).</h3>
+    </div>
+<%end%>

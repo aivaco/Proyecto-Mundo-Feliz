@@ -1,8 +1,8 @@
 class UserController < ApplicationController
     
-     def show
-    @user = User.find(params[:id])
-  end
+    def show
+      @user = User.find(params[:id])
+    end
 
   def new
     @user = User.new
@@ -11,9 +11,14 @@ class UserController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
+      @user.send_activation_email
+      flash[:info] = "Por favor ingrese a su correo electrónico para activar la cuenta."
+      redirect_to root_url
+
+=begin    if @user.save
+      log_in @user                                          Esto estaba antes
       flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+=end      redirect_to @user
     else
       render 'new'
     end
@@ -22,7 +27,7 @@ class UserController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:usuario, :password,
                                    :password_confirmation)
     end
 end
