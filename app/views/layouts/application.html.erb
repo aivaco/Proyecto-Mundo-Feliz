@@ -20,7 +20,77 @@
   <div id="menu_tabs" class="container">
     <%= render 'layouts/footer' %>
     </div>
-    
+      
+    <div id="proyectosAsignados" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+                <!-- Modal content-->
+              <div class="modal-content">
+                  
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title"> </h4>
+                  </div>
+                  
+                  <div class="modal-body">
+                      <head> Sus proyectos asignados son: </head>
+                      <p>
+                      <div class="input-group">
+                        <% if current_user %>
+                          <% @fisica = Fisica.where("persona_id == :id", {id: current_user.persona_id}).first  %>
+                          <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
+                          <% @proyectos = @recurso.proyectos.all %>
+                          <% if !@proyectos.empty? then%>
+                            <%  @proyectos.each do |proyecto| %>
+                              Nombre: <%= proyecto.nombre %> Estado: <%= proyecto.estado %>  </br>
+                            <%end%>
+                          <%end%>
+                        <% end %>
+                      </div>
+                      </p>
+                  </div>
+                  
+                  <div class="modal-footer">
+                  </div>
+              </div>
+          
+          </div>
+      </div>
+      
+    <div id="ultimosEntregables" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+                <!-- Modal content-->
+              <div class="modal-content">
+                  
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      <h4 class="modal-title"> </h4>
+                  </div>
+                  
+                  <div class="modal-body">
+                      <head> Sus últimos entregables son: </head>
+                      <p>
+                      <div class="input-group">
+                        <% if current_user %>
+                          <% @fisica = Fisica.where("persona_id == :id", {id: current_user.persona_id}).first  %>
+                          <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
+                          <% @entregables = @recurso.entregables.all %>
+                          <% if !@entregables.empty? then%>
+                            <%  @entregables.each do |entregable| %>
+                            <% @proyecto = Proyecto.find(entregable.proyecto_id) %>
+                              Descripcion: <%= entregable.descripcion %> Proyecto: <%= @proyecto.nombre %>   </br>
+                            <%end%>
+                          <%end%>
+                        <% end %>
+                      </div>
+                      </p>
+                  </div>
+                  
+                  <div class="modal-footer">
+                  </div>
+              </div>
+          
+          </div>
+      </div>
     
 </body>
 </html>

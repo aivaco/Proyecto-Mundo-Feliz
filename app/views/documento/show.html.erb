@@ -107,7 +107,7 @@
                     <p>
                     <div class="input-group">
                         <%= form_for(:seleccionarEntregable, url: entregableSeleccionado_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
-                            <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :descripcion) %>
+                            <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :fechayDescripcion) %>
                             <%= f.submit "Aceptar", class: "btn btn-default" %>
                         <%end%>
                     </div>
@@ -167,7 +167,7 @@
                     <p>
                         <div class="input-group">
                             <%= form_for(:seleccionarEntregable, url: borrarEntregableSeleccionado_path , html: {class: 'navbar-form navbar-right'} ) do |f| %>
-                                <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :descripcion) %>
+                                <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :fechayDescripcion) %>
                                 <%= f.submit "Aceptar", class: "btn btn-default", data: { confirm: '¿Está seguro que desea borrar este entregable?' } %>
                             <%end%>
                         </div>

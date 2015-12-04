@@ -7,11 +7,11 @@
   <!-- Opciones del menu de usuario -->
   <ul id="menu_user_dropdown" class="dropdown-menu" role="menu" aria-labelledby="menu1">
     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Perfil</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Proyectos Asignados</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Entradas de Bitácora</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Últimos Entregables</a></li>
+    <li><a data-toggle="modal" data-target="#proyectosAsignados"> Proyectos Asignados </a></li>
+    <li><a data-toggle="modal" data-target="#ultimosEntregables"> Últimos Entregables </a></li>
     <li role="presentation" class="divider"></li>
     <li role="presentation"><%= link_to "Cerrar sesión", logout_path, method: :delete %></li>
   </ul>
   
 </li>
+
