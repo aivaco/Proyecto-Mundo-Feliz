@@ -26,7 +26,7 @@ class RolTest < ActiveSupport::TestCase
     pr1.rols.create(recurso: r2, papel: 'Desarrollador')
     
     
-    print pr1.recursos.each {}
+    #print pr1.recursos.each {}
     assert pr1.valid?, "pr1 no válido #{pr1.errors.inspect}"
   end
 end

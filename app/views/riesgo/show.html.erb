@@ -1,0 +1,22 @@
+
+
+<br>
+<!--Crea un Markdown con las la descripción de los documentos de riesgo.-->
+<div class = "col-md-8 col-md-offset-2">
+   <span id="markdown_area">
+   <div id="elementId" class= "well">
+      <%a=creaDR(@riesgo.tipo,@riesgo.descripcion)%>
+      <%= markdown(a) %>
+   </div>
+   </span>
+      <br>
+   <!--Link para retornar a la página anterior-->   
+   <div class =  "col-md-offset-12">
+       <i><%= link_to 'Volver', :back %></i>
+   </div>
+
+
+</div>
+
+
+

@@ -7,5 +7,9 @@ class ProfileController < ApplicationController
             @user ||= User.find(session[:user_id]) if session[:user_id]  
         end
     end
+<<<<<<< HEAD
     
 end
+=======
+end
+>>>>>>> b894b37f12599c68e1face019a72772c4d72a954

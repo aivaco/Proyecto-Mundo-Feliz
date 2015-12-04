@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'profile/view'
+
   get 'administrar_entregable/vistageneral'
 
   get 'modulo_bitacora/view_bitacora'
@@ -10,7 +12,8 @@ Rails.application.routes.draw do
 
   get 'password_resets/new'
   get 'password_resets/edit'
-
+  post 'nuevoEntregable' => 'documento#nuevoEntregable'
+  post 'entregableSeleccionado' => 'documento#entregableSeleccionado'
 =begin 
   
   root  'pages#mientras'       #Mientras
@@ -59,6 +62,8 @@ Rails.application.routes.draw do
   
   get 'newclient' => 'new_client#new'
   post 'newclient' => 'new_client#create'
+  
+  get 'profile' => 'profile#view'
   #Prueba
   get 'modulo_portafolio/view_portafolio'
   #Para crear una ruta con el nombre home
@@ -73,9 +78,37 @@ Rails.application.routes.draw do
   match '/riesgo/delete' => 'riesgo#delete', :as => :delete_riesgo, :via => [:post]
   #Ruta para agregar una entrega de un entregable
   match '/modulo_entregable/agregar_entrega' => 'modulo_entregable#agregar_entrega', :as => :agregar_entrega, :via => [:post]
+  #Muestra información principal del documento de riesgo
+  get '/riesgo/:id', to: 'riesgo#show', as: 'riesgo'
+  #Muestra información principal del documento de alianza
+  get '/alianza/:id', to: 'alianza#show', as: 'alianza'
 
+
+  post 'borrarEntregableSeleccionado' => 'documento#borrarEntregableSeleccionado'
   
   
+  #Administrar recursos de entregables
+  get '/recursos_asignados/:id', to: 'recursos_asignados#administrar', as: 'recursos_entregable'
+  get 'agregarRecursoSeleccionado' => 'recursos_asignados#agregarRecursoSeleccionado'
+  get 'removerRecursoSeleccionado' => 'recursos_asignados#removerRecursoSeleccionado'
+  
+  
+  get 'bitacora/bitacora_usuario'
 
+  get 'bitacora/bitacora_administrador'
 
+  get 'bitacora/ver_bitacora'
+
+  get 'recursos/lista_recursos'
+
+  get 'recursos/agregar_recurso'
+
+  get 'recursos/opciones_recurso'
+  post 'formBuscarRecurso' => 'recursos#lista_recursos'
+  
+  post 'formEnviarReporte' => 'bitacora#bitacora_usuario'
+  post 'formCrearRecurso' => 'recursos#lista_recursos'
+  post 'formCrearUsuario' => 'recursos#lista_recursos'
+  post 'formEditarRecurso' => 'recursos#lista_recursos'
+  
 end

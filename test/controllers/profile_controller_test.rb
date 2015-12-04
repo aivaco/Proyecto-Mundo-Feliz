@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class ProfileControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get view" do
+    get :view
+    assert_response :success
+  end
+
 end

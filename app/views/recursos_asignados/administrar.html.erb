@@ -1,0 +1,126 @@
+<!-- Inserta el contenido del header -->
+<%= render 'layouts/header_user' %>
+  
+<%= render 'layouts/menus/menu_tabs' %>
+
+<div style= "margin-top: 10px">
+
+  <div class= "col-md-4">
+     <!--Muestra el nombre del cliente-->
+     <h4>Cliente: <%= @cliente.nombreEmp%></h4>
+     <h4>Proyecto: <%= @proyecto.nombre %> </h4>
+     <br>
+     <h4>Descripción de entregable: </h4> <h5><%= @entregable.descripcion %></h5>
+  </div>
+  
+  <div class= "col-md-4" style="border-left: 1px solid #eaeaea;padding-right: 35px;">
+    
+    <h4>Recursos asignados al entregable</h4>
+    <table class="table table-bordered table-striped table-hover" style="width: 350px">
+      <% if @lista_recursos_asignados.empty? %>
+        <!-- Nombres de las columnas de la tabla -->
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+             <th>No hay recursos asignados a este entregable</th>
+          </tr>
+        </tbody>
+        
+      <%else%>
+      
+        <!-- Nombres de las columnas de la tabla -->
+        <thead>
+           <tr> 
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+           </tr>
+        </thead>
+        
+        <!-- Contenido de las celdas-->
+        <tbody>
+          <% @lista_recursos_asignados.each do |personas| %>
+          <tr>
+            <th><%= personas[:id] %></th>
+            <th><%= personas[:nombre] %></th>
+            <th><%= personas[:apellido1] %> <%= personas[:apellido2] %></th>
+            <th>
+              <%= link_to :controller => 'recursos_asignados', :action => 'removerRecursoSeleccionado', :id => personas[:id] , :id_entregable => @entregable.id do %>
+                <div class="btn btn-danger btn-xs" data-toggle="tooltip" title="Eliminar recurso del entregable"> 
+                  <i class="fa fa-times"></i>
+                </div>
+              <% end %>
+              
+              <%= link_to :controller => 'profile', :action => 'view', :usuario => personas[:id]  do %>
+                <div class="btn btn-info btn-xs" data-toggle="tooltip" title="Ver perfil"> 
+                  <i class="glyphicon glyphicon-user"></i>
+                </div>
+              <% end %>
+            </th>
+          </tr>
+          <% end %>
+        </tbody>
+        
+      <% end %>
+    </table>
+    
+    
+    <h4>Recursos no asignados al entregable</h4>
+    
+    <table class="table table-bordered table-striped table-hover" style="width: 350px">
+       <% if @lista_no_asignados.empty? %>
+        <!-- Nombres de las columnas de la tabla -->
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <th>No hay más recursos para asignar a este entregable</th>
+          </tr>
+        </tbody>
+        
+      <%else%>
+        <!-- Nombres de las columnas de la tabla -->
+        <thead>
+           <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+           </tr>
+        </thead>
+    
+        <!-- Contenido de las celdas-->
+        <tbody>
+          <% @lista_no_asignados.each do |personas| %>
+            <tr>
+              <th><%= personas[:id] %></th>
+              <th><%= personas[:nombre] %></th>
+              <th><%= personas[:apellido1] %> <%= personas[:apellido2] %></th>
+              <th>
+                <%= link_to :controller => 'recursos_asignados', :action => 'agregarRecursoSeleccionado', :id => personas[:id] , :id_entregable => @entregable.id, :target => "_blank" do %>
+                  <div class="btn btn-primary btn-xs" data-toggle="tooltip" title="Agregar recurso al entregable"> 
+                    <i class="fa fa-plus"></i>
+                  </div>
+                <% end %>
+                
+                <%= link_to :controller => 'profile', :action => 'view', :usuario => personas[:id]  do %>
+                <div class="btn btn-info btn-xs" data-toggle="tooltip" title="Ver perfil"> 
+                  <i class="glyphicon glyphicon-user"></i>
+                </div>
+              <% end %>
+              
+              </th>
+            </tr>
+          <% end %>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+
+</div>

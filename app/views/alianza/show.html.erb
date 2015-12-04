@@ -1,0 +1,17 @@
+
+<br>
+<!--Crea un Markdown con las la descripción de los documentos de alianza.-->
+<div class = "col-md-8 col-md-offset-2">
+   <span id="markdown_area">
+   <div id="elementId" class= "well">
+      <%a=creaDA(@alianza.tipo,@alianza.nombreEmp,@alianza.proposito,@alianza.fechaFin)%>
+      <%= markdown(a) %>
+   </div>
+   </span>
+      <br>
+   <!--Link para retornar a la página anterior-->   
+   <div class =  "col-md-offset-12">
+       <i><%= link_to 'Volver', :back %></i>
+   </div>
+
+</div>
