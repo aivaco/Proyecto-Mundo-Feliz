@@ -11,7 +11,43 @@
 # bundle exec rake db:migrate
 # bundle exec rake db:seed
 
-
+#Agrega usuarios de ejemplo
+User.create(usuario: "juan@juan.com",
+password: "12345678",
+password_confirmation: "12345678",
+activated: true,
+activated_at: Time.zone.now,
+persona_id: 1)
+User.create(usuario: "maria@maria.com",
+password: "12345678",
+password_confirmation: "12345678",
+activated: true,
+activated_at: Time.zone.now,
+persona_id: 2)
+User.create(usuario: "sutano@sutano.com",
+password: "12345678",
+password_confirmation: "12345678",
+activated: true,
+activated_at: Time.zone.now,
+persona_id: 3)
+User.create(usuario: "momba@momba.com",
+password: "12345678",
+password_confirmation: "12345678",
+activated: true,
+activated_at: Time.zone.now,
+persona_id: 4)
+User.create(usuario: "yahir@yahir.com",
+password: "12345678",
+password_confirmation: "12345678",
+activated: true,
+activated_at: Time.zone.now,
+persona_id: 5)            
+#usuario de prueba
+User.create(usuario: "example@mundofeliz.com",
+             password:              "12345678",
+             password_confirmation: "12345678",
+             activated: true,
+             activated_at: Time.zone.now)
 #Crea a las primeros tres usuarios en la tabla de personas.             
 Persona.create(idPersona: "12321321321",
               email: "juan@juan.com",
