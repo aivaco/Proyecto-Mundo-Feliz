@@ -38,8 +38,8 @@
                         <% if current_user %>
                           <% @fisica = Fisica.where("persona_id == :id", {id: current_user.persona_id}).first  %>
                           <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
-                          <% @proyectos = @recurso.proyectos.all %>
                           <% if !@proyectos.empty? then%>
+                            <% @proyectos = @recurso.proyectos.all %>
                             <%  @proyectos.each do |proyecto| %>
                               Nombre: <%= proyecto.nombre %> Estado: <%= proyecto.estado %>  </br>
                             <%end%>
@@ -73,8 +73,8 @@
                         <% if current_user %>
                           <% @fisica = Fisica.where("persona_id == :id", {id: current_user.persona_id}).first  %>
                           <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
-                          <% @entregables = @recurso.entregables.all %>
                           <% if !@entregables.empty? then%>
+                          <% @entregables = @recurso.entregables.all %>
                             <%  @entregables.each do |entregable| %>
                             <% @proyecto = Proyecto.find(entregable.proyecto_id) %>
                               Descripcion: <%= entregable.descripcion %> Proyecto: <%= @proyecto.nombre %>   </br>
