@@ -1,4 +1,12 @@
 class RiesgoController < ApplicationController
+    
+    #Recibe un id de documento de riesgo para desplegarlo.
+     def show
+        puts params[:rid]
+        @riesgo = Riesgo.find(params[:rid])
+    end
+    
+    
     #Crea un nuevo documento de riesgos
     def create
          @riesgo = Riesgo.new(riesgo_params)

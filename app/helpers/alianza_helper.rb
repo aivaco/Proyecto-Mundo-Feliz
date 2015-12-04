@@ -3,7 +3,7 @@ module AlianzaHelper
     #Para generar archivo de documentos alianza con formato markdown. No Identar.
     def creaDA(tipo,nombreEmp,proposito,fechaFin)
         @markdown = "##{tipo}
-##Empresa:
+###Empresa:
 #{nombreEmp}.
 
 ###Propósito:

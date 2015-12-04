@@ -32,7 +32,7 @@
                   
                   <% if !@riesgos.empty? then%>
                   <%  @riesgos.each do |riesgo| %>
-                  <li><%= link_to riesgo.tipo, 'google.com', :target => '_blank' %></li>
+                  <li><%= link_to riesgo.tipo, :controller =>'riesgo',:action =>'show',:rid =>riesgo.id, :target => "_blank" %></li>
                   <%end%>
                   <%else%>
                   <li><img src="/content/images/google.ico" />No existen documentos asociados a este proyecto.</a></li>
@@ -46,7 +46,7 @@
                   
                   <% if !@alianzas.empty? then%>
                   <%  @alianzas.each do |alianza| %>
-                  <li><a href="http://www.google.com" target="_blank"><%= alianza.tipo %></a></li>
+                  <li><%= link_to alianza.tipo, :controller =>'alianza',:action =>'show',:aid =>alianza.id, :target => "_blank" %></li>
                   <%end%>
                   <%else%>
                   <li><img src="/content/images/google.ico" />No existen documentos asociados a este proyecto.</a></li>
@@ -69,10 +69,12 @@
       <%a=creaMD(@documento.titulo,@documento.razon,@documento.tiempo,@documento.precio,@documento.costo,@documento.estado)%>
       <%= markdown(a) %>
    </div>
+   </div>
    </span>
       <br>
    <!--Botones con las distintas acciones-->      
    <%= link_to "/auth/facebook", id: "sign_in" do %>
+   <div class ="col-md-9 col-md-offset-3">
    <div class="btn btn-default"> 
       <i class="fa fa-tasks"></i>  Administrar entregables
    </div>
