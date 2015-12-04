@@ -81,25 +81,29 @@ User.create(usuario: "maria@maria.com",
              password:              "12345678",
              password_confirmation: "12345678",
              activated: true,
-             activated_at: Time.zone.now)
+             activated_at: Time.zone.now,
+             persona_id: 2)
 
 User.create(usuario: "sutano@sutano.com",
              password:              "12345678",
              password_confirmation: "12345678",
              activated: true,
-             activated_at: Time.zone.now)
+             activated_at: Time.zone.now,
+             persona_id: 3)
              
 User.create(usuario: "momba@momba.com",
              password:              "12345678",
              password_confirmation: "12345678",
              activated: true,
-             activated_at: Time.zone.now)
+             activated_at: Time.zone.now,
+             persona_id: 4)
         
 User.create(usuario: "yahir@yahir.com",
              password:              "12345678",
              password_confirmation: "12345678",
              activated: true,
-             activated_at: Time.zone.now)             
+             activated_at: Time.zone.now,
+             persona_id: 5)          
 #usuario de prueba
 User.create(usuario: "example@mundofeliz.com",
              password:              "12345678",
@@ -211,12 +215,12 @@ e5 = Entregable.create(numero: 5,
 #Datos Ruiz. 
 User.create(usuario: "pj045", password: "12345678")
 Cliente.create(nombreEmp: "Cosa S.A", persona_id: 3) 
-Direccion.create(tipo: "f", pais: "Costa Rica", provincia: "San Jose", ciudad: "Sabanilla", dirExac: "Frente al AMPM", persona_id: 1)
-Direccion.create(tipo: "f", pais: "Costa Rica", provincia: "San Jose", ciudad: "Guadalupe", dirExac: "Costado norte de Novacentro", persona_id: 2)
-Direccion.create(tipo: "f", pais: "Costa Rica", provincia: "San Jose", ciudad: "Montes de Oca", dirExac: "100m este de la iglesia", persona_id: 3)
-Direccion.create(tipo: "f", pais: "Costa Rica", provincia: "San Jose", ciudad: "Sabanilla", dirExac: "Frente al AMPM", persona_id: 4)
-Direccion.create(tipo: "f", pais: "Costa Rica", provincia: "San Jose", ciudad: "Guadalupe", dirExac: "Costado norte de Novacentro", persona_id: 5)
-Direccion.create(tipo: "f", pais: "Costa Rica", provincia: "San Jose", ciudad: "Guadalupe", dirExac: "Costado norte de Novacentro", persona_id: 6)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Sabanilla", dirExac: "Frente al AMPM", persona_id: 1)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Guadalupe", dirExac: "Costado norte de Novacentro", persona_id: 2)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Montes de Oca", dirExac: "100m este de la iglesia", persona_id: 3)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Sabanilla", dirExac: "Frente al AMPM", persona_id: 4)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Guadalupe", dirExac: "Costado norte de Novacentro", persona_id: 5)
+Direccion.create(tipo: "Principal", pais: "Costa Rica", provincia: "San Jose", ciudad: "Guadalupe", dirExac: "Costado norte de Novacentro", persona_id: 6)
 Telefono.create(tipo: "casa", numero: 34586797, persona_id: 1)
 Telefono.create(tipo: "celular", numero: 45656776, persona_id: 1)
 Telefono.create(tipo: "oficina", numero: 90764534, persona_id: 1)
