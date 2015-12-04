@@ -1,5 +1,10 @@
 class ModuloEntregableController < ApplicationController
   def view_entregable
+    if(params.has_key?(:entregable_numero)) then
+      @entreg=Entregable.find(params[:entregable_numero].to_i)
+    else
+      @entreg=Entregable.first()
+    end
   end
   
   #Actualiza una entrega con su descripción.

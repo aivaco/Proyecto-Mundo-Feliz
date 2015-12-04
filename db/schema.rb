@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118140456) do
+ActiveRecord::Schema.define(version: 20151204221644) do
 
   create_table "activos", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -184,8 +184,9 @@ ActiveRecord::Schema.define(version: 20151118140456) do
   create_table "recursos", force: :cascade do |t|
     t.string   "almaMater"
     t.integer  "fisica_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "estado",     default: true
   end
 
   add_index "recursos", ["fisica_id"], name: "index_recursos_on_fisica_id"

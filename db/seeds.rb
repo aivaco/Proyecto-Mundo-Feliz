@@ -175,6 +175,10 @@ r2 = Recurso.create(almaMater: "UNA",
                fisica_id: 2)
 r3 = Recurso.create(almaMater: "TEC", 
                fisica_id: 3)
+               
+habilidad1 = Habilidad.create(descripcion: "C++, Ruby", recurso_id: 1)
+habilidad2 = Habilidad.create(descripcion: "Swift", recurso_id: 2)
+habilidad3 = Habilidad.create(descripcion: "C++, Rails, PHP", recurso_id: 3)
               
 #Crea proyectos
 pr1 = Proyecto.create(nombre: "Punto de venta",

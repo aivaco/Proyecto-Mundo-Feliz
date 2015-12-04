@@ -1,32 +1,83 @@
+<script>
+    
+    $('#modalEntregable').on('show.bs.modal', function(e) {
+
+    //get data-id attribute of the clicked element
+    var entregable = $(e.relatedTarget).data('numero-entregable');
+
+    //populate the textbox
+    $(e.currentTarget).find('input[name="bookId"]').val(entregable);
+    
+});
+    
+</script>
+
 
   <!-- Inserta el contenido del header -->
   <%= render 'layouts/header_user' %>
   <%= render 'layouts/menus/menu_tabs' %>
   
   <h1>Entregables</h1>
-   <%= render partial: 'modulo_entregable/fichas' %>
-   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalAddEntrega">
+  
+  <% @entregables = Entregable.all %>
+  
+   <%= month_calendar events: @entregables do |date, entregables| %>
+
+        <%= date.strftime("%d") %>
+        
+        <% entregables.each do |entregable| %>
+            <div>
+            
+                <a href="#modalEntregable" data-toggle="modal" data-numero-entrgable="2"> * <%= entregable.descripcion %> </a>
+            
+            </div>
+        <% end %>
+    <% end %>
+  
+   
+   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalAgregarEntrega">
       <i class="fa  fa-plus-square"></i>  Agregar entrega
    </button>
    
-   <!-- Modal agregar entrega -->
+<!-- Modal entregable -->
 
-<div id="modalAddEntrega" class="modal fade" role="dialog">
-  <div class="modal-dialog" style="width: 400px">
+<div id="modalEntregable" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 600px">
 
     <!-- Contenido dentro del Modal -->
     <div class="modal-content">
        <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Entregable</h4>
+        </div>
+        
+        <div class="modal-body">
+            
+           <%= render partial: 'modulo_entregable/entregable' %>
+           
+        </div>
+        
+    </div>
+  </div>
+</div>
+
+   
+   <!-- Modal agregar entrega -->
+
+<div id="modalAgregarEntrega" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 400px">
+
+    <!-- Contenido dentro del Modal -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Agregar Entrega</h4>
         </div>
         
         <div class="modal-body">
-           
              <%= render partial: 'modulo_entregable/add_entrega' %>
         </div>
-
-   
-
+        
+    </div>
   </div>
 </div>

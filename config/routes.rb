@@ -58,6 +58,8 @@ Rails.application.routes.draw do
   get 'signup' => 'signup#new'
   post 'signup' => 'signup#create'
   
+  get 'profile' => 'profile#view'
+  
   get 'newclient' => 'new_client#new'
   post 'newclient' => 'new_client#create'
   

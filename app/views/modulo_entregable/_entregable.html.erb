@@ -1,0 +1,23 @@
+<% @proyecto = Proyecto.find(@entreg.proyecto_id) %>
+<% @hoja = Hoja.find(@proyecto.hoja_id) %>
+<% @portafolio = Portafolio.find(@hoja.portafolio_id) %>
+<% @cliente = Cliente.find(@portafolio.cliente_id) %>
+<% @persona = Persona.find(@cliente.persona_id) %>
+<% @fisica = Fisica.find_by_persona_id(@persona.id) %>
+
+<div>
+    <table align="center style="width:50%">
+        <tr>
+            <td><h4>Proyecto:</h4></td>
+            <td><%= @proyecto.nombre%></td>
+        </tr>
+        <tr>
+            <td><h4>Cliente:</h4></td>
+            <td><%= @fisica.nombre %> <%= @fisica.apellido1 %></td>
+        </tr>
+        <tr>
+            <td><h4>Descripción:</h4></td>
+            <td><%= @entreg.descripcion %></td>
+        </tr>
+    </table>
+</div>

@@ -9,6 +9,7 @@
 <% @portafolio = Portafolio.find_by(cliente_id: @cliente.id)%>
 <!--Obtiene las hojas pertenecientes -->
 <% @hojas = Hoja.where("portafolio_id == :id", {id: @portafolio.id}).all %>
+
 <div class= "col-md-3">
    <!--Muestra el nombre del cliente-->
    <h4>Cliente: <%= @cliente.nombreEmp%></h4>
