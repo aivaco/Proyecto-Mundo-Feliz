@@ -2,6 +2,7 @@
 <%= render 'layouts/menus/menu_tabs' %>
 <!--Incluye a los archivos de js para el menú-->
 <%= javascript_include_tag "easytree"%>
+<%= javascript_include_tag('administrarEntregables.js') %>
 <!--Obtiene al cliente del cual se desean mostrar sus proyectos-->
 <% @cliente = Cliente.find(@id)%>
 <!--Obtiene el portafolio del cliente-->
@@ -71,27 +72,124 @@
    </div>
    </div>
    </span>
-      <br>
-   <!--Botones con las distintas acciones-->      
-   <%= link_to "/auth/facebook", id: "sign_in" do %>
-   <div class ="col-md-9 col-md-offset-3">
-   <div class="btn btn-default"> 
-      <i class="fa fa-tasks"></i>  Administrar entregables
-   </div>
-   <%end%>
-   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalAgregarDocumentos">
+    <br>
+   <!--Botones con las distintas acciones-->
+    <div class ="col-md-9 col-md-offset-3">
+   
+   <!--Empieza código para Editar entregables-->
+   <% @hojas = Hoja.find(@documento.proyecto_id) %>
+   <% @proyectos = Proyecto.where("hoja_id == :id", {id: @hojas.id}).first %>
+   <% @entregables = Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all %>
+
+   
+    <!-- Botón Administrar Entregables -->
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Administrar Entregables<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a data-toggle="modal" data-target="#editarEntregablesNuevoEntregablemodal"> Añadir nuevo entregable</a></li>
+            <li><a data-toggle="modal" data-target="#editarEntregablesmodalBorrarEntregable"> <i class="glyphicon glyphicon-trash"></i> Borrar entregable</a></li>
+            <li><a data-toggle="modal" data-target="#editarEntregablesmodal"> <i class="fa fa-tasks"></i> Modificar Recursos Asignados</a></li>
+        </ul>
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalAgregarDocumentos">
       <i class="fa fa-file"></i>  Agregar documentos
    </button>
       <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalEliminarDocumentos">
       <i class="fa fa-file-excel-o"></i>  Eliminar documentos
-   </button>
-   
-   <%= link_to "callto://mundoFeliz",  id: "sign_in" do %>
-   <div class="btn btn-default"> 
-      <i class="fa fa-plus-square"></i>  Añadir nuevo proyecto
-   </div>
-   <%end%>
+      </button>
+    </div>
+
+
 </div>
+   <!--Termina código para Editar entregables-->
+    
+    <!-- Popup de editarEntregables -->
+    <!-- Modal -->
+    <div id="editarEntregablesmodal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </h4>
+                </div>
+                
+                <div class="modal-body">
+                    <head> Por favor seleccione el entregable: </head>
+                    <p>
+                    <div class="input-group">
+                        <%= form_for(:seleccionarEntregable, url: entregableSeleccionado_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
+                            <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :descripcion) %>
+                            <%= f.submit "Aceptar", class: "btn btn-default" %>
+                        <%end%>
+                    </div>
+                    </p>
+                </div>
+                
+                <div class="modal-footer">
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+   <!-- Popup de editarEntregableNuevoEntregable -->
+   <!-- Modal -->
+   <div id="editarEntregablesNuevoEntregablemodal" class="modal fade" role="dialog">
+     <div class="modal-dialog modal-sm">
+   
+       <!-- Modal content-->
+       <div class="modal-content" style="text-align: center">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </br> Añadir nuevo entregable</h4>
+         </div>
+         <div class="modal-body">
+           <p>
+            <div class="input-group">
+                <%= form_for(:agregarNuevoEntregable, url: nuevoEntregable_path, html: {class: 'navbar-form navbar-right'} ) do |f| %>
+                    <p> Digite la descripción: </p>
+                    <%= f.text_field :descripcion, placeholder: 'Descripción' %> 
+                    <%= f.hidden_field :id, :value => @proyectos.id %>
+                    <p> Seleccione la fecha de entrega: </p>
+                    <%= date_select('range', 'start_date', :order => [:day, :month, :year])%>
+                    <span class="input-group-btn">
+                        <%= f.submit "Aceptar", class: "btn btn-default" %>
+                    </span>
+                <%end%>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+    
+     <!-- Popup de de borrar Entregables -->
+    <!-- Modal -->
+    <div id="editarEntregablesmodalBorrarEntregable" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 375px">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"> Cliente: <%= @cliente.nombreEmp %> <br> Proyecto: <%= @documento.titulo %> </h4>
+                </div>
+                <div class="modal-body">
+                    <head> Por favor seleccione el entregable que desea borrar: </head>
+                    <p>
+                        <div class="input-group">
+                            <%= form_for(:seleccionarEntregable, url: borrarEntregableSeleccionado_path , html: {class: 'navbar-form navbar-right'} ) do |f| %>
+                                <%= f.collection_select(:id, Entregable.where("proyecto_id == :id", {id: @proyectos.id}).all, :id, :descripcion) %>
+                                <%= f.submit "Aceptar", class: "btn btn-default", data: { confirm: '¿Está seguro que desea borrar este entregable?' } %>
+                            <%end%>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!--Termina código para Editar entregables-->
+
 
  <!-- Inserta el contenido del header -->
   <%= render 'layouts/header_user' %>

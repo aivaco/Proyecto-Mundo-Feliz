@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   get 'password_resets/new'
   get 'password_resets/edit'
-
+  post 'nuevoEntregable' => 'documento#nuevoEntregable'
+  post 'entregableSeleccionado' => 'documento#entregableSeleccionado'
 =begin 
   
   root  'pages#mientras'       #Mientras
@@ -77,4 +78,12 @@ Rails.application.routes.draw do
   get '/alianza/:id', to: 'alianza#show', as: 'alianza'
 
 
+  post 'borrarEntregableSeleccionado' => 'documento#borrarEntregableSeleccionado'
+  
+  
+  #Administrar recursos de entregables
+  get '/recursos_asignados/:id', to: 'recursos_asignados#administrar', as: 'recursos_entregable'
+  get 'agregarRecursoSeleccionado' => 'recursos_asignados#agregarRecursoSeleccionado'
+  get 'removerRecursoSeleccionado' => 'recursos_asignados#removerRecursoSeleccionado'
+  
 end

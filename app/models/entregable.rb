@@ -11,4 +11,8 @@ class Entregable < ActiveRecord::Base
   validates :proyecto, :presence => true #Valida que se guarde en un Proyecto.
   validates :numero, uniqueness: { scope: :proyecto, message: "Un número por Proyecto" } #Valida que número sea atributo único para un Proyecto
   validates :numero, :fechaEnt, :descripcion, presence: true #Valida que esos atributos no sean nulos
+  
+  def fechayDescripcion
+    "#{fechaEnt} | #{descripcion}"
+  end
 end
