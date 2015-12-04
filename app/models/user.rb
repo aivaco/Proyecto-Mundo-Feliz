@@ -47,6 +47,9 @@ class User < ActiveRecord::Base
 	  
 #Para autenticarse con facebook.
 def self.from_omniauth(auth)
+  puts auth.info.name
+  puts auth.info.last_name
+  puts 'hola'
   existe = defined? auth.uid
   if existe
     if user = User.find_by_uid(auth.uid)
