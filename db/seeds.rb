@@ -60,7 +60,6 @@ Persona.create(idPersona: "41651305",
 Persona.create(idPersona: "987987987",
               email: "daniela@daniela.com",
               tipoPersona: "f")
-                      
 Persona.create(idPersona: "481189416",
               email: "momba@momba.com",
               tipoPersona: "f")
@@ -85,7 +84,7 @@ Fisica.create(nombre: "Daniela",
               apellido2: "Mora",
               sexo: "f",
               fechaNac: Date.new(1995,8,7),
-              persona_id: 4 )              
+              persona_id: 6 )              
 Fisica.create(nombre: "Sutano",
               apellido1: "Mengano",
               apellido2: "Soto",
@@ -159,7 +158,7 @@ pr1.rols.create(recurso: r2, papel: 'Desarrollador')
 pr2.rols.create(recurso: r2, papel: 'Scrum Master')
 pr2.rols.create(recurso: r1, papel: 'QA')
 #Proyecto 3
-pr2.rols.create(recurso: r3, papel: 'Scrum Master')
+pr3.rols.create(recurso: r3, papel: 'Scrum Master')
 
 #Crea documento de riesgo
 Riesgo.create(tipo: "Prueba",
@@ -205,37 +204,6 @@ e5 = Entregable.create(numero: 5,
     e5.activos.create(recurso: r1, estado: false)
 #Proyecto 3
     e3.activos.create(recurso: r3, estado: false)
-
-
-
-Recurso.create( almaMater: "UCR",
-                fisica_id: 1)
-Recurso.create( almaMater: "TEC",
-                fisica_id: 2)   
-Recurso.create( almaMater: "UCR",
-                fisica_id: 4)            
-Recurso.create( almaMater: "UNA",
-                fisica_id: 3)                  
-   
-Rol.create( proyecto_id: 2 , recurso_id: 1, papel: "Tester" ) 
-Rol.create( proyecto_id: 1 , recurso_id: 2, papel: "Desarrollador" )    
-Rol.create( proyecto_id: 2 , recurso_id: 3, papel: "Desarrollador" )     
-Rol.create( proyecto_id: 2 , recurso_id: 4, papel: "Scrum Master" )
-                
-                
-Activo.create( entregable_id: 5,
-                recurso_id: 1,
-                estado: true)
-                
-Activo.create( entregable_id: 5,
-                recurso_id: 3,
-                estado: true)
-                
-Activo.create( entregable_id: 6,
-                recurso_id: 4,
-                estado: true)
-
-
 
 
 #Datos Ruiz. 
