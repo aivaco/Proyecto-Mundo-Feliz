@@ -41,20 +41,20 @@
                       <head> Sus proyectos asignados son: </head>
                       <p>
                       <div class="input-group">
-                        <% if current_user %>
+                        <% if current_user then %>
                           <% @fisica = Fisica.where("persona_id == :id", {id: current_user.persona_id}).first  %>
                           <% existeRecurso1 = defined?  Recurso.where("fisica_id == :id", {id: @fisica.id}).first %>
                           <% if existeRecurso1 then %>
-                          <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
-                          <% existeProyecto = defined?  @recurso.proyectos.all %>
-                          <% if existeProyecto then %>
-                            <% @proyectos = @recurso.proyectos.all %>
-                            <% if !@proyectos.empty? then%>
-                              <%  @proyectos.each do |proyecto| %>
-                                Nombre: <%= proyecto.nombre %> Estado: <%= proyecto.estado %>  </br>
+                            <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
+                            <% existeProyecto = defined?  @recurso.proyectos.all %>
+                            <% if existeProyecto then %>
+                              <% @proyectos = @recurso.proyectos.all %>
+                              <% if !@proyectos.empty? then%>
+                                <%  @proyectos.each do |proyecto| %>
+                                  Nombre: <%= proyecto.nombre %> Estado: <%= proyecto.estado %>  </br>
+                                <%end%>
                               <%end%>
-                            <%end%>
-                          <% end %>
+                            <% end %>
                           <% end %>
                         <% end %>
                       </div>
@@ -86,18 +86,18 @@
                           <% @fisica = Fisica.where("persona_id == :id", {id: current_user.persona_id}).first  %>
                           <% existeRecurso2 = defined?  Recurso.where("fisica_id == :id", {id: @fisica.id}).first %>
                           <% if existeRecurso2 then %>
-                          <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
-                          <% existeEntregable = defined?  @recurso.entregables.all %>
-                          <% if existeEntregable then %>
-                            <% @entregables = @recurso.entregables.all %>
-                            <% if !@entregables.empty? then%>
-                              <%  @entregables.each do |entregable| %>
-                              <% @proyecto = Proyecto.find(entregable.proyecto_id) %>
-                              Descripcion: <%= entregable.descripcion %> Proyecto: <%= @proyecto.nombre %>   </br>
-                            <%end%>
-                          <%end%>
-                         <% end %>
-                        <% end %>
+                            <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
+                            <% existeEntregable = defined?  @recurso.entregables.all %>
+                            <% if existeEntregable then %>
+                              <% @entregables = @recurso.entregables.all %>
+                              <% if !@entregables.empty? then%>
+                                <%  @entregables.each do |entregable| %>
+                                <% @proyecto = Proyecto.find(entregable.proyecto_id) %>
+                                  Descripcion: <%= entregable.descripcion %> Proyecto: <%= @proyecto.nombre %>   </br>
+                                <%end%>
+                              <%end%>
+                           <% end %>
+                          <% end %>
                         <% end %>
                       </div>
                       </p>
