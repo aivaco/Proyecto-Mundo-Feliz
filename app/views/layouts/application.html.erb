@@ -44,7 +44,7 @@
                         <% if current_user %>
                           <% @fisica = Fisica.where("persona_id == :id", {id: current_user.persona_id}).first  %>
                           <% existeRecurso1 = defined?  Recurso.where("fisica_id == :id", {id: @fisica.id}).first %>
-                          <% if existeRecurso1 then %>
+                     
                           <% @recurso = Recurso.where("fisica_id == :id", {id: @fisica.id}).first  %>
                           <% existeProyecto = defined?  @recurso.proyectos.all %>
                           <% if existeProyecto then %>
@@ -52,7 +52,7 @@
                             <% if !@proyectos.empty? then%>
                               <%  @proyectos.each do |proyecto| %>
                                 Nombre: <%= proyecto.nombre %> Estado: <%= proyecto.estado %>  </br>
-                              <%end%>
+                              
                             <%end%>
                           <% end %>
                           <% end %>
