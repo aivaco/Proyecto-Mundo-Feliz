@@ -1,4 +1,18 @@
 class RecursosController < ApplicationController
+  def create_user
+      usuario = User.create(:usuario => params[:crearUsuario][:usuario], :persona_id => params[:crearUsuario][:idPersona_row], :password => params[:crearUsuario][:contrasena], :password_confirmation => params[:crearUsuario][:contrasena], :activated => true, :activated_at =>  Time.zone.now)
+      usuario.save()
+      if usuario != nil
+        @usuarioCreado = true
+        @errorUsuario = false
+      else
+        @errorUsuario = true
+      end 
+      @usuarioCreado = false
+      @errorUsuario = false
+  
+  end
+  
   def lista_recursos
 
     if params[:idRecursoEliminar]
@@ -11,8 +25,13 @@ class RecursosController < ApplicationController
     end
 
     #crea el recurso 
+    
     if params[:crearUsuario]
-      usuario = User.create(:usuario => params[:crearUsuario][:usuario], :IdPersona => params[:crearUsuario][:idPersona_row], :password => params[:crearUsuario][:contrasena])
+      puts "hola"
+      puts params[:crearUsuario]
+      usuario = User.create(:usuario => params[:crearUsuario][:usuario], :persona_id => params[:crearUsuario][:idPersona_row], :password => params[:crearUsuario][:contrasena], :password_confirmation => params[:crearUsuario][:contrasena], :activated => true, :activated_at =>  Time.zone.now)
+      puts usuario.usuario
+      usuario.save()
       if usuario != nil
         @usuarioCreado = true
         @errorUsuario = false

@@ -12,14 +12,11 @@ class Entregable < ActiveRecord::Base
   validates :numero, uniqueness: { scope: :proyecto, message: "Un número por Proyecto" } #Valida que número sea atributo único para un Proyecto
   validates :numero, :fechaEnt, :descripcion, presence: true #Valida que esos atributos no sean nulos
   
-<<<<<<< HEAD
   def start_time
         self.fechaEnt
   end
     
-=======
   def fechayDescripcion
     "#{fechaEnt} | #{descripcion}"
   end
->>>>>>> b894b37f12599c68e1face019a72772c4d72a954
 end
